@@ -12,7 +12,7 @@ export default function EmailUs() {
     email: '',
     phone: '',
     company: '',
-    selectedProducts: [], 
+    selectedProducts: [],
     message: ''
   });
 
@@ -20,7 +20,7 @@ export default function EmailUs() {
   const [openCategories, setOpenCategories] = useState({
     [firstCategoryKey]: true
   });
-  
+
   const [openSubcategories, setOpenSubcategories] = useState({
     [`${firstCategoryKey}-${firstSubcategoryKey}`]: true
   });
@@ -55,13 +55,13 @@ export default function EmailUs() {
 
       setFormData(prev => ({
         ...prev,
-        selectedProducts: checked 
+        selectedProducts: checked
           ? [...prev.selectedProducts, productInfo]
-          : prev.selectedProducts.filter(p => 
-              !(p.categoryKey === categoryKey && 
-                p.subcategoryKey === subcategoryKey && 
-                p.productId === productId)
-            )
+          : prev.selectedProducts.filter(p =>
+            !(p.categoryKey === categoryKey &&
+              p.subcategoryKey === subcategoryKey &&
+              p.productId === productId)
+          )
       }));
     } else {
       setFormData(prev => ({
@@ -71,23 +71,10 @@ export default function EmailUs() {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      company: '',
-      selectedProducts: [],
-      message: ''
-    });
-  };
-
   const isProductSelected = (categoryKey, subcategoryKey, productId) => {
-    return formData.selectedProducts.some(p => 
-      p.categoryKey === categoryKey && 
-      p.subcategoryKey === subcategoryKey && 
+    return formData.selectedProducts.some(p =>
+      p.categoryKey === categoryKey &&
+      p.subcategoryKey === subcategoryKey &&
       p.productId === productId
     );
   };
@@ -95,8 +82,13 @@ export default function EmailUs() {
   return (
     <div className="container bg-[#DACEC2] p-6">
       <h2 className="text-2xl font-bold text-[#293E31] mb-6">Send us an Email</h2>
-      
-      <form onSubmit={handleSubmit} className="space-y-6">
+
+      <form action="https://formsubmit.co/shaik.sadhiks727@gmail.com" method="POST" className="space-y-6">
+        {/* Customize your redirect */}
+        <input type="hidden" name="_next" value="http://localhost:5173/" />
+        <input type="hidden" name="_subject" value="New Contact Form Submission" />
+        <input type="hidden" name="_template" value="table" />
+        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-gray-700">NAME *</label>
@@ -110,7 +102,7 @@ export default function EmailUs() {
               className="mt-1 block w-full p-3 bg-[#DACEC2] border-1 border-[#293E31] focus:ring-[#293E31] focus:ring-1 outline-none"
             />
           </div>
-          
+
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700">EMAIL *</label>
             <input
@@ -123,7 +115,7 @@ export default function EmailUs() {
               className="mt-1 block w-full p-3 bg-[#DACEC2] border-1 border-[#293E31] focus:ring-[#293E31] focus:ring-1 outline-none"
             />
           </div>
-          
+
           <div>
             <label htmlFor="phone" className="block text-sm font-medium text-gray-700">PHONE</label>
             <input
@@ -147,11 +139,18 @@ export default function EmailUs() {
             value={formData.company}
             onChange={handleChange}
             className="mt-1 block w-full p-3 bg-[#DACEC2] border-1 border-[#293E31] focus:ring-[#293E31] focus:ring-1 outline-none"
-            />
+          />
         </div>
 
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-4">Products</label>
+          <input 
+            type="hidden" 
+            name="selected_products" 
+            value={formData.selectedProducts.map(p => 
+              `${p.categoryName} > ${p.subcategoryName} > ${p.productName}`
+            ).join(', ')} 
+          />
           <div className="space-y-0 border border-black">
             {Object.entries(productCategories).map(([categoryKey, category]) => (
               <div key={categoryKey} className="border-b border-black last:border-b-0">
@@ -161,13 +160,12 @@ export default function EmailUs() {
                   className="w-full px-4 py-3 bg-[#DACEC2] hover:bg-[#c5bab0] flex items-center justify-between text-left border-0"
                 >
                   <h3 className="text-lg font-semibold text-[#293E31]">{category.name}</h3>
-                  <ChevronDown 
-                    className={`w-5 h-5 text-[#293E31] transition-transform duration-200 ${
-                      openCategories[categoryKey] ? 'transform rotate-180' : ''
-                    }`}
+                  <ChevronDown
+                    className={`w-5 h-5 text-[#293E31] transition-transform duration-200 ${openCategories[categoryKey] ? 'transform rotate-180' : ''
+                      }`}
                   />
                 </button>
-                
+
                 {openCategories[categoryKey] && (
                   <div className="border-t border-black">
                     {Object.entries(category.subcategories).map(([subcategoryKey, subcategory]) => (
@@ -178,13 +176,12 @@ export default function EmailUs() {
                           className="w-full px-6 py-2 bg-[#DACEC2] hover:bg-[#c5bab0] flex items-center justify-between text-left border-0"
                         >
                           <h4 className="text-md font-medium text-[#FE8340]">{subcategory.name}</h4>
-                          <ChevronDown 
-                            className={`w-4 h-4 text-[#FE8340] transition-transform duration-200 ${
-                              openSubcategories[`${categoryKey}-${subcategoryKey}`] ? 'transform rotate-180' : ''
-                            }`}
+                          <ChevronDown
+                            className={`w-4 h-4 text-[#FE8340] transition-transform duration-200 ${openSubcategories[`${categoryKey}-${subcategoryKey}`] ? 'transform rotate-180' : ''
+                              }`}
                           />
                         </button>
-                        
+
                         {openSubcategories[`${categoryKey}-${subcategoryKey}`] && (
                           <div className="px-8 py-3 bg-[#DACEC2] border-t border-black">
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -199,8 +196,8 @@ export default function EmailUs() {
                                     onChange={handleChange}
                                     className="mt-1 h-4 w-4 text-[#FE8340] border-black focus:ring-[#FE8340]"
                                   />
-                                  <label 
-                                    htmlFor={`${categoryKey}|${subcategoryKey}|${product.id}`} 
+                                  <label
+                                    htmlFor={`${categoryKey}|${subcategoryKey}|${product.id}`}
                                     className="ml-2 block text-sm text-gray-700"
                                   >
                                     {product.name}

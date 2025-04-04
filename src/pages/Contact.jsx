@@ -43,69 +43,6 @@ export function Contact() {
             </section>
 
             {/* Contact Form */}
-            {/* <section className="bg-[#DACEC2] py-16">
-                <div className="container  px-8 max-w-2xl">
-                    <h2 className="text-[#293E31] text-3xl font-semibold mb-10 text-center">Contact Us</h2>
-                    <form className="space-y-6">
-                        <div>
-                            <label htmlFor="firstName" className="block text-[#293E31] mb-2">
-                                First name
-                            </label>
-                            <input
-                                type="text"
-                                id="firstName"
-                                className="w-full p-3 bg-[#DACEC2] border-1 border-[#293E31] focus:ring-[#293E31] focus:ring-1 outline-none"
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="lastName" className="block text-[#293E31] mb-2">
-                                Last name
-                            </label>
-                            <input
-                                type="text"
-                                id="lastName"
-                                className="w-full p-3 bg-[#DACEC2] border-1 border-[#293E31] focus:ring-[#293E31] focus:ring-1 outline-none"
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="email" className="block text-[#293E31] mb-2">
-                                Email
-                            </label>
-                            <input
-                                type="email"
-                                id="email"
-                                className="w-full p-3 bg-[#DACEC2] border-1 border-[#293E31] focus:ring-[#293E31] focus:ring-1 outline-none"
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="phone" className="block text-[#293E31] mb-2">
-                                Phone
-                            </label>
-                            <input
-                                type="tel"
-                                id="phone"
-                                className="w-full p-3 bg-[#DACEC2] border-1 border-[#293E31] focus:ring-[#293E31] focus:ring-1 outline-none"
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="company" className="block text-[#293E31] mb-2">
-                                Company name
-                            </label>
-                            <input
-                                type="text"
-                                id="company"
-                                className="w-full p-3 bg-[#DACEC2] border-1 border-[#293E31] focus:ring-[#293E31] focus:ring-1 outline-none"
-                            />
-                        </div>
-                        <Button
-                            type="submit"
-                            className="w-full bg-[#FE8340] hover:bg-[#293E31] hover:text-white text-[#293E31] py-3 transition-colors duration-300"
-                        >
-                            Submit
-                        </Button>
-                    </form>
-                </div>
-            </section> */}
             <EmailUs />
         </div>
     )

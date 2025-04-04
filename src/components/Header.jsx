@@ -1,20 +1,59 @@
-import { Link, useLocation } from "react-router-dom"
-import { Menu, X, ChevronDown, ChevronRight, ChevronLeft, ChevronUp } from "lucide-react"
+import { Link, useLocation, useNavigate } from "react-router-dom"
+import { Menu, X, ChevronDown, ChevronRight, Search, Phone, Mail } from "lucide-react"
 import { useState, useRef, useEffect } from "react"
 import { productCategories } from "../data/productsData"
 import { useProducts } from "../context/ProductContext"
+import { useSearch } from "../context/SearchContext"
+import { Input } from "./ui/input"
+import { Button } from "./ui/button"
+import { cn } from "../lib/utils"
 
-export function Header() {
+export default function Header() {
   const location = useLocation()
+  const navigate = useNavigate()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [dropdownPositions, setDropdownPositions] = useState({})
   const dropdownRefs = useRef({})
+  const searchRef = useRef(null)
   const { handleCategorySelect, handleSubcategorySelect } = useProducts()
+  const {
+    searchQuery,
+    setSearchQuery,
+    searchResults,
+    showSearchResults,
+    setShowSearchResults,
+    performSearch,
+    clearSearch
+  } = useSearch()
 
   // Close dropdowns when location changes
   useEffect(() => {
     setIsMenuOpen(false)
+    document.body.style.overflow = 'unset'
   }, [location])
+
+  // Close search results when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (searchRef.current && !searchRef.current.contains(event.target)) {
+        setShowSearchResults(false)
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [setShowSearchResults])
+
+  // Auto-search as user types
+  useEffect(() => {
+    if (searchQuery.trim()) {
+      performSearch(searchQuery)
+    } else {
+      setShowSearchResults(false)
+    }
+  }, [searchQuery, performSearch, setShowSearchResults])
 
   useEffect(() => {
     const calculatePositions = () => {
@@ -24,7 +63,7 @@ export function Header() {
         if (element && key.startsWith('subcategory-')) {
           // Extract category number from the key (first or second category)
           const categoryNum = key.split('-')[1] === '0' ? 'first' : 'second'
-          
+
           // Force right for first category, left for second category
           positions[key] = categoryNum === 'first' ? 'right' : 'left'
         }
@@ -34,7 +73,7 @@ export function Header() {
 
     // Initial calculation
     calculatePositions()
-    
+
     // Add resize listener
     window.addEventListener('resize', calculatePositions)
 
@@ -45,7 +84,7 @@ export function Header() {
   }, [])
 
   const isActive = (path) => {
-    return location.pathname === path ? "text-[#FE8340] font-semibold" : "text-white hover:text-[#FE8340]"
+    return location.pathname === path ? "text-[#FE8340] font-semibold" : "text-white hover:text-[#FE8340] transition-colors"
   }
 
   const toggleMenu = () => {
@@ -56,6 +95,7 @@ export function Header() {
 
   const handleLinkClick = () => {
     setIsMenuOpen(false)
+    document.body.style.overflow = 'unset'
     // Force close all dropdowns by removing hover classes
     const dropdowns = document.querySelectorAll('.group-hover\\:opacity-100, .group-hover\\:visible')
     dropdowns.forEach(dropdown => {
@@ -64,259 +104,416 @@ export function Header() {
     })
   }
 
+  const handleSearch = (e) => {
+    e.preventDefault()
+    if (searchQuery.trim()) {
+      performSearch(searchQuery)
+    }
+  }
+
+  const handleSearchResultClick = (path) => {
+    navigate(path)
+    clearSearch()
+  }
+
   return (
-    <header className="flex flex-col md:flex-row bg-[#293E31] h-hidden md:h-40">
-      {/* Logo Section */}
-      <div className="bg-[#FE8340] w-full md:w-50 lg:w-120 p-4 md:p-3 flex justify-between items-center">
-        <div className="w-full md:w-auto">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center gap-3">
-              <img
-                src="https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/logo/eckhtn4r99sznxbyfru7"
-                alt="VM ECOGROW Logo"
-                className="w-16 h-16 md:w-12 md:h-12 lg:w-25 lg:h-25 object-contain"
-              />
-              <div>
-                <h1 className="text-[#293E31] font-bold text-4xl md:text-lg lg:text-4xl">
-                  VM ECOGROW
-                </h1>
-                <p className="text-[#293E31] block text-sm lg:text-xl">
-                  Smart Inputs, Sustainable Outputs
-                </p>
-                  <p className="text-[#293E31] block text-sm lg:text-base">
-                    Tel: +44 7442590367 
-                  </p>
-                  <p className="text-[#293E31] block text-sm lg:text-base">
-                    Email: connect@vmecogrow.com
-                  </p>
-              </div>
+    <header className="w-full">
+      {/* Desktop Navigation (lg and above) */}
+      <div className="hidden lg:flex bg-[#293E31] w-full">
+        {/* Logo Section with Orange Background */}
+        <div className="bg-[#FE8340] flex-shrink-0 w-[300px] xl:w-[375px] flex items-center">
+          <Link to="/" className="flex items-center gap-2 xl:gap-4 px-4 xl:px-6 py-4 w-full group" onClick={handleLinkClick}>
+            <img
+              src="https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/logo/eckhtn4r99sznxbyfru7"
+              alt="VM ECOGROW Logo"
+              className="w-14 h-14 xl:w-16 xl:h-16 object-contain transition-transform group-hover:scale-105"
+            />
+            <div className="min-w-0">
+              <h1 className="text-[#293E31] font-bold text-xl xl:text-3xl truncate">
+                VM ECOGROW
+              </h1>
+              <p className="text-[#293E31] text-sm xl:text-sm truncate">
+                Smart Inputs, Sustainable Outputs
+              </p>
             </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={toggleMenu}
-              className="md:hidden text-[#293E31]"
-              aria-label="Toggle menu"
-            >
-              <Menu size={24} />
-            </button>
-          </div>
-
-          {/* <p className="text-[#293E31] text-2xl mt-1 hidden md:block">
-            Smart Inputs, Sustainable Outputs
-          </p> */}
+          </Link>
         </div>
-      </div>
 
-      {/* Desktop Navigation */}
-      <div className="flex-1 hidden md:flex justify-between items-center px-6">
-        <nav className="flex space-x-6">
-          <Link to="/" className={`${isActive("/")} text-sm lg:text-base`} onClick={handleLinkClick}>Home</Link>
-          <div className="relative group">
-            <Link 
-              to="/products" 
-              className={`${isActive("/products")} text-sm lg:text-base flex items-center gap-1`}
-              onClick={handleLinkClick}
-            >
-              Products
-            </Link>
-            {/* Dropdown Menu */}
-            <div className="absolute left-0 mt-2 w-[600px] bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-              <div className="p-6">
-                <div className="grid grid-cols-2 gap-x-8">
-                  {Object.entries(productCategories).map(([categoryKey, category]) => (
-                    <div key={categoryKey} className="relative">
-                      <Link 
-                        to={`/products/${categoryKey}`}
-                        className="text-[#293E31] font-bold text-xl mb-6 hover:text-[#FE8340] transition-colors block"
-                        onClick={handleLinkClick}
-                      >
-                        {category.name}
-                      </Link>
-                      
-                      <div className="space-y-4">
-                        {Object.entries(category.subcategories).map(([subcategoryKey, subcategory]) => (
-                          <div key={subcategoryKey} className="relative group/subcategory hover:z-[70]">
-                            <Link 
-                              to={`/products/${categoryKey}/${subcategoryKey}`}
-                              className="text-[#FE8340] font-semibold block hover:text-[#293E31] transition-colors flex items-center justify-between relative group-hover/subcategory:text-[#293E31]"
-                              onClick={handleLinkClick}
-                            >
-                              {subcategory.name}
-                              <ChevronRight size={16} className="opacity-0 group-hover/subcategory:opacity-100 transition-opacity" />
-                            </Link>
+        {/* Navigation and Search Section */}
+        <div className="flex-1 flex flex-col min-w-0 ">
+          {/* Navigation Links */}
+          <nav className="flex items-center space-x-4 xl:space-x-6 px-4 xl:px-6 py-4">
+            <Link to="/" className={`${isActive("/")} text-sm xl:text-sm whitespace-nowrap`} onClick={handleLinkClick}>Home</Link>
+            <div className="relative group">
+              <Link
+                to="/products"
+                className={`${isActive("/products")} text-sm xl:text-sm flex items-center gap-1 whitespace-nowrap`}
+                onClick={handleLinkClick}
+              >
+                Products
+                <ChevronDown size={16} className="transition-transform duration-300 group-hover:rotate-180" />
+              </Link>
+              {/* Dropdown Menu */}
+              <div className="absolute left-0 mt-2 w-[550px] lg:w-[600px] bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <div className="p-4 lg:p-6">
+                  <div className="grid grid-cols-2 gap-x-6 lg:gap-x-8">
+                    {Object.entries(productCategories).map(([categoryKey, category]) => (
+                      <div key={categoryKey} className="relative">
+                        <Link
+                          to={`/products/${categoryKey}`}
+                          className="text-[#293E31] font-bold text-lg lg:text-xl mb-4 lg:mb-6 hover:text-[#FE8340] transition-colors block"
+                          onClick={handleLinkClick}
+                        >
+                          {category.name}
+                        </Link>
 
-                            {/* Products Popup */}
-                            <div 
-                              ref={el => dropdownRefs.current[`subcategory-${categoryKey}-${subcategoryKey}`] = el}
-                              className={`absolute bg-white rounded-lg shadow-lg opacity-0 invisible group-hover/subcategory:opacity-100 group-hover/subcategory:visible transition-all duration-200 z-[60] ${
-                                dropdownPositions[`subcategory-${categoryKey}-${subcategoryKey}`] === 'right'
-                                  ? 'left-[calc(100%-8px)] top-0'
-                                  : 'right-[calc(100%-8px)] top-0'
-                              }`}
-                              style={{ width: '250px' }}
-                            >
-                              {/* Bridge element */}
-                              <div className={`absolute ${
-                                dropdownPositions[`subcategory-${categoryKey}-${subcategoryKey}`] === 'right'
-                                  ? '-left-6 top-0 w-6 h-full bg-transparent'
-                                  : '-right-6 top-0 w-6 h-full bg-transparent'
-                              }`} />
+                        <div className="space-y-3 lg:space-y-4">
+                          {Object.entries(category.subcategories).map(([subcategoryKey, subcategory]) => (
+                            <div key={subcategoryKey} className="relative group/subcategory hover:z-[70]">
+                              <Link
+                                to={`/products/${categoryKey}/${subcategoryKey}`}
+                                className="text-[#FE8340] font-semibold text-sm xl:text-base block hover:text-[#293E31] transition-colors flex items-center justify-between relative group-hover/subcategory:text-[#293E31]"
+                                onClick={handleLinkClick}
+                              >
+                                <span>{subcategory.name}</span>
+                                <ChevronRight size={16} className="opacity-0 group-hover/subcategory:opacity-100 transition-opacity" />
+                              </Link>
 
-                              <div className="relative bg-white rounded-lg">
-                                <div className="p-4">
-                                  <h4 className="text-[#293E31] font-semibold mb-3">{subcategory.name}</h4>
-                                  <div className="space-y-2">
-                                    {subcategory.products.map((product) => (
-                                      <Link
-                                        key={product.id}
-                                        to={`/products/${categoryKey}/${subcategoryKey}/${product.id}`}
-                                        className="text-[#293E31] hover:text-[#FE8340] block transition-colors text-sm"
-                                        onClick={handleLinkClick}
-                                      >
-                                        {product.name}
-                                      </Link>
-                                    ))}
+                              {/* Products Popup */}
+                              <div
+                                ref={el => dropdownRefs.current[`subcategory-${categoryKey}-${subcategoryKey}`] = el}
+                                className={cn(
+                                  "absolute bg-white rounded-lg shadow-xl opacity-0 invisible group-hover/subcategory:opacity-100 group-hover/subcategory:visible transition-all duration-200 z-[60]",
+                                  dropdownPositions[`subcategory-${categoryKey}-${subcategoryKey}`] === 'right'
+                                    ? 'left-[calc(100%-8px)] top-0'
+                                    : 'right-[calc(100%-8px)] top-0'
+                                )}
+                                style={{ width: '250px' }}
+                              >
+                                {/* Bridge element */}
+                                <div className={cn(
+                                  "absolute",
+                                  dropdownPositions[`subcategory-${categoryKey}-${subcategoryKey}`] === 'right'
+                                    ? '-left-6 top-0 w-6 h-full bg-transparent'
+                                    : '-right-6 top-0 w-6 h-full bg-transparent'
+                                )} />
+
+                                <div className="relative bg-white rounded-lg">
+                                  <div className="p-4">
+                                    <h4 className="text-[#293E31] font-semibold mb-3">{subcategory.name}</h4>
+                                    <div className="space-y-2">
+                                      {subcategory.products.map((product) => (
+                                        <Link
+                                          key={product.id}
+                                          to={`/products/${categoryKey}/${subcategoryKey}/${product.id}`}
+                                          className="text-[#293E31] hover:text-[#FE8340] block transition-colors text-sm"
+                                          onClick={handleLinkClick}
+                                        >
+                                          {product.name}
+                                        </Link>
+                                      ))}
+                                    </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
-                          </div>
-                        ))}
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
+            <Link to="/about" className={`${isActive("/about")} text-sm xl:text-sm whitespace-nowrap`} onClick={handleLinkClick}>About</Link>
+            <Link to="/crop-programs" className={`${isActive("/crop-programs")} text-sm xl:text-sm whitespace-nowrap`} onClick={handleLinkClick}>Crop Programs</Link>
+            <Link to="/services" className={`${isActive("/services")} text-sm xl:text-sm whitespace-nowrap`} onClick={handleLinkClick}>Services</Link>
+            <Link to="/media" className={`${isActive("/media")} text-sm xl:text-sm whitespace-nowrap`} onClick={handleLinkClick}>Media</Link>
+            <Link to="/contact-us" className={`${isActive("/contact-us")} text-sm xl:text-sm whitespace-nowrap`} onClick={handleLinkClick}>Contact</Link>
+          </nav>
+
+          {/* Search Bar */}
+          <div className="px-4 xl:px-6 py-3 flex justify-center">
+            {/* <div className="px-4 xl:px-6 py-3 border-t border-[#3a4f3f]"> */}
+
+            <div className="relative w-full max-w-xl mx-auto" ref={searchRef}>
+              <form onSubmit={handleSearch} className="flex items-center">
+                <div className="relative w-full">
+                  <Input
+                    type="text"
+                    placeholder="Search products or services"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-full pr-10 bg-[#3a4f3f] border-[#3a4f3f] text-white placeholder:text-gray-300 focus-visible:ring-[#FE8340] rounded-full"
+                  />
+                  <Button
+                    type="submit"
+                    size="icon"
+                    variant="ghost"
+                    className="absolute right-0 top-0 h-full text-white hover:text-[#FE8340] hover:bg-transparent"
+                  >
+                    <Search size={18} />
+                  </Button>
+                </div>
+              </form>
+
+              {/* Search Results Dropdown */}
+              {showSearchResults && searchResults.length > 0 && (
+                <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-lg shadow-lg z-50 max-h-96 overflow-y-auto">
+                  {searchResults.map((result, index) => (
+                    <div
+                      key={index}
+                      onClick={() => handleSearchResultClick(result.path)}
+                      className="p-3 hover:bg-gray-100 cursor-pointer border-b border-gray-200 last:border-b-0 transition-colors"
+                    >
+                      <div className="font-medium text-[#293E31]">{result.title}</div>
+                      <div className="text-sm text-gray-600">{result.description}</div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
-          <Link to="/about" className={`${isActive("/about")} text-sm lg:text-base`} onClick={handleLinkClick}>About Us</Link>
-          <Link to="/crop-programs" className={`${isActive("/crop-programs")} text-sm lg:text-base`} onClick={handleLinkClick}>Crop Programs</Link>
-          <Link to="/services" className={`${isActive("/services")} text-sm lg:text-base`} onClick={handleLinkClick}>Services</Link>
-          <Link to="/media" className={`${isActive("/media")} text-sm lg:text-base`} onClick={handleLinkClick}>Media</Link>
-          <Link to="/contact-us" className={`${isActive("/contact-us")} text-sm lg:text-base`} onClick={handleLinkClick}>Contact Us</Link>
-          {/* <Link to="/email-us" className={`${isActive("/email-us")} text-sm lg:text-base`} onClick={handleLinkClick}>Email Us</Link> */}
-        </nav>
+        </div>
+
+        {/* Contact Information */}
+        <div className="hidden lg:flex flex-col text-white px-4 xl:px-6 py-4 justify-center min-w-[220px]">
+          {/* <div className="hidden lg:flex flex-col text-white px-4 xl:px-6 py-4 justify-center border-l border-[#3a4f3f] min-w-[220px]"> */}
+
+          <div className="flex flex-col gap-2">
+            <a href="tel:+447442590367" className="hover:text-[#FE8340] transition-colors text-sm flex items-center gap-2 whitespace-nowrap">
+              <Phone size={16} className="text-[#FE8340] flex-shrink-0" />
+              +44 7442590367
+            </a>
+            <a href="tel:+447377420266" className="hover:text-[#FE8340] transition-colors text-sm flex items-center gap-2 whitespace-nowrap">
+              <Phone size={16} className="text-[#FE8340] flex-shrink-0" />
+              +44 7377420266
+            </a>
+          </div>
+          <a href="mailto:connect@vmecogrow.com" className="hover:text-[#FE8340] transition-colors text-sm flex items-center gap-2 whitespace-nowrap mt-2">
+            <Mail size={16} className="text-[#FE8340] flex-shrink-0" />
+            connect@vmecogrow.com
+          </a>
+        </div>
       </div>
 
-      {/* Mobile Off-canvas Menu */}
+      {/* Mobile/Tablet Header */}
+      <div className="lg:hidden bg-[#FE8340] w-full p-4 flex justify-between items-center shadow-md">
+        <Link to="/" className="flex items-center gap-3">
+          <img
+            src="https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/logo/eckhtn4r99sznxbyfru7"
+            alt="VM ECOGROW Logo"
+            className="w-12 h-12 md:w-14 md:h-14 object-contain"
+          />
+          <div>
+            <h1 className="text-[#293E31] font-bold text-lg md:text-xl">
+              VM ECOGROW
+            </h1>
+            <p className="text-[#293E31] text-xs md:text-sm">
+              Smart Inputs, Sustainable Outputs
+            </p>
+          </div>
+        </Link>
+
+        {/* Menu Button */}
+        <button
+          onClick={toggleMenu}
+          className="text-[#293E31] p-2 rounded-full hover:bg-[#ff9f6a] transition-colors"
+          aria-label="Toggle menu"
+        >
+          <Menu size={24} />
+        </button>
+      </div>
+
+      {/* Mobile/Tablet Off-canvas Menu */}
       <div
-        className={`fixed inset-0 bg-black bg-opacity-50 z-50 transition-all duration-500 md:hidden ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        className={`fixed inset-0 bg-black/50 z-50 transition-all duration-300 lg:hidden ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         onClick={toggleMenu}
       >
         {/* Off-canvas Content */}
         <div
-          className={`fixed inset-y-0 right-0 w-full bg-[#293E31] transform transition-all duration-500 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+          className={`fixed inset-y-0 right-0 w-full md:w-[400px] bg-[#293E31] transform transition-all duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} shadow-2xl overflow-hidden`}
           onClick={e => e.stopPropagation()}
         >
-          {/* Close Button */}
-          <button
-            onClick={toggleMenu}
-            className="absolute right-4 top-4 text-white hover:text-[#FE8340] transition-colors"
-            aria-label="Close menu"
-          >
-            <X size={28} />
-          </button>
+          {/* Menu Header */}
+          <div className="flex justify-between items-center p-4 border-b border-[#3a4f3f]">
+            <div className="flex items-center gap-3">
+              <img
+                src="https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/logo/iq9mm2k96zmximny8dbr"
+                alt="VM ECOGROW Logo"
+                className="w-10 h-10 md:w-12 md:h-12 object-contain"
+              />
+              <div>
+                <h2 className="text-white font-bold text-lg md:text-xl">VM ECOGROW</h2>
+                <p className="text-white text-xs md:text-sm">Smart Inputs, Sustainable Outputs</p>
+              </div>
+            </div>
+            <button
+              onClick={toggleMenu}
+              className="text-white hover:text-[#FE8340] transition-colors p-2 rounded-full hover:bg-[#3a4f3f]"
+              aria-label="Close menu"
+            >
+              <X size={24} />
+            </button>
+          </div>
 
-          {/* Mobile Navigation Links */}
-          <nav className="flex flex-col items-center justify-center h-full">
+          {/* Search Bar */}
+          <div className="p-4 border-b border-[#3a4f3f]">
+            <form onSubmit={handleSearch} className="flex items-center">
+              <div className="relative w-full">
+                <Input
+                  type="text"
+                  placeholder="Search products or services"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pr-10 bg-[#3a4f3f] border-[#3a4f3f] text-white placeholder:text-gray-300 focus-visible:ring-[#FE8340] rounded-full"
+                />
+                <Button
+                  type="submit"
+                  size="icon"
+                  variant="ghost"
+                  className="absolute right-0 top-0 h-full text-white hover:text-[#FE8340] hover:bg-transparent"
+                >
+                  <Search size={18} />
+                </Button>
+              </div>
+            </form>
+
+            {/* Search Results */}
+            {showSearchResults && searchResults.length > 0 && (
+              <div className="mt-2 bg-white rounded-lg shadow-lg max-h-48 overflow-y-auto">
+                {searchResults.map((result, index) => (
+                  <div
+                    key={index}
+                    onClick={() => {
+                      handleSearchResultClick(result.path);
+                      toggleMenu();
+                    }}
+                    className="p-3 hover:bg-gray-100 cursor-pointer border-b border-gray-200 last:border-b-0"
+                  >
+                    <div className="font-medium text-[#293E31]">{result.title}</div>
+                    <div className="text-sm text-gray-600">{result.description}</div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Navigation Links */}
+          <nav className="flex flex-col p-4 space-y-3 overflow-y-auto max-h-[calc(100vh-200px)]">
             <Link
               to="/"
-              className={`${isActive("/")} text-2xl mb-8 transform transition-all duration-300 ${isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'}`}
+              className={`${isActive("/")} text-lg py-2 border-b border-[#3a4f3f] last:border-b-0`}
               onClick={handleLinkClick}
             >
               Home
             </Link>
-            <div className="relative group">
-              <Link
-                to="/products"
-                className={`${isActive("/products")} text-2xl mb-8 transform transition-all duration-300 delay-75 ${isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'} flex items-center gap-2`}
-                onClick={handleLinkClick}
-              >
-                Products
-                <ChevronDown size={20} className="transition-transform group-hover:rotate-180" />
-              </Link>
-              {/* Mobile Dropdown Menu */}
-              <div className="absolute left-0 mt-2 w-[300px] bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                <div className="p-4">
+            <div className="border-b border-[#3a4f3f] last:border-b-0">
+              <details className="group">
+                <summary className={`${isActive("/products")} text-lg py-2 flex justify-between items-center cursor-pointer`}>
+                  <span>Products</span>
+                  <ChevronDown
+                    size={20}
+                    className="transition-transform duration-300 group-open:rotate-180"
+                  />
+                </summary>
+                <div className="pl-4 space-y-3 pt-2 pb-2">
                   {Object.entries(productCategories).map(([categoryKey, category]) => (
-                    <div key={categoryKey} className="mb-4">
-                      <h3 className="text-[#293E31] font-semibold mb-2">{category.name}</h3>
-                      <div className="space-y-2">
+                    <div key={categoryKey} className="mb-3">
+                      <Link
+                        to={`/products/${categoryKey}`}
+                        className="text-[#FE8340] font-semibold block hover:text-white"
+                        onClick={handleLinkClick}
+                      >
+                        {category.name}
+                      </Link>
+                      <div className="pl-4 space-y-2 mt-2">
                         {Object.entries(category.subcategories).map(([subcategoryKey, subcategory]) => (
-                          <div key={subcategoryKey} className="ml-4">
-                            <Link
-                              to={`/products/${categoryKey}/${subcategoryKey}`}
-                              className="text-gray-700 hover:text-[#FE8340] block py-1"
-                              onClick={handleLinkClick}
-                            >
-                              {subcategory.name}
-                            </Link>
-                            <div className="ml-4 space-y-1">
-                              {subcategory.products.map((product) => (
-                                <Link
-                                  key={product.id}
-                                  to={`/products/${categoryKey}/${subcategoryKey}/${product.id}`}
-                                  className="text-sm text-gray-600 hover:text-[#FE8340] block py-0.5"
-                                  onClick={handleLinkClick}
-                                >
-                                  {product.name}
-                                </Link>
-                              ))}
-                            </div>
+                          <div key={subcategoryKey}>
+                            <details className="group/sub">
+                              <summary className="text-white hover:text-[#FE8340] cursor-pointer flex justify-between items-center">
+                                <span>{subcategory.name}</span>
+                                <ChevronDown size={16} className="transition-transform duration-300 group-open/sub:rotate-180" />
+                              </summary>
+                              <div className="pl-4 space-y-2 pt-1">
+                                {subcategory.products.map((product) => (
+                                  <Link
+                                    key={product.id}
+                                    to={`/products/${categoryKey}/${subcategoryKey}/${product.id}`}
+                                    className="text-gray-300 hover:text-[#FE8340] text-sm block"
+                                    onClick={handleLinkClick}
+                                  >
+                                    {product.name}
+                                  </Link>
+                                ))}
+                              </div>
+                            </details>
                           </div>
                         ))}
                       </div>
                     </div>
                   ))}
                 </div>
-              </div>
+              </details>
             </div>
             <Link
               to="/about"
-              className={`${isActive("/about")} text-2xl mb-8 transform transition-all duration-300 delay-100 ${isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'}`}
+              className={`${isActive("/about")} text-lg py-2 border-b border-[#3a4f3f] last:border-b-0`}
               onClick={handleLinkClick}
             >
-              About Us
+              About
             </Link>
             <Link
               to="/crop-programs"
-              className={`${isActive("/crop-programs")} text-2xl mb-8 transform transition-all duration-300 delay-150 ${isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'}`}
+              className={`${isActive("/crop-programs")} text-lg py-2 border-b border-[#3a4f3f] last:border-b-0`}
               onClick={handleLinkClick}
             >
               Crop Programs
             </Link>
             <Link
               to="/services"
-              className={`${isActive("/services")} text-2xl mb-8 transform transition-all duration-300 delay-150 ${isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'}`}
+              className={`${isActive("/services")} text-lg py-2 border-b border-[#3a4f3f] last:border-b-0`}
               onClick={handleLinkClick}
             >
               Services
             </Link>
             <Link
               to="/media"
-              className={`${isActive("/media")} text-2xl mb-8 transform transition-all duration-300 delay-150 ${isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'}`}
+              className={`${isActive("/media")} text-lg py-2 border-b border-[#3a4f3f] last:border-b-0`}
               onClick={handleLinkClick}
             >
               Media
             </Link>
             <Link
               to="/contact-us"
-              className={`${isActive("/contact-us")} text-2xl transform transition-all duration-300 delay-200 ${isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'}`}
+              className={`${isActive("/contact-us")} text-lg py-2 border-b border-[#3a4f3f] last:border-b-0`}
               onClick={handleLinkClick}
             >
-              Contact Us
+              Contact
             </Link>
-            {/* <Link
-              to="/email-us"
-              className={`${isActive("/email-us")} text-2xl transform transition-all duration-300 delay-250 ${isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'}`}
-              onClick={handleLinkClick}
-            >
-              Email Us
-            </Link> */}
           </nav>
+
+          {/* Contact Information */}
+          <div className="p-4 border-t border-[#3a4f3f] mt-auto bg-[#293E31]">
+            <div className="flex flex-col text-white space-y-3">
+              <div className="flex flex-col md:flex-row md:gap-4">
+                <a href="tel:+447442590367" className="hover:text-[#FE8340] transition-colors text-sm flex items-center gap-2">
+                  <Phone size={16} className="text-[#FE8340] flex-shrink-0" />
+                  +44 7442590367
+                </a>
+                <a href="tel:+447377420266" className="hover:text-[#FE8340] transition-colors text-sm flex items-center gap-2">
+                  <Phone size={16} className="text-[#FE8340] flex-shrink-0" />
+                  +44 7377420266
+                </a>
+              </div>
+              <a href="mailto:connect@vmecogrow.com" className="hover:text-[#FE8340] transition-colors text-sm flex items-center gap-2">
+                <Mail size={16} className="text-[#FE8340] flex-shrink-0" />
+                connect@vmecogrow.com
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </header>
   )
-} 
+}

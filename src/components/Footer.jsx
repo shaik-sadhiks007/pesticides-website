@@ -34,24 +34,24 @@ export function Footer() {
             </div>
 
             {/* Social Media Section */}
-            <div className="flex flex-row items-center justify-center gap-8 md:gap-16">
+            <div className="flex flex-row items-center justify-center gap-8 md:gap-10">
               <a href="#" className="text-[#FE8340] hover:opacity-80 transition-opacity">
-                <FacebookIcon className="w-8 h-8 md:w-10 md:h-10" />
+                <FacebookIcon className="w-6  h-6 md:w-6 md:h-6" />
               </a>
               <div className="w-[1px] h-10 bg-[#FE8340]"></div>
 
               <a href="#" className="text-[#FE8340] hover:opacity-80 transition-opacity">
-                <TwitterIcon className="w-8 h-8 md:w-10 md:h-10" />
+                <TwitterIcon className="w-6  h-6 md:w-6 md:h-6" />
               </a>
               <div className="w-[1px] h-10 bg-[#FE8340]"></div>
 
               <a href="#" className="text-[#FE8340] hover:opacity-80 transition-opacity">
-                <InstagramIcon className="w-8 h-8 md:w-10 md:h-10" />
+                <InstagramIcon className="w-6 h-6 md:w-6 md:h-6" />
               </a>
               <div className="w-[1px] h-10 bg-[#FE8340]"></div>
 
               <a href="mailto:connect@vmecogrow.com" className="text-[#FE8340] hover:opacity-80 transition-opacity">
-                <GmailIcon className="w-8 h-8 md:w-10 md:h-10" />
+                <GmailIcon className="w-6 h-6 md:w-6 md:h-6" />
               </a>
             </div>
           </div>

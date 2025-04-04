@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -21,22 +22,25 @@
     font-display: swap;
 }
 
-/* Apply Museo to all headings */
+/* New Montserrat Font Styles */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-    font-family: 'museo-w01-700', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    /* font-family: 'museo-w01-700', sans-serif; */
 }
 
-/* Apply Raleway to body text */
 body,
 p,
 span,
 div {
-    font-family: 'raleway', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    /* font-family: 'raleway', sans-serif; */
 }
 
 /* Add to your existing CSS */

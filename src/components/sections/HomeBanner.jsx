@@ -1,5 +1,5 @@
 import { ChevronRight, ChevronLeft } from "lucide-react"
-import { Button } from "../ui/Button"
+import { Button } from "../ui/button"
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 
@@ -85,12 +85,12 @@ export function HomeBanner() {
               ></div>
 
               {/* Content */}
-              <div className={`absolute inset-0 flex flex-col justify-center px-4 sm:px-8 md:px-16 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'
+              <div className={`absolute inset-0 flex flex-col justify-center px-4 sm:px-8 md:px-10 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'
                 }`}>
-                <h1 className="text-white text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-bold max-w-3xl leading-tight tracking-wide">
+                <h1 className="text-white text-2xl sm:text-4xl md:text-5xl lg:text-5xl font-bold w-full leading-tight tracking-wide">
                   {slide.title}
                 </h1>
-                <p className="text-white text-base sm:text-lg md:text-xl lg:text-2xl mt-3 sm:mt-4 md:mt-6 max-w-xl font-medium tracking-wide">
+                <p className="text-white text-base sm:text-lg md:text-xl lg:text-2xl mt-3 sm:mt-4 md:mt-6 w-full  font-medium tracking-wide">
                   {slide.subtitle}
                 </p>
                 <div>
