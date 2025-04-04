@@ -18,9 +18,9 @@ export function ImageSection() {
       {/* First column with an image and download button */}
       <div className="bg-[#293E31] flex flex-col justify-center items-center p-4 relative group">
         <img
-          src={Image1}
+          src={"https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/HomeCatalog/av21x1exqelfvceue0cw"}
           alt="Farm worker1"
-          className="object-cover w-[250px] h-[150px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[300px] transition-transform duration-500 group-hover:scale-95"
+          className="object-cover w-[250px] h-[200px] md:w-[400px] md:h-[500px] lg:w-[500px] lg:h-[400px] transition-transform duration-500 group-hover:scale-95"
         />
         {/* Floating Download Button */}
         <div className="absolute  bottom-8 transform translate-y-20 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 w-[250px] md:w-[400px] lg:w-[500px]">
@@ -40,7 +40,7 @@ export function ImageSection() {
         <div
           className="absolute inset-0 bg-center bg-cover md:bg-fixed transition-transform duration-500 group-hover:scale-[1.02]"
           style={{
-            backgroundImage: `url('https://static.wixstatic.com/media/ad420a_3a81fba6eaac4f47bc45e66572c0bda2~mv2_d_5700_3804_s_4_2.jpg')`,
+            backgroundImage: `url('https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/HomeCatalog/kg7xqfv3ymnd6rfvzqaj')`,
             backgroundRepeat: "no-repeat",
             width: "100%",
             height: "100%",

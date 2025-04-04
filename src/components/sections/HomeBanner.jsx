@@ -11,28 +11,28 @@ import banner4 from '../../assets/Carousel-Image4.jpg'
 
 const slides = [
   {
-    image: banner1,
+    image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/HomeBanner/gntppbgccatxjnrwhzpz",
     title: "Premium Organic Inputs for Thriving Growth",
     subtitle: "Sustainable Solution for Agriculture and Horticulture",
     cta: "EXPLORE OUR PRODUCTS",
     ctaLink: "/products"
   },
   {
-    image: banner2,
+    image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/HomeBanner/nrvhwshfa6xnzfmi4jqm",
     title: "Elevate your Amenity spaces with excellence",
     subtitle: "Transform golf courses, turfs, landscapes, and ornaments with our Amenities inputs",
     cta: "Explore our Amenity Range",
     ctaLink: "/products/sportsAndTurf"
   },
   {
-    image: banner3,
+    image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/HomeBanner/x3pftpemnyrghxh7qaby",
     title: "Tailored Solutions for Every Soil, Turf and Crop Challenge",
     subtitle: "Exceptional Programs for Agriculture, Horticulture and Amenity spaces",
     cta: "Get started today",
     ctaLink: "/services"
   },
   {
-    image: banner4,
+    image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/HomeBanner/crtpbiyshcupa97wvcej",
     title: "Global Reach, Local Expertise: Seamless Exports Anywhere",
     subtitle: "Looking for a Franchise, Distributorship, or Collaboration? We Deliver Bulk Supplies and Build Partnerships Worldwide with Ease",
     cta: "Partner with Us Today",

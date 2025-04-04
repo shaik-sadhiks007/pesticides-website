@@ -5,53 +5,48 @@ import { motion, AnimatePresence } from "framer-motion";
 const reviews = [
     {
         id: 1,
-        username: "@Angie T.",
+        username: "Maria Santos, Philippines (Pepper Farmer)",
         rating: 5,
-        text: "As advertised... delivery was fast...very convenient.. definitely can buy again from this online seller.",
+        text: "NBS SIZE PLUS™ has significantly improved the size and quality of our peppers. The application, boosted by NBS MAX SPREADER™, is consistent and effective, ensuring uniform growth. Plus, NBS BUG SHIELD™ has been our go-to solution to improve resilience."
     },
     {
         id: 2,
-        username: "@Goh J.",
+        username: "Ahmed Al-Mansour, Saudi Arabia (Date Palm Plantation Owner)",
         rating: 5,
-        text: "Fast delivery. My 2nd purchase. Delivery guy just left the parcel on the bench outside my unit instead of putting it inside my main gate. Thanks seller for the free gift.",
+        text: "Our date palms have never been healthier, thanks to NBS NEEM FERTILISER™. It revitalizes the soil and provides essential nutrients for robust growth. We also use NBS BIO PROTECT™ to strengthen the palms' natural defences against environmental stressors."
     },
     {
         id: 3,
-        username: "@florakid",
+        username: "Liam O'Connor, Australia (Maize Farm Owner)",
         rating: 5,
-        text: "Shipping was fast and took only three days. Item is as described by the seller. Seller included an anti-fungi and bacteria probiotics as a free gift.",
+        text: "The crop programs are unmatched. Their team developed a tailored strategy that includes NBS PSEUDO TECH™, NBS ROOT MAX, NBS Yield booster, NBS K-35, NBS Bio stimulator, NBS Microshield. This combination has not only enhanced plant immunity but also stimulated robust root development in our farm. Highly recommended their kit."
     },
     {
         id: 4,
-        username: "@mokster23",
+        username: "Priya Ramdin, Mauritius (Resort Landscaper)",
         rating: 5,
-        text: "Good stuff! High concentrate. Need to dilute with water and I applied to my plants. Looking good so far! Waiting to see if it will control my mealy bug issue.",
+        text: "VMEcogrow understands the importance of plant health in a luxury resort setting. Their custom program using NBS MICROSHIELD™ and NBS BIO-GUARD™ has kept our ornamental plants vibrant and resilient. We also appreciate their prompt and reliable service."
     },
     {
         id: 5,
-        username: "@Mayank",
+        username: "Chen Wei, Thailand (Vineyard Owner)",
         rating: 5,
-        text: "Item as described with 93% purity and just 2 ml for a litre of solution. Would like to recommend for all gardeners and plant lovers to get rid of infestations.",
+        text: "NBS MAX SPREADER™ has been a game-changer in our vineyard. We can't afford to waste any product, and it guarantees that our NBS BIO-DEFENDER™ and other treatments reach every part of our vines effectively. It really stretches our budget."
     },
     {
         id: 6,
-        username: "@leelynnkoi",
+        username: "Janine Tan, Singapore (Vegetable Grower)",
         rating: 5,
-        text: "Quality: good. Suitability: good. Performance: good. Have not tried, but NBS is a trusted name. Plus free gift hooray.",
+        text: "Using NBS BIO GUARD™ has been a huge help for my vegetable crops. It's effective and easy to use as there is no need to wait before harvest!"
     },
     {
         id: 7,
-        username: "@Chan",
+        username: "James Thompson, UK",
         rating: 5,
-        text: "Very effective! Mixed with water and into a spray bottle. Drove out all these pesky black ants and killed them in seconds! These ants that keep depositing the white furry sap-sucking insects that are killing my pandan plant! Now, waiting to see if it's effective against these white insects too.",
-    },
-    {
-        id: 8,
-        username: "@Tony C",
-        rating: 5,
-        text: "Great response and great product. It eased me off getting another agent to break off the neem oil. As we know, oil and water don't mix. This product already has the mixture agent added for easy use. Just 3-4 ml of neem to 1 litre of water. So don't waste your time buying neem oil that requires another agent to use. End up, you pay more. Recommend anyone who prefers convenience. Will buy again after I finish this bottle. Thank you seller for your wonderful product.",
+        text: "The combination of NBS PSEUDO-TECH™ and NBS MICROSHIELD™ has transformed our golf course maintenance. The turf is healthier, disease-resistant, and requires less frequent chemical treatments. It's a win-win for our budget and the environment! The high tip will be to add Max spreader as well to increase the efficiency and reduce the cost."
     }
 ];
+
 
 const Testimonials = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -95,7 +90,7 @@ const Testimonials = () => {
         <div className="relative overflow-hidden py-8 sm:py-12 md:py-16 bg-[#DACEC2]">
             <div className="container  px-4">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-[#1e3a29] mb-6 sm:mb-8 md:mb-12">
-                    Customer Reviews
+                    Customer Testimonials
                 </h2>
 
                 <div className="relative h-[150px] mx-auto sm:h-[175px] md:h-[200px] max-w-3xl ">
