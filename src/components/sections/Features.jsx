@@ -13,7 +13,7 @@ export const defaultFeatures = [
     ]
   },
   {
-    title: "Our Packaging System",
+    title: "Packaging Solutions",
     description: "VM ECOGROW offers versatile packaging options to suit your needs:",
     details: [
       "Size range: From 100 ml/g to 1000 L/kg",
@@ -25,7 +25,7 @@ export const defaultFeatures = [
     ]
   },
   {
-    title: "Our Quality",
+    title: "Quality Assurance",
     description: "At VM ECOGROW, quality is non-negotiable:",
     details: [
       "Rigorous testing at every production stage",
@@ -52,9 +52,9 @@ export const defaultFeatures = [
 
 const icons = {
   "One of a Kind": CheckCircle2,
-  "Our Packaging System": Package,
+  "Packaging Solutions": Package,
   "Terms of Delivery": Truck,
-  "Our Quality": Award
+  "Quality Assurance": Award
 }
 
 export function Features() {
@@ -64,7 +64,7 @@ export function Features() {
         <h2 className="text-[#293E31] text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12">
           Features
         </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {defaultFeatures.map((feature, index) => {
             const Icon = icons[feature.title];
             return (

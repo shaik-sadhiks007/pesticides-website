@@ -78,6 +78,7 @@ export default function Services() {
           image={service.image}
           mobileImageFirst={service.mobileImageFirst}
           icon={service.icon}
+          // bgColor={"#FCF9F4"}
         />
       ))}
 

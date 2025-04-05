@@ -476,7 +476,7 @@ const CropPrograms = () => {
                         transition={{ duration: 0.8 }}
                         className="relative h-full flex items-center text-white py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8"
                     >
-                        <div className="container  max-w-6xl">
+                        <div className="container max-w-6xl">
                             <motion.h1
                                 initial={{ y: 20 }}
                                 animate={{ y: 0 }}
@@ -508,7 +508,7 @@ const CropPrograms = () => {
                 </div>
             </div>
             <div className="min-h-screen bg-[#DACEC2]">
-                <div className="container  max-w-6xl px-4 py-12">
+                <div className="container mx-auto max-w-6xl px-4 py-12">
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                         {[
                             {
@@ -706,7 +706,7 @@ const CropPrograms = () => {
 
             {/* Custom Solution Section */}
             <div className="bg-[#DACEC2] text-black py-16">
-                <div className="container  max-w-6xl px-4">
+                <div className="container mx-auto max-w-6xl px-4">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
