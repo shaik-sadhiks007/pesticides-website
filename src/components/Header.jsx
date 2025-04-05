@@ -495,8 +495,8 @@ export default function Header() {
 
           {/* Contact Information */}
           <div className="p-4 border-t border-[#3a4f3f] mt-auto bg-[#293E31]">
-            <div className="flex flex-col text-white space-y-3">
-              <div className="flex flex-col md:flex-row md:gap-4">
+            <div className="flex flex-col text-white ">
+              <div className="flex flex-col md:flex-row md:gap-4 space-y-3">
                 <a href="tel:+447442590367" className="hover:text-[#FE8340] transition-colors text-sm flex items-center gap-2">
                   <Phone size={16} className="text-[#FE8340] flex-shrink-0" />
                   +44 7442590367
@@ -506,7 +506,7 @@ export default function Header() {
                   +44 7377420266
                 </a>
               </div>
-              <a href="mailto:connect@vmecogrow.com" className="hover:text-[#FE8340] transition-colors text-sm flex items-center gap-2">
+              <a href="mailto:connect@vmecogrow.com" className="hover:text-[#FE8340] transition-colors text-sm flex items-center gap-2 mt-3 md:mt-0">
                 <Mail size={16} className="text-[#FE8340] flex-shrink-0" />
                 connect@vmecogrow.com
               </a>

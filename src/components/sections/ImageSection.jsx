@@ -14,31 +14,31 @@ export function ImageSection() {
   };
 
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 h-auto md:h-[60vh] lg:h-[100vh]">
+    <section className="grid grid-cols-1 md:grid-cols-2 min-h-[100vh] md:min-h-[60vh] lg:min-h-[100vh] w-full">
       {/* First column with an image and download button */}
-      <div className="bg-[#293E31] flex flex-col justify-center items-center p-4 relative group">
+      <div className="bg-[#293E31] flex flex-col justify-center items-center p-4 relative group min-h-[50vh] md:min-h-[60vh] w-full">
         <img
           src={"https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/HomeCatalog/av21x1exqelfvceue0cw"}
           alt="Farm worker1"
-          className="object-cover w-[250px] h-[200px] md:w-[400px] md:h-[500px] lg:w-[500px] lg:h-[400px] transition-transform duration-500 group-hover:scale-95"
+          className="object-cover w-full  h-[250px] sm:w-[400px] sm:h-[350px] md:w-[300px] md:h-[400px] lg:w-[500px] lg:h-[450px] transition-transform duration-500 group-hover:scale-95"
         />
-        {/* Floating Download Button */}
-        <div className="absolute  bottom-8 transform translate-y-20 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 w-[250px] md:w-[400px] lg:w-[500px]">
+        {/* Download Button - Always visible on mobile and tablet, floating on desktop */}
+        <div className="w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[500px] mt-6 md:mt-8 lg:mt-0 lg:absolute lg:bottom-8 lg:transform lg:translate-y-20 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 transition-all duration-500">
           <button
             onClick={() => handleDownload(agricultureCatalog, 'agriculture-catalog.pdf')}
-            className="w-full cursor-pointer bg-[#FE8340] hover:bg-[#e06724] text-white p-4 rounded-lg flex items-center justify-center gap-3 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="w-full cursor-pointer bg-[#FE8340] hover:bg-[#e06724] text-white py-4 px-6 rounded-lg flex items-center justify-center gap-3 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl"
           >
-            <FileDown className="w-6 h-6" />
-            <span className="text-lg font-semibold">Agriculture Brochure</span>
+            <FileDown className="w-5 h-5 sm:w-6 sm:h-6" />
+            <span className="text-base sm:text-lg font-semibold">Agriculture Brochure</span>
           </button>
         </div>
       </div>
 
       {/* Second column: Background image with download button */}
-      <div className="relative w-full h-[50vh] md:h-screen overflow-hidden group">
+      <div className="relative w-full min-h-[50vh] md:min-h-[60vh] overflow-hidden group">
         {/* Background Image */}
         <div
-          className="absolute inset-0 bg-center bg-cover md:bg-fixed transition-transform duration-500 group-hover:scale-[1.02]"
+          className="absolute inset-0 bg-center bg-cover transition-transform duration-500 group-hover:scale-[1.02]"
           style={{
             backgroundImage: `url('https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/HomeCatalog/kg7xqfv3ymnd6rfvzqaj')`,
             backgroundRepeat: "no-repeat",
@@ -46,26 +46,25 @@ export function ImageSection() {
             height: "100%",
             backgroundPosition: "center",
             backgroundSize: "cover",
-            transform: "scale(1)",
           }}
         ></div>
         
-        {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        {/* Overlay gradient - Always visible on mobile and tablet, hover on desktop */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500"></div>
 
-        {/* Floating Download Button */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 transform translate-y-20 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+        {/* Download Button - Always visible on mobile and tablet, floating on desktop */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 transform lg:translate-y-20 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 transition-all duration-500 w-[90%] max-w-[300px] sm:max-w-[400px] md:max-w-[500px]">
           <button
             onClick={() => handleDownload(golfCatalog, 'golf-catalog.pdf')}
-            className="bg-white cursor-pointer text-[#293E31] px-6 py-4 rounded-lg flex items-center gap-3 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl group/btn"
+            className="w-full bg-white cursor-pointer text-[#293E31] px-6 py-4 rounded-lg flex items-center justify-center gap-3 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl group/btn"
           >
             <div className="relative cursor-pointer">
-              <FileDown className="w-6 h-6 transition-transform duration-300 group-hover/btn:scale-110" />
+              <FileDown className="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 group-hover/btn:scale-110" />
               <div className="absolute inset-0 animate-ping opacity-30 group-hover/btn:opacity-0">
-                <FileDown className="w-6 h-6" />
+                <FileDown className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
             </div>
-            <span className="text-lg font-semibold">Golf Brochure</span>
+            <span className="text-base sm:text-lg font-semibold">Golf Brochure</span>
           </button>
         </div>
       </div>

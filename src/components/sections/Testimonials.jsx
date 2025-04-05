@@ -93,7 +93,7 @@ const Testimonials = () => {
                     Customer Testimonials
                 </h2>
 
-                <div className="relative h-[150px] mx-auto sm:h-[175px] md:h-[200px] max-w-3xl ">
+                <div className="relative min-h-[200px] sm:min-h-[225px] md:min-h-[250px] mx-auto max-w-3xl">
                     <AnimatePresence initial={false} custom={direction}>
                         <motion.div
                             key={currentIndex}
@@ -125,8 +125,8 @@ const Testimonials = () => {
                                         <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-[#f47834] fill-[#f47834]" />
                                     ))}
                                 </div>
-                                <p className="text-gray-600 mb-4 sm:mb-6 text-base sm:text-lg">{reviews[currentIndex].text}</p>
-                                <p className="text-[#1e3a29] font-semibold text-sm sm:text-base">{reviews[currentIndex].username}</p>
+                                <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base md:text-lg leading-relaxed">{reviews[currentIndex].text}</p>
+                                <p className="text-[#1e3a29] font-semibold text-xs sm:text-sm md:text-base">{reviews[currentIndex].username}</p>
                             </div>
                         </motion.div>
                     </AnimatePresence>
