@@ -1,7 +1,7 @@
 import { CheckCircle2, Leaf, TrendingUp, Globe, TestTube, ChevronRight } from "lucide-react"
 import Aboutus from "../assets/about.avif"
 import { motion } from "framer-motion"
-import { Button } from "../components/ui/Button"
+import { Button } from "../components/ui/button"
 import { useState, useEffect } from "react"
 import FarmIcon from "../components/FarmIcon"
 import { AlternatingSection } from "../components/sections/AlternatingSection"

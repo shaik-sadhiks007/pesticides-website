@@ -88,12 +88,12 @@ const Testimonials = () => {
 
     return (
         <div className="relative overflow-hidden py-8 sm:py-12 md:py-16 bg-[#DACEC2]">
-            <div className="container  px-4">
+            <div className="container mx-auto px-4 max-w-4xl">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-[#1e3a29] mb-6 sm:mb-8 md:mb-12">
                     Customer Testimonials
                 </h2>
 
-                <div className="relative min-h-[200px] sm:min-h-[225px] md:min-h-[250px] mx-auto max-w-3xl">
+                <div className="relative min-h-[250px] sm:min-h-[225px] md:min-h-[200px]">
                     <AnimatePresence initial={false} custom={direction}>
                         <motion.div
                             key={currentIndex}
@@ -119,20 +119,24 @@ const Testimonials = () => {
                             }}
                             className="absolute w-full"
                         >
-                            <div className="text-center px-4">
-                                <div className="flex justify-center mb-2 sm:mb-4">
+                            <div className="text-center px-4 sm:px-6 md:px-8">
+                                <div className="flex justify-center mb-3 sm:mb-4">
                                     {[...Array(5)].map((_, i) => (
                                         <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-[#f47834] fill-[#f47834]" />
                                     ))}
                                 </div>
-                                <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base md:text-lg leading-relaxed">{reviews[currentIndex].text}</p>
-                                <p className="text-[#1e3a29] font-semibold text-xs sm:text-sm md:text-base">{reviews[currentIndex].username}</p>
+                                <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+                                    {reviews[currentIndex].text}
+                                </p>
+                                <p className="text-[#1e3a29] font-semibold text-xs sm:text-sm md:text-base">
+                                    {reviews[currentIndex].username}
+                                </p>
                             </div>
                         </motion.div>
                     </AnimatePresence>
                 </div>
 
-                <div className="flex justify-center mt-4 sm:mt-6 md:mt-8 gap-2">
+                <div className="flex justify-center mt-6 sm:mt-8 md:mt-10 gap-2">
                     {reviews.map((_, index) => (
                         <button
                             key={index}
@@ -140,8 +144,9 @@ const Testimonials = () => {
                                 setDirection(index > currentIndex ? 1 : -1);
                                 setCurrentIndex(index);
                             }}
-                            className={`w-2 h-2 rounded-full transition-colors duration-200 ${index === currentIndex ? "bg-[#f47834]" : "bg-gray-300"
-                                }`}
+                            className={`w-2 h-2 rounded-full transition-colors duration-200 ${
+                                index === currentIndex ? "bg-[#f47834]" : "bg-gray-300"
+                            }`}
                             aria-label={`Go to slide ${index + 1}`}
                         />
                     ))}

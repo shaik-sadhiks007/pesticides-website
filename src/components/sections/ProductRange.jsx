@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom"
-import { Button } from "../ui/Button"
+import { Button } from "../ui/button"
 import { ChevronDown, ChevronRight } from "lucide-react"
 import { useEffect, useState, useRef } from "react"
 import Slider from "react-slick";
@@ -119,7 +119,7 @@ export default function ProductRange() {
     dots: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: 4,
     slidesToScroll: 1,
     arrows: true,
     className: "custom-slider",
@@ -174,20 +174,30 @@ export default function ProductRange() {
             color: #293E31;
             opacity: 1;
           }
+          .custom-slider .slick-track {
+            display: flex;
+            gap: 16px;
+            margin-left: auto;
+            margin-right: auto;
+          }
+          .custom-slider .slick-slide > div {
+            height: 100%;
+          }
         `}
       </style>
-      <div className="container px-4 sm:px-6 md:px-8">
-        <h2 className="text-[#293E31] text-xl sm:text-2xl lg:text-4xl font-semibold mb-6 sm:mb-8 text-center">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-7xl">
+        <h2 className="text-[#293E31] text-xl sm:text-2xl lg:text-4xl font-semibold mb-8 sm:mb-10 md:mb-12 text-center">
           Browse Our Products
         </h2>
-        <div className="relative">
+        <div className="relative max-w-6xl mx-auto">
           <Slider ref={sliderRef} {...settings}>
             {agricultureProducts.map((product) => (
-              <div key={product.id} className="px-2">
-                <div className="group bg-white rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-lg transition-shadow"
+              <div key={product.id} className="h-full px-2">
+                <div 
+                  className="group bg-white rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-lg transition-shadow h-full flex flex-col"
                   onClick={() => handleProductClick(product.categoryKey, product.subcategoryKey, product.id)}
                 >
-                  <div className="relative h-[180px]">
+                  <div className="relative h-[180px] sm:h-[200px]">
                     <img
                       src={product.imgSrc}
                       alt={product.name}
@@ -195,13 +205,24 @@ export default function ProductRange() {
                     />
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-95 bg-[#FE8340] transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out flex items-center justify-center p-4">
                       <div className="text-[#293E31] text-center opacity-0 group-hover:opacity-100">
-                        <h1 className="font-bold text-2xl mb-2">Suitable For :</h1>
-                        <h6 className="text-lg line-clamp-3">{product.suitableFor}</h6>
+                        <h1 className="font-bold text-xl mb-2">Suitable For :</h1>
+                        <h6 className="text-sm line-clamp-3">{product.suitableFor}</h6>
                       </div>
                     </div>
                   </div>
-                  <div className="p-4">
-                    <h3 className="text-base font-semibold text-[#293E31] mb-2">{product.name}</h3>
+                  <div className="p-4 flex flex-col flex-grow">
+                    <div className="flex flex-wrap gap-1 mb-2">
+                      {/* <span className="text-sm text-[#293E31]">
+                        {product.categoryKey === "agricultureAndHorticulture" ? "Agriculture & Horticulture" : "Golf & Sports Turf"}
+                      </span> */}
+                      <span className="text-xs text-[#f47834]">
+                        {product.subcategoryKey === "liquidFertilisers" ? "Liquid Fertilisers" :
+                         product.subcategoryKey === "microbesAndBioStimulants" ? "Microbes & Bio-Stimulants" :
+                         product.subcategoryKey === "organicFertilisers" ? "Organic Fertilisers" :
+                         product.subcategoryKey === "humates" ? "Humates" : product.subcategoryKey}
+                      </span>
+                    </div>
+                    <h3 className="text-base font-semibold text-[#293E31] mb-4">{product.name}</h3>
                     <Button className="w-full bg-[#f47834] hover:bg-[#e06724] text-white mt-auto">
                       View Details
                     </Button>
@@ -210,20 +231,12 @@ export default function ProductRange() {
               </div>
             ))}
           </Slider>
-
-          {/* Navigation Button */}
-          {/* <button
-            onClick={() => sliderRef.current?.slickNext()}
-            className="absolute -right-4 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full cursor-pointer transition-all duration-300 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            <ChevronRight className="h-6 w-6 text-[#293E31]" />
-          </button> */}
         </div>
 
         {/* View More Button */}
-        <div className="flex justify-center mt-8">
+        <div className="flex justify-center mt-8 sm:mt-10 md:mt-12">
           <Link to="/products/agricultureAndHorticulture" className="w-full sm:w-auto">
-            <Button className="bg-[#FE8340] cursor-pointer text-white w-full sm:w-auto px-8 py-3 transition-all duration-300">
+            <Button className="bg-[#FE8340] cursor-pointer text-white w-full sm:w-auto px-8 py-3 transition-all duration-300 hover:bg-[#e06724]">
               View All Products <ChevronDown className="ml-2 h-4 w-4" />
             </Button>
           </Link>

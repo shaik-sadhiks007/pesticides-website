@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Button } from "../components/ui/Button";
+import { Button } from "../components/ui/button";
 import { ArrowLeft, Download, FileText, BarChart2 } from "lucide-react";
 
 // Import the case studies data

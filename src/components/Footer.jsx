@@ -7,10 +7,10 @@ import { Mail, Phone } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="bg-[#293E31] text-white relative z-10 px-4">
+    <footer className="bg-[#293E31] text-white relative z-10">
       {/* Main Content */}
-      <div className="container px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 py-12 max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16 max-w-6xl mx-auto">
           {/* Company Info */}
           <div className="space-y-3 text-center md:text-left">
             <h2 className="font-semibold text-2xl text-[#FE8340]">VM ECOGROW</h2>
@@ -23,7 +23,7 @@ export function Footer() {
 
           {/* Operating Hours */}
           <div className="flex flex-col items-center">
-            <div className="flex flex-col items-center space-y-3 ">
+            <div className="flex flex-col items-center space-y-3">
               <h2 className="font-semibold text-2xl text-[#FE8340]">Operating Hours</h2>
               <div className="text-gray-200 leading-relaxed text-center">
                 <p>Mon - Fri: 9am - 7pm</p>
@@ -34,10 +34,8 @@ export function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-3 text-center md:text-end">
-            {/* <h2 className="font-semibold text-2xl text-[#FE8340]">University Of Nottingham</h2> */}
+          <div className="space-y-3 text-center md:text-right">
             <h2 className="font-semibold text-2xl text-[#FE8340]">VM Group Europe Ltd</h2>
-
             <div className="text-gray-200 space-y-2">
               <p className="leading-relaxed">
                 Innovation Park, Triumph Road,<br />
@@ -68,8 +66,8 @@ export function Footer() {
 
       {/* Bottom Section */}
       <div className="border-t border-[#3a4f3f]">
-        <div className="container-fluid px-4 py-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-6">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 py-6 max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-6 max-w-6xl mx-auto">
             {/* Links - Takes full width on tablet, 6 columns on desktop */}
             <div className="lg:col-span-6 flex flex-wrap justify-center lg:justify-start gap-4 lg:gap-6">
               <Link to="/policy" className="text-gray-200 hover:text-[#FE8340] transition-colors">

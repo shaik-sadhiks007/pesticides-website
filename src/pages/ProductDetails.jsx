@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { Link, useParams, useNavigate } from "react-router-dom"
 import { ShoppingCart, User, ChevronLeft, Plus, Minus, Heart, Share2, Check, ChevronDown } from "lucide-react"
-import { Button } from "../components/ui/Button"
+import { Button } from "../components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs"
 import { motion } from "framer-motion"
 import NutriLifeBAM1L from "../assets/productImages/Nutri-LifeBAM1L.png"

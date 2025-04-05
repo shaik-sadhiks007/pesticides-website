@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { Calendar, Leaf, Droplet, Sun, ChevronRight, CheckCircle2, Download } from "lucide-react"
-import { Button } from "../components/ui/Button"
+import { Button } from "../components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../components/ui/accordion"
 import ProductsBanner from "../assets/productImages/productBanner.jpg"
@@ -464,7 +464,7 @@ const CropPrograms = () => {
                 <div
                     className="absolute inset-0 bg-center bg-cover"
                     style={{
-                        backgroundImage: `url(${ProductsBanner})`,
+                        backgroundImage: `url("https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/HomeBanner/crop%20Program%20Banner/cik8dj5h2k7hbfjdfag4")`,
                     }}
                 >
                 </div>
@@ -566,7 +566,7 @@ const CropPrograms = () => {
                                         <CardHeader className="py-3">
                                             <CardTitle className="text-base sm:text-lg text-black">{program.name}</CardTitle>
                                             <CardDescription className="text-sm text-[#293E31]/80">{program.duration}</CardDescription>
-                                        </CardHeader>
+                                        </CardHeader>   
                                     </Card>
                                 ))}
                             </div>

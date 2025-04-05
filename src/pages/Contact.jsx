@@ -1,6 +1,5 @@
 import { Image } from "lucide-react"
-import { Button } from "../components/ui/Button"
-import ContactBanner from "../assets/contactUsImage.jpg"
+import { Button } from "../components/ui/button"
 import EmailUs from "../components/sections/EmailUs"
 
 export function Contact() {
@@ -12,7 +11,7 @@ export function Contact() {
                 <div
                     className="absolute inset-0 bg-center bg-cover md:bg-fixed"
                     style={{
-                        backgroundImage: `url(${ContactBanner})`,
+                        backgroundImage: `url("https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/HomeBanner/contactBanner/wnit8xx4jxfnc7tq7vks")`,
                     }}
                 ></div>
             </div>

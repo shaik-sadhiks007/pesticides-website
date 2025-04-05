@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
 import { motion } from "framer-motion"
-import { Button } from "../components/ui/Button"
+import { Button } from "../components/ui/button"
 import { ChevronLeft } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 

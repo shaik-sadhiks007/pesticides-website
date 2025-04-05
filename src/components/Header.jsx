@@ -147,7 +147,7 @@ export default function Header() {
             <div className="relative group">
               <Link
                 to="/products"
-                className={`${isActive("/products")} text-sm xl:text-sm flex items-center gap-1 whitespace-nowrap`}
+                className={`${location.pathname.startsWith("/products") ? "text-[#FE8340]" : "text-white hover:text-[#FE8340]"} text-sm xl:text-sm flex items-center gap-1 whitespace-nowrap`}
                 onClick={handleLinkClick}
               >
                 Products

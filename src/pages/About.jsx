@@ -1,7 +1,7 @@
 import { CheckCircle2, Leaf, TrendingUp, Globe, TestTube, ChevronRight } from "lucide-react"
 import Aboutus from "../assets/about.avif"
 import { motion } from "framer-motion"
-import { Button } from "../components/ui/Button"
+import { Button } from "../components/ui/button"
 import { useState, useEffect } from "react"
 import FarmIcon from "../components/FarmIcon"
 import { AlternatingSection } from "../components/sections/AlternatingSection"
@@ -22,7 +22,7 @@ export function About() {
         subtitle="Innovating Agriculture, Empowering Farmers"
         buttonText="Learn More"
         buttonLink="#"
-        backgroundImage={Aboutus}
+        backgroundImage={"https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/HomeBanner/AboutBanner/y6fsbdxjy2lifokutjz1"}
       />
 
       {/* Introduction Section */}
