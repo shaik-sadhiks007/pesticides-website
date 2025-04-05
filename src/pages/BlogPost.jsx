@@ -120,7 +120,7 @@ const BlogPost = () => {
 
     return (
         <div className="min-h-screen bg-[#DACEC2]">
-            <div className="container  px-4 py-12">
+            <div className="container mx-auto px-4 py-12">
                 <Button 
                     onClick={() => navigate("/media")}
                     variant="ghost"
@@ -134,7 +134,7 @@ const BlogPost = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="max-w-4xl  bg-[#FCF9F4] rounded-lg overflow-hidden shadow-lg"
+                    className="max-w-4xl mx-auto bg-[#FCF9F4] rounded-lg overflow-hidden shadow-lg"
                 >
                     <div className="relative h-[400px]">
                         <img 

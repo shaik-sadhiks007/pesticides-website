@@ -6,37 +6,41 @@ export const caseStudies = [
         subtitle: "Comparing NBS Magic Box Paddy Kit with Conventional Farming Methods",
         description: "Analysis of the benefits of paddy crops using an NBS kit against conventional farming methods.",
         image: "https://images.unsplash.com/photo-1536657464919-892534f60d6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80",
-        date: "May 2015",
-        location: "Jewar, Uttar Pradesh and Lakhimpur Kheri, India",
+        date: "May 2019",
+        location: "Alor Setar, Kedah, Malaysia",
         products: ["Bio-Stimulator", "Bug Shield", "Yield Booster", "Bio-Protect"],
         pdfUrl: "/src/assets/pdfs/caseStudy/paddy-case-study.pdf",
         content: {
             aim: "Analyse the benefits of paddy crops by using an NBS kit which involves NBS Bio Simulator, NBS Yield Booster, NBS Bug Shield and NBS Bio Protect against conventional farming methods.",
             introduction: [
-                "Nutrition is the most enunciated topic spoken around the world, everyone wants to eat nutritious chemical-free food, and farmers also want to produce what is beneficial for their soil and land, a food which is chemical and pesticide-free, their main focus across India is to get maximum yield with minimum input cost.",
+                "Nutrition is the most enunciated topic spoken around the world, everyone wants to eat nutritious chemical-free food, and farmers also want to produce what is beneficial for their soil and land, a food which is chemical and pesticide-free, their main focus across the world is to get maximum yield with minimum input cost.",
                 "Nutrition Bio Systems is a new bird in farming, but it comes with the strong backing of its promoter company, Nutri Tech Solutions, with 40 years of experience in 55 countries in the field of Nutrition Farming. Australia's leading provider of cutting-edge agricultural products and services.",
                 "Nutrition Bio Systems has a wide range of products for Plant Nutrition, Animal Nutrition and Human Nutrition.",
-                "In May 2015, we prepared model farms for Paddy Crop in Jewar, Uttar Pradesh and Lakhimpur Kheri, India. The tests were done with high-quality seeds to produce paddy crops. Analysis was done over 26 acres on different plots in and around the area of Jewar."
+                "In May 2019, we prepared model farms for Paddy Crop in Alor Setar, Kedah, Malaysia. The tests were done with high-quality seeds to produce paddy crops. Analysis was done over 26 acres on different plots in and around the area of Alor Setar."
             ],
             methodology: [
                 "The trial was conducted on a total of 26 acres, with 13 acres using our Magic Box Paddy Kit and the remaining 13 acres following conventional farming methods.",
                 "Each Magic Box Paddy Kit was applied to 1 acre of land.",
-                "Primary data for this research was collected from trial fields in Jewar and Lakhimpur Kheri.",
+                "Primary data for this research was collected from trial fields in Kedah.",
                 "The model farms using the Magic Box Paddy Kit strictly adhered to the recommended application methods.",
                 "The same variety of virgin seeds was used in both the control (conventional farming) and treated (Magic Box Paddy Kit) farms."
             ],
-            analysis: "The NBS Magic Paddy Kit increased paddy yield by 25%–30% due to its scientifically formulated components. Yield Booster (organic matter, organic carbon, potassium) enhanced soil fertility and nutrient uptake, while Bio Protect (organic matter, mineral potassium, phosphorus) strengthened plant immunity and stress tolerance. Bio Simulator (organic matter, organic carbon) improved microbial activity and root development, and Bug Shield (NPK) ensured balanced nutrition and pest resistance. This synergy led to healthier crops, improved grain quality, and higher productivity compared to conventional farming.",
-            keyFindings: [
-                "The paddy plants treated with the NBS Kit exhibited strong resistance to diseases and pest infestations",
-                "Enhanced vigor, improved immunity, and overall better physiological development",
-                "The paddy grown with NBS kit was bigger with better taste and shine",
-                "Reduced water usage in the NBS Kits Treated farm",
-                "The Paddy Crop matured 30 days before the controlled plot paddy crop",
-                "Reduced use of pesticides, saving significant costs for farmers"
+            analysis: [
+                "The NBS Magic Paddy Kit increased paddy yield by 25%–30% due to its scientifically formulated components. Yield Booster (organic matter, organic carbon, potassium) enhanced soil fertility and nutrient uptake, while Bio Protect (organic matter, mineral potassium, phosphorus) strengthened plant immunity and stress tolerance. Bio Simulator (organic matter, organic carbon) improved microbial activity and root development, and Bug Shield (NPK) ensured a balanced nutrition and defence mechanism. This synergy led to healthier crops, improved grain quality, and higher productivity compared to conventional farming.",
+                "The paddy plants treated with the NBS Kit exhibited strong resistance to external stressors, maintaining optimal plant health throughout the trial period. The treated plants demonstrated enhanced vigour, improved immunity, and overall better physiological development, contributing to higher crop resilience and sustainability.",
+                "The paddy grown with NBS kit was bigger than the controlled crop, it also had better taste and shine than the controlled crop.",
+                "The use of water was reduced in the NBS Kits Treated farm compared to the controlled farm.",
+                "With the use of the NBS kit, the Paddy Crop matured 30 days before the controlled plot paddy crop.",
+                "The final crop produced was healthy due to which the use of pesticides was reduced to a minimum, which saved a huge cost to the farmers."
             ],
             conclusion: [
-                "The cost of the Magic kit was Rs 3000 to which the produce of 30% more, the water usage was less which saves cost on electricity and consumption on water, the soil quality improves, the use of pesticides per acre costs from Rs. 2000- Rs.3000, considering the base price saved on pesticides the cost of our Magic Kit marginalizes to Rs. 1,000/- per acre.",
-                "Therefore the actual benefit is to the farmer is more than 30% in my assessment. The crop hence is healthier, tastier, shinier, bigger in size, almost chemical and pesticides free, has all the nutritious value."
+                "The Magic Kit offers transformative benefits for modern farming practices, making it a valuable tool for sustainable agriculture. Its advantages include:",
+                "30% Increase in Crop Yield: Farmers experience a significant boost in productivity, enabling them to grow more produce on the same land area.",
+                "Reduced Water Usage: The kit promotes efficient water management, leading to conservation of resources and supporting sustainable farming practices.",
+                "Improved Soil Quality: By enhancing soil health, the Magic Kit contributes to long-term agricultural sustainability and higher productivity over time.",
+                "Decreased Pesticide Use: The reduction in chemical inputs results in healthier crops with minimal residues, benefiting both farmers and consumers.",
+                "Additionally, the Magic Kit improves crop quality, producing larger, shinier, tastier, and more nutritious produce. This opens opportunities for farmers to access health-conscious markets and potentially achieve premium pricing due to the superior quality of their products.",
+                "The emphasis on soil improvement also suggests long-term benefits, enhancing farmland sustainability and productivity beyond the initial growing season. These features make the Magic Kit a holistic solution to key agricultural challenges, offering increased yields, healthier produce, reduced environmental impact, and improved soil health—all critical elements for sustainable farming."
             ],
             researcher: {
                 name: "Kashish Dewan",
@@ -309,6 +313,60 @@ export const caseStudies = [
                 "Extended Shelf Life",
                 "Eco-Friendly Solution",
                 "Compatible with Chemical Fungicides"
+            ]
+        }
+    },
+    {
+        id: "max-spreader-efficacy",
+        title: "Efficacy Data – NBS Max Spreader",
+        subtitle: "Organic Silicon Super Spreader/Tank Mix/Catalyst",
+        description: "Comprehensive analysis of NBS Max Spreader's effectiveness as an organic silicon super spreader in agricultural applications.",
+        image: "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80",
+        date: "2023",
+        location: "Mendoza, Argentina",
+        products: ["Max Spreader"],
+        pdfUrl: "/src/assets/pdfs/caseStudy/max-spreader-efficacy.pdf",
+        content: {
+            aim: "Analyze the effectiveness of NBS Max Spreader as an organic silicon super spreader in agricultural applications, comparing its performance with conventional spreaders and evaluating its impact on product efficacy, cost reduction, and yield increase.",
+            introduction: [
+                "NBS Max Spreader is an organic approved non-ionic silicon super spreader used in agriculture as well as tank mix. It can be applied by foliar spray and soil application. Its silicon is extracted from rice husk.",
+                "NBS MAX SPREADER is approved as per Indian Organic Standards – NPOP, American Organic Standards – NOP, EU Organic Regulations – EU 2018/848 and EU 2021/1165, Japanese Agricultural Standard for Organic Agriculture – JAS and OMRI listed.",
+                "NBS MAX SPREADER acts as a super spreader, penetrator, sticker and activator. It also acts as a growth promoter by providing silicon to the plant.",
+                "NBS MAX SPREADER can be used with any acidic or alkaline fertilizers or pesticides. NBS MAX SPREADER does not react with any active ingredient like other common silicon spreaders. The lowest dosage of 0.1 ml per litre makes NBS MAX SPREADER the most economical spreader in the world. NBS MAX SPREADER improves product efficacy by 30% resulting in a 25-30% reduction in overall production cost and a 15-20% increase in yield. It is compatible with every spray and every soil application."
+            ],
+            methodology: [
+                "The trials were conducted in various locations in Mendoza, Argentina, focusing on different aspects of NBS Max Spreader's performance.",
+                "For the Diametric Spread Test, grapevine fields in Maipú were used to evaluate the spreading capability of NBS Max Spreader compared to other products.",
+                "For the Pesticide Efficacy Test, grapevine fields in Luján de Cuyo were used to assess the effectiveness of pesticides when combined with NBS Max Spreader against thrips and red mites.",
+                "For the Fertilizer Dispersion Test, fields in San Rafael were used to evaluate the impact of NBS Max Spreader on fertilizer dispersion and penetration in soil through drip irrigation.",
+                "All trials were conducted by the R&D Department of NBS Singapore Pte Ltd, with strict adherence to scientific testing protocols."
+            ],
+            analysis: [
+                "The Diametric Spread Test demonstrated that NBS Max Spreader achieved a spreading diameter of 40mm, significantly higher than other non-ionic spreaders (15mm) and other brands (25mm). This improved spreading capability enhances the coverage and effectiveness of applied products.",
+                "The Pesticide Efficacy Test showed that pesticides applied with NBS Max Spreader achieved 90% efficacy, compared to 30% without a spreader, 50% with ionic spreaders, and 70% with other brands. This enhanced efficacy allows for reduced pesticide application rates while maintaining effectiveness.",
+                "The Fertilizer Dispersion Test confirmed that NBS Max Spreader significantly improved fertilizer dispersion and penetration in soil, enhancing nutrient availability to plant roots and improving soil application efficiency.",
+                "The trials collectively demonstrate that NBS Max Spreader improves product efficacy by 30%, resulting in a 25-30% reduction in overall production cost and a 15-20% increase in yield."
+            ],
+            conclusion: [
+                "NBS Max Spreader offers transformative benefits for modern farming practices, making it a valuable tool for sustainable agriculture. Its advantages include:",
+                "30% Improvement in Product Efficacy: Farmers experience significantly enhanced effectiveness of applied products, enabling better results with lower application rates.",
+                "25-30% Reduction in Production Cost: The improved efficacy and spreading capability lead to substantial cost savings in pesticide and fertilizer applications.",
+                "15-20% Increase in Yield: The enhanced nutrient uptake and plant health contribute to higher productivity and better crop quality.",
+                "Enhanced Spreading and Penetration: The superior spreading capability ensures better coverage and more effective application of products.",
+                "Organic Certified Product: NBS Max Spreader is approved by multiple organic certification bodies, making it suitable for organic farming operations.",
+                "Additionally, NBS Max Spreader is compatible with all types of sprays and soil applications, making it a versatile solution for various agricultural needs. Its low dosage requirement (0.1 ml per litre for foliar applications and 0.25 ml per litre for soil applications) makes it an economical choice for farmers."
+            ],
+            researcher: {
+                name: "R&D Department",
+                title: "Research and Development Team",
+                organization: "NBS Singapore Pte Ltd"
+            },
+            keyResults: [
+                "30% Improvement in Product Efficacy",
+                "25-30% Reduction in Production Cost",
+                "15-20% Increase in Yield",
+                "Enhanced Spreading and Penetration",
+                "Organic Certified Product"
             ]
         }
     }

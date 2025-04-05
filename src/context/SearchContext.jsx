@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { productCategories } from '../data/productsData';
 
 const SearchContext = createContext();
@@ -8,9 +8,11 @@ export function SearchProvider({ children }) {
   const [searchResults, setSearchResults] = useState([]);
   const [showSearchResults, setShowSearchResults] = useState(false);
 
-  const performSearch = (query) => {
+  // Use useCallback to memoize the performSearch function
+  const performSearch = useCallback((query) => {
     if (!query.trim()) {
       setSearchResults([]);
+      setShowSearchResults(false);
       return;
     }
 
@@ -77,13 +79,13 @@ export function SearchProvider({ children }) {
 
     setSearchResults(results);
     setShowSearchResults(true);
-  };
+  }, []); // Empty dependency array since it doesn't depend on any props or state
 
-  const clearSearch = () => {
+  const clearSearch = useCallback(() => {
     setSearchQuery('');
     setSearchResults([]);
     setShowSearchResults(false);
-  };
+  }, []); // Empty dependency array
 
   return (
     <SearchContext.Provider

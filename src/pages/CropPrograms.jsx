@@ -34,48 +34,58 @@ const cropPrograms = [
         ],
         stages: [
             {
-                name: "Seed Treatment",
+                name: "Seed Treatment (Boosting Germination & Early Growth)",
                 duration: "Before Sowing",
-                instructions: "Mix 25 ml of NBS YIELD BOOSTER and 20 gm of NBS Microshield in 10 L of water. Dip seeds for 20 minutes, dry in shade before sowing.",
+                instructions: "Prepare a solution by mixing 25 ml of NBS YIELD BOOSTER and 20 gm of NBS Microshield in 10 L of water. Dip the seeds in this solution for 20 minutes, ensuring uniform absorption of beneficial nutrients and microbial protection. After treatment, dry the seeds in the shade before sowing to avoid direct sunlight damage and ensure easy handling.",
                 products: ["NBS YIELD BOOSTER", "NBS Microshield"]
             },
             {
-                name: "Soil Preparation",
+                name: "Soil Preparation (Strengthening Soil Health & Root Development)",
                 duration: "Before Sowing",
-                instructions: "Apply 50 kg of NBS BIO STIMULATOR mixed with organic compost to enhance soil fertility and microbial activity.",
+                instructions: "Before sowing, apply 50 kg of NBS BIO STIMULATOR mixed with any organic compost. This step enhances soil fertility, microbial activity, and organic matter content, creating an ideal environment for seed germination and root establishment. Proper soil preparation helps in better nutrient retention and aeration.",
                 products: ["NBS BIO STIMULATOR"]
             },
             {
                 name: "Early Growth Phase",
                 duration: "15-20 Days After Sowing",
-                instructions: "Spray NBS YIELD BOOSTER at 1.5 ml/L of water across the field for essential bio-nutrients and chlorophyll production.",
+                instructions: "At this critical stage, young maize plants require additional nutrients to support root expansion and vegetative growth. Spray NBS YIELD BOOSTER at 1.5 ml/L of water across the field. This foliar application supplies essential bio-nutrients, stimulates chlorophyll production, and improves plant metabolism, ensuring uniform and vigorous early growth.",
                 products: ["NBS YIELD BOOSTER"]
             },
             {
                 name: "Vegetative Growth & Nutrient Boost",
                 duration: "45th Day Post-Sowing",
-                instructions: "Broadcast 100 kg of NBS BIO STIMULATOR across the field. Can be mixed with other Fertilisers for better efficiency.",
+                instructions: "As the maize plants reach their vegetative peak, they require additional soil nutrition to sustain rapid growth and biomass development. Broadcast 100 kg of NBS BIO STIMULATOR across the field. It can be applied alone or mixed with other fertilizers for better efficiency. This application enhances soil microbial activity, improves nutrient availability, and strengthens the root system for better water and nutrient absorption.",
                 products: ["NBS BIO STIMULATOR"]
             },
             {
                 name: "Plant Vitality & Resilience Enhancement",
                 duration: "Every 15 Days",
-                instructions: "Apply foliar spray of NBS BUG SHIELD at 1.25 ml/L of water. Repeat every 15 days for consistent results.",
+                instructions: "To maintain optimal plant health and ensure uninterrupted growth, apply a foliar spray of NBS BUG SHIELD at 1.25 ml/L of water. This application supports overall plant vigour, strengthens natural defences, and promotes a stress-free growth cycle. For consistent results, it is recommended to repeat the application every 15 days as a proactive measure.",
                 products: ["NBS BUG SHIELD"]
             },
             {
-                name: "Flowering & Grain Setting",
+                name: "Flowering & Grain Setting (Ensuring Maximum Yield Potential)",
                 duration: "During Flowering",
-                instructions: "Apply NBS YIELD BOOSTER at 2 ml/L along with NBS K-35 at 2 ml/L of water for better flower initiation and grain setting.",
+                instructions: "For better flower initiation, stronger grain setting, and improved pollination, foliar nutrition is essential. Apply NBS YIELD BOOSTER at 2 ml/L along with NBS K-35 at 2 ml/L of water. This spray provides essential potassium and growth stimulators, which enhance reproductive development, leading to well-filled, high-yielding maize cobs. Depending on flowering stages, this application can be repeated for consistent results.",
                 products: ["NBS YIELD BOOSTER", "NBS K-35"]
             },
             {
                 name: "Plant Strength & Environmental Stress Management",
                 duration: "As Needed",
-                instructions: "Apply NBS Pseudotech at 200 gm per acre along with NBS BUG SHIELD at 2 ml/L of water. Repeat during high moisture periods.",
+                instructions: "To support plant resilience and ensure optimal growth, apply NBS Pseudotech at 200 gm per acre along with NBS BUG SHIELD at 2 ml/L of water. This combination enhances natural defense mechanisms, promotes overall plant health, and maintains crop quality under varying environmental conditions. The application can be repeated as needed, particularly during periods of high moisture or extended wet conditions.",
                 products: ["NBS Pseudotech", "NBS BUG SHIELD"]
             }
         ],
+        features: [
+            "Comprehensive 7-stage nutrition program",
+            "Enhanced seed germination and early growth",
+            "Improved soil health and root development",
+            "Optimized vegetative growth and biomass",
+            "Strengthened plant vitality and stress resistance",
+            "Better flowering and grain setting",
+            "Environmental stress management",
+            "Flexible application timing based on crop stage"
+        ]
     },
     {
         id: 2,
@@ -127,7 +137,7 @@ const cropPrograms = [
         id: 3,
         name: "Litter Digestion Program - Coffee",
         pdfFile: coffee,
-        description: "Effective conversion of leaf litter & crop residues into humus & plant nutrients",
+        description: "Effective Conversion of Leaf Litter & Crop Residues into Humus & Plant Nutrients",
         duration: "As Needed",
         products: [
             "DIY 6% Liquid Humate",
@@ -141,37 +151,39 @@ const cropPrograms = [
         ],
         stages: [
             {
-                name: "Soil Condition Preparation",
+                name: "Ensure Proper Soil Conditions",
                 duration: "Before Application",
-                instructions: "Maintain good soil moisture and ensure plant residues are in direct contact with the soil to facilitate microbial activity and decomposition.",
+                instructions: "Maintain good soil moisture to facilitate microbial activity and decomposition. Ensure plant residues are in direct contact with the soil to promote effective breakdown and nutrient absorption.",
                 products: []
             },
             {
-                name: "Base Mixture Preparation",
+                name: "Prepare the Nutrient-Enriched Mixture",
                 duration: "Initial Mix",
-                instructions: "Mix per acre: DIY 6% Liquid Humate (20L), Molasses/Jaggery (4kg), Urea (5kg), NBS Microshield (400g), NBS Pseudotech (400g).",
+                instructions: "Mix per acre: DIY 6% Liquid Humate (20L - enhances microbial activity), Molasses/Jaggery (4kg - provides energy for soil microbes), Urea (5kg - speeds up decomposition), NBS Microshield (400g - promotes beneficial microbial activity), NBS Pseudotech (400g - aids in organic matter decomposition).",
                 products: ["DIY 6% Liquid Humate", "Molasses/Jaggery", "Urea", "NBS Microshield", "NBS Pseudotech"]
             },
             {
-                name: "Enhanced Mixture Preparation",
-                duration: "Optional Enhancement",
-                instructions: "Add per acre: Borax/Boric Acid (500g), Ammonium Molybdate (125g), Kelp (200g) for improved results.",
-                products: ["Borax/Boric Acid", "Ammonium Molybdate", "Kelp"]
+                name: "Apply as a Soil Drench",
+                duration: "Implementation",
+                instructions: "Mix the prepared solution in a minimum of 400L of water per acre to ensure even distribution. This application supports rapid microbial colonization, improving organic matter decomposition into humus.",
+                products: []
             },
             {
-                name: "Application",
-                duration: "Implementation",
-                instructions: "Mix the prepared solution in minimum 400L of water per acre. Can be applied as soil drench or foliar spray for comprehensive coverage.",
-                products: []
+                name: "Enhance the Mixture for Better Results",
+                duration: "Optional Enhancement",
+                instructions: "Add per acre: Borax/Boric Acid (500g - enhances nutrient uptake), Ammonium Molybdate (125g - aids nitrogen fixation), Kelp (200g - provides natural growth stimulants). The prepared mixture can be applied both to the soil and as a foliar spray.",
+                products: ["Borax/Boric Acid", "Ammonium Molybdate", "Kelp"]
             }
         ],
         features: [
+            "Efficiently converts excessive leaf litter and crop residues into humus",
+            "Enriches soil health and fertility",
             "Accelerates natural breakdown of organic matter",
             "Improves soil structure and microbial diversity",
-            "Enhances nutrient availability",
+            "Enhances nutrient availability and uptake",
             "Supports higher crop productivity",
-            "Promotes beneficial microbial activity",
-            "Flexible application methods (soil drench or foliar spray)"
+            "Flexible application methods (soil drench or foliar spray)",
+            "Promotes beneficial microbial activity"
         ]
     },
     {
@@ -294,7 +306,7 @@ const cropPrograms = [
         id: 6,
         name: "Nitrate Conversion Program – All Crops",
         pdfFile: nitrateConversion,
-        description: "Converting excess nitrate nitrogen in plant tissues into complex amino acids and proteins to enhance plant resilience, improve crop quality, and support balanced growth. This foliar spray aids in efficient nitrogen utilization, ensuring healthier plant development and optimal yield.",
+        description: "Excessive accumulation of nitrate nitrogen in plant tissues can lead to increased susceptibility to environmental stress, pest infestations, and disease attacks. Converting this excess nitrate into complex amino acids and proteins enhances plant resilience, improves crop quality, and supports balanced growth. This foliar spray aids in efficient nitrogen utilization, ensuring healthier plant development and optimal yield.",
         duration: "Post Fruit Set",
         products: [
             "Magnesium Sulphate",
@@ -305,16 +317,16 @@ const cropPrograms = [
         ],
         stages: [
             {
-                name: "Foliar Spray Preparation",
+                name: "Prepare the Foliar Spray",
                 duration: "Before Application",
-                instructions: "Mix per acre: Magnesium Sulphate (2 kg), Ammonium Molybdate (125 g) or Sodium Molybdate (150 g if unavailable), Fulvic Acid Powder (60 g), NBS Maxspreader (20 ml per 100 L of water).",
+                instructions: "Mix per acre: Magnesium Sulphate (2 kg - enhances enzyme activation and protein synthesis), Ammonium Molybdate (125 g) or Sodium Molybdate (150 g if unavailable - supports nitrogen metabolism), Fulvic Acid Powder (60 g - improves nutrient absorption), NBS Maxspreader (20 ml per 100 L of water - ensures better coverage).",
                 products: ["Magnesium Sulphate", "Ammonium Molybdate", "Sodium Molybdate", "Fulvic Acid Powder", "NBS Maxspreader"]
             },
             {
-                name: "Application",
+                name: "Method of Application",
                 duration: "After Fruit Set",
-                instructions: "Apply the foliar spray after fruit set, ensuring uniform coverage across the foliage for maximum absorption and effectiveness. This timing is critical when excessive vegetative growth can affect fruit quality and overall yield.",
-                products: ["NBS Maxspreader"]
+                instructions: "Apply this foliar spray after fruit set, as this is a critical stage when excessive vegetative growth can affect fruit quality and overall yield. Ensure even spraying across the foliage for maximum absorption and effectiveness.",
+                products: []
             }
         ],
         features: [
@@ -323,7 +335,9 @@ const cropPrograms = [
             "Enhances enzyme activation and protein synthesis",
             "Supports nitrogen metabolism and amino acid formation",
             "Improves nutrient absorption and plant metabolism",
-            "Ensures better coverage and penetration of nutrients"
+            "Ensures better coverage and penetration of nutrients",
+            "Regulates plant nitrogen levels for improved crop health",
+            "Reduces stress vulnerability and enhances yield potential"
         ],
         objective: "To convert excess nitrate nitrogen in plant tissues into complex amino acids and proteins, reducing the risk of pest and disease susceptibility while promoting healthier crop growth."
     },
@@ -402,7 +416,7 @@ const cropPrograms = [
         id: 8,
         name: "Phytophthora Control Program - Pepper",
         pdfFile: pepper,
-        description: "Comprehensive soil health and root resilience program designed to prevent Phytophthora infections in pepper vines through enhanced soil structure and microbial balance.",
+        description: "Pepper vines are often planted close to the trunks of shade trees, creating specific soil conditions that influence root health. The traditional method of applying NPK fertilizers in a small root zone can negatively impact soil organic carbon levels, disrupt beneficial microbial activity, and alter soil electrical conductivity. These factors contribute to poor soil structure, water runoff, and weak root systems, making the plants more vulnerable to Phytophthora infections.",
         duration: "Growing Season",
         products: [
             "DIY 6% Liquid Humate",
@@ -412,31 +426,27 @@ const cropPrograms = [
         ],
         stages: [
             {
-                name: "Soil Drench Mixture Preparation",
+                name: "Prepare the Soil Drench Mixture",
                 duration: "Before Application",
-                instructions: "Mix per 200L of water: DIY 6% Liquid Humate (160ml), NBS Microshield (40g), NBS Pseudotech (40g), NBS Root Max (100ml). This mixture enhances soil organic matter, supports microbial activity, and promotes root health.",
+                instructions: "Mix in 200L of water: DIY 6% Liquid Humate (160 ml - enhances soil organic matter and nutrient retention), NBS Microshield (40 g - boosts beneficial microbial populations), NBS Pseudotech (40 g - helps maintain soil microbial balance), NBS Root Max (100 ml - promotes healthy root development).",
                 products: ["DIY 6% Liquid Humate", "NBS Microshield", "NBS Pseudotech", "NBS Root Max"]
             },
             {
-                name: "Application",
+                name: "Application Method",
                 duration: "During Growing Season",
-                instructions: "Apply 5 litres of the prepared soil drench per vine, ensuring even distribution around the base. Cover a 600mm radius from the base of each pepper vine to optimize nutrient absorption and microbial activity.",
-                products: []
-            },
-            {
-                name: "Follow-up Treatment",
-                duration: "High-Risk Periods",
-                instructions: "Repeat treatments during high-risk periods to maintain soil health and strengthen plant resistance. Monitor soil conditions and plant health to determine optimal timing for follow-up applications.",
+                instructions: "Apply 5 litres of the prepared soil drench per vine, ensuring even distribution around the base. Cover a 600 mm radius from the base of the pepper vine to optimize nutrient absorption and microbial activity. Follow-up treatments may be required during high-risk periods to maintain soil health and strengthen plant resistance.",
                 products: []
             }
         ],
         features: [
-            "Enhances soil organic carbon levels",
-            "Improves soil structure and water retention",
-            "Supports beneficial microbial populations",
-            "Strengthens root system development",
-            "Reduces vulnerability to Phytophthora infections",
-            "Promotes sustainable pepper cultivation"
+            "Enhances soil structure and organic carbon levels",
+            "Improves nutrient retention and microbial activity",
+            "Boosts beneficial microbial populations",
+            "Maintains soil microbial balance",
+            "Suppresses harmful pathogens",
+            "Promotes healthy root development",
+            "Improves nutrient and water uptake",
+            "Strengthens plant resistance against Phytophthora"
         ],
         objective: "To enhance soil structure, organic carbon levels, and root system health, creating an environment that prevents Phytophthora infections in pepper vines and promotes stronger, more resilient plants."
     }

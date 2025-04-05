@@ -48,12 +48,16 @@ export default function Header() {
 
   // Auto-search as user types
   useEffect(() => {
-    if (searchQuery.trim()) {
-      performSearch(searchQuery)
-    } else {
-      setShowSearchResults(false)
-    }
-  }, [searchQuery, performSearch, setShowSearchResults])
+    const searchTimeout = setTimeout(() => {
+      if (searchQuery.trim()) {
+        performSearch(searchQuery);
+      } else {
+        setShowSearchResults(false);
+      }
+    }, 300); // Add a debounce of 300ms
+
+    return () => clearTimeout(searchTimeout);
+  }, [searchQuery, performSearch, setShowSearchResults]);
 
   useEffect(() => {
     const calculatePositions = () => {
@@ -84,6 +88,9 @@ export default function Header() {
   }, [])
 
   const isActive = (path) => {
+    if (path === "/media") {
+      return location.pathname.startsWith("/media") ? "text-[#FE8340] font-semibold" : "text-white hover:text-[#FE8340] transition-colors"
+    }
     return location.pathname === path ? "text-[#FE8340] font-semibold" : "text-white hover:text-[#FE8340] transition-colors"
   }
 
@@ -112,8 +119,17 @@ export default function Header() {
   }
 
   const handleSearchResultClick = (path) => {
-    navigate(path)
+    // Close the search results dropdown
+    setShowSearchResults(false)
+    
+    // Clear the search query
     clearSearch()
+    
+    // Navigate to the selected path
+    navigate(path)
+    
+    // Force a scroll to top when navigating
+    window.scrollTo(0, 0)
   }
 
   return (
@@ -261,14 +277,18 @@ export default function Header() {
               {showSearchResults && searchResults.length > 0 && (
                 <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-lg shadow-lg z-50 max-h-96 overflow-y-auto">
                   {searchResults.map((result, index) => (
-                    <div
+                    <Link
                       key={index}
-                      onClick={() => handleSearchResultClick(result.path)}
-                      className="p-3 hover:bg-gray-100 cursor-pointer border-b border-gray-200 last:border-b-0 transition-colors"
+                      to={result.path}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleSearchResultClick(result.path);
+                      }}
+                      className="block p-3 hover:bg-gray-100 cursor-pointer border-b border-gray-200 last:border-b-0 transition-colors"
                     >
                       <div className="font-medium text-[#293E31]">{result.title}</div>
                       <div className="text-sm text-gray-600">{result.description}</div>
-                    </div>
+                    </Link>
                   ))}
                 </div>
               )}
@@ -383,17 +403,25 @@ export default function Header() {
             {showSearchResults && searchResults.length > 0 && (
               <div className="mt-2 bg-white rounded-lg shadow-lg max-h-48 overflow-y-auto">
                 {searchResults.map((result, index) => (
-                  <div
+                  <Link
                     key={index}
-                    onClick={() => {
-                      handleSearchResultClick(result.path);
-                      toggleMenu();
+                    to={result.path}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      // First close the menu
+                      setIsMenuOpen(false);
+                      document.body.style.overflow = 'unset';
+                      // Then navigate after a short delay to ensure the menu is closed
+                      setTimeout(() => {
+                        handleSearchResultClick(result.path);
+                      }, 100);
                     }}
-                    className="p-3 hover:bg-gray-100 cursor-pointer border-b border-gray-200 last:border-b-0"
+                    className="block p-3 hover:bg-gray-100 cursor-pointer border-b border-gray-200 last:border-b-0"
                   >
                     <div className="font-medium text-[#293E31]">{result.title}</div>
                     <div className="text-sm text-gray-600">{result.description}</div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             )}
