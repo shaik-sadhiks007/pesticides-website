@@ -1,42 +1,54 @@
-import { CheckCircle2, Package, Truck, Award } from "lucide-react"
+import { motion } from "framer-motion";
+import { CheckCircle2, Package, Truck, Award } from "lucide-react";
 
-const features = [
+export const defaultFeatures = [
   {
     title: "One of a Kind",
-    description: "How we control size, ash, iodine, quantity",
+    description: "What sets VM ECOGROW apart:",
     details: [
-      "We have professional crushing machine to control the size.",
-      "For ash, we have screening machine and can process with washed way.",
-      "For iodine, we have temperature control cabinet to change the degree to get the right iodine. Besides, our tester worker will test the iodine for every batch of production.",
-      "For quantity, every bag will be weighted and noted."
+      "Innovative R&D: Constantly developing cutting-edge agricultural solutions",
+      "Global reach with local expertise: Understanding diverse agricultural needs worldwide",
+      "Sustainability focus: Eco-friendly products and practices",
+      "Customer-centric approach: Your success is our priority"
     ]
   },
   {
     title: "Our Packaging System",
-    description: "Customizable packaging solutions",
+    description: "VM ECOGROW offers versatile packaging options to suit your needs:",
     details: [
-      "Generally, We use HDPE BAGS with Liner inserts of 25kg/bag, 50kg/bag or JUMBO BAGS.",
-      "We can completely Customise the packaging and print the bags according to your requirements."
-    ]
-  },
-  {
-    title: "Terms of Delivery",
-    description: "Flexible delivery options",
-    details: [
-      "We accept FOB, CFR, CIF, EXW, etc. You can choose the most convenient way for you.",
-      "We are always ready with humongous stock of 1,000 M.T. and to take bulk orders 24x7.",
-      "We can supply and transport said quantity to any country at any point of time."
+      "Size range: From 100 ml/g to 1000 L/kg",
+      "Eco-friendly sustainable materials available",
+      "Custom branding and labelling",
+      "Bulk packaging for large-scale operations",
+      "Specialised packaging for sensitive formulations",
+      "Our flexible packaging solutions ensure product integrity and ease of use, from small farms to industrial-scale operations."
     ]
   },
   {
     title: "Our Quality",
-    description: "Commitment to excellence",
+    description: "At VM ECOGROW, quality is non-negotiable:",
     details: [
-      "We are fully committed to a total quality approach, starting from the first phone call going all the way through to making sure that the delivered product meets and exceeds the specified requirements.",
-      "Our strict quality assurance procedures ensure you get a quality product."
+      "Rigorous testing at every production stage",
+      "State-of-the-art quality control laboratories",
+      "Adherence to international quality standards",
+      "Consistent product performance batch after batch",
+      "Regular audits and certifications",
+      "Our commitment to quality ensures that every product leaving our facility meets the highest efficacy and safety standards."
+    ]
+  },
+  {
+    title: "Terms of Delivery",
+    description: "We make doing business with VM ECOGROW simple and transparent:",
+    details: [
+      "Flexible payment terms",
+      "On-time delivery guarantee",
+      "Clear communication throughout the order process",
+      "Damage protection and insurance options",
+      "After-sales support and follow-up",
+      "Experience hassle-free transactions and reliable deliveries with VM ECOGROW."
     ]
   }
-]
+];
 
 const icons = {
   "One of a Kind": CheckCircle2,
@@ -52,9 +64,9 @@ export function Features() {
         <h2 className="text-[#293E31] text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12">
           Features
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-          {features.map((feature, index) => {
-            const Icon = icons[feature.title]
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+          {defaultFeatures.map((feature, index) => {
+            const Icon = icons[feature.title];
             return (
               <div key={index} className="bg-[#FCF9F4] p-6 sm:p-8 rounded-lg">
                 <div className="flex items-center gap-4 mb-4">
@@ -75,10 +87,10 @@ export function Features() {
                   ))}
                 </ul>
               </div>
-            )
+            );
           })}
         </div>
       </div>
     </section>
-  )
+  );
 } 
