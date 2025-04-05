@@ -161,7 +161,7 @@ export default function Header() {
                       <div key={categoryKey} className="relative">
                         <Link
                           to={`/products/${categoryKey}`}
-                          className="text-[#293E31] font-bold text-lg lg:text-xl mb-4 lg:mb-6 hover:text-[#FE8340] transition-colors block"
+                          className="text-[#293E31] font-bold text-lg uppercase lg:text-xl mb-4 lg:mb-6 hover:text-[#FE8340] transition-colors block"
                           onClick={handleLinkClick}
                         >
                           {category.name}
@@ -172,7 +172,7 @@ export default function Header() {
                             <div key={subcategoryKey} className="relative group/subcategory hover:z-[70]">
                               <Link
                                 to={`/products/${categoryKey}/${subcategoryKey}`}
-                                className="text-[#FE8340] font-semibold text-sm xl:text-base block hover:text-[#293E31] transition-colors flex items-center justify-between relative group-hover/subcategory:text-[#293E31]"
+                                className="text-[#FE8340] uppercase font-semibold text-sm xl:text-base block hover:text-[#293E31] transition-colors flex items-center justify-between relative group-hover/subcategory:text-[#293E31]"
                                 onClick={handleLinkClick}
                               >
                                 <span>{subcategory.name}</span>
@@ -206,7 +206,7 @@ export default function Header() {
                                         <Link
                                           key={product.id}
                                           to={`/products/${categoryKey}/${subcategoryKey}/${product.id}`}
-                                          className="text-[#293E31] hover:text-[#FE8340] block transition-colors text-sm"
+                                          className="text-[#293E31] uppercase hover:text-[#FE8340] block transition-colors text-sm"
                                           onClick={handleLinkClick}
                                         >
                                           {product.name}

@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { productCategories } from "../data/productsData";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "../components/ui/tabs";
@@ -181,7 +181,14 @@ export default function ProductDetail() {
                         <div className="space-y-6">
                             <div>
                                 <h1 className="text-3xl font-bold text-[#293E31] mb-4">{product.name}</h1>
-                                {/* <p className="text-lg text-gray-600 mb-6">{product.type}</p> */}
+                                <div className="flex flex-wrap gap-2 mb-4">
+                                    <Link to={`/products/${category}`} className="bg-[#293E31] text-white px-3 py-1 rounded-full text-sm font-medium uppercase">
+                                        {productCategories[category]?.name || category}
+                                    </Link>
+                                    <Link to={`/products/${category}/${subcategory}`} className="bg-[#293E31] text-white px-3 py-1 rounded-full text-sm font-medium uppercase">
+                                        {productCategories[category]?.subcategories[subcategory]?.name || subcategory}
+                                    </Link>
+                                </div>
                                 <p className="text-gray-700 mb-8">{product.description}</p>
                             </div>
 
