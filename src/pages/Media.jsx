@@ -35,27 +35,309 @@ const Media = () => {
     const galleryImages = [
         {
             id: 1,
-            title: "Farm Field",
-            image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80",
-            category: "Agriculture"
+            title: "Case Study Image 1",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/othdcrcellr78lfhe3jj",
+            category: "Case Study"
         },
         {
             id: 2,
-            title: "Soil Analysis",
-            image: "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80",
-            category: "Research"
+            title: "Case Study Image 2",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/pxrcmqq62ipg9bhjgp3j",
+            category: "Case Study"
         },
         {
             id: 3,
-            title: "Crop Growth",
-            image: "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80",
-            category: "Agriculture"
+            title: "Case Study Image 3",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/rhmclx4oqhlfdszdbxei",
+            category: "Case Study"
         },
         {
             id: 4,
-            title: "Farm Equipment",
-            image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80",
-            category: "Equipment"
+            title: "Case Study Image 4",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/rupgxil53p5hgrpl5snq",
+            category: "Case Study"
+        },
+        {
+            id: 5,
+            title: "Case Study Image 5",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/rxt4wcsyear4fwfnkspe",
+            category: "Case Study"
+        },
+        {
+            id: 6,
+            title: "Case Study Image 6",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/sbtn5g2smgpqr18hu3ya",
+            category: "Case Study"
+        },
+        {
+            id: 7,
+            title: "Case Study Image 7",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/t6zdvtdgelagl3d2rosx",
+            category: "Case Study"
+        },
+        {
+            id: 8,
+            title: "Case Study Image 8",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/tt88qirsllxnnvrgwtb4",
+            category: "Case Study"
+        },
+        {
+            id: 9,
+            title: "Case Study Image 9",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/u9qf2ow6lqupxunq5wyo",
+            category: "Case Study"
+        },
+        {
+            id: 10,
+            title: "Case Study Image 10",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/u7663mwyjn4fmy9nrzwz",
+            category: "Case Study"
+        },
+        {
+            id: 11,
+            title: "Case Study Image 11",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/uwhgz6a9szliibwnpsuj",
+            category: "Case Study"
+        },
+        {
+            id: 12,
+            title: "Case Study Image 12",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/uxbij6bffo9awyenc8gz",
+            category: "Case Study"
+        },
+        {
+            id: 13,
+            title: "Case Study Image 13",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/v6qd9g1x5dm5tetazahn",
+            category: "Case Study"
+        },
+        {
+            id: 14,
+            title: "Case Study Image 14",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/vddf8pn0c1azudhcdenc",
+            category: "Case Study"
+        },
+        {
+            id: 15,
+            title: "Case Study Image 15",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/vexwxcpzio0ni21l1gxu",
+            category: "Case Study"
+        },
+        {
+            id: 16,
+            title: "Case Study Image 16",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/vsouuarrg83vw3oanben",
+            category: "Case Study"
+        },
+        {
+            id: 17,
+            title: "Case Study Image 17",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/vvmawy2rspfsj9b9z2nh",
+            category: "Case Study"
+        },
+        {
+            id: 18,
+            title: "Case Study Image 18",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/wy7jvfmudvqw2znx3tjn",
+            category: "Case Study"
+        },
+        {
+            id: 19,
+            title: "Case Study Image 19",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/xvr4iy1rssyj3fd5seoi",
+            category: "Case Study"
+        },
+        {
+            id: 20,
+            title: "Case Study Image 20",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/y4vf8qtqwszv7aafdl0i",
+            category: "Case Study"
+        },
+        {
+            id: 21,
+            title: "Case Study Image 21",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/ydfsuyocqymvhufjpy6n",
+            category: "Case Study"
+        },
+        {
+            id: 22,
+            title: "Case Study Image 22",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/ylgk5r2ic1txjkcgbaqt",
+            category: "Case Study"
+        },
+        {
+            id: 23,
+            title: "Case Study Image 23",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/ywsd9hvvxieravpoumrv",
+            category: "Case Study"
+        },
+        {
+            id: 24,
+            title: "Case Study Image 24",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/yztzviczhtmcyfb0m4ny",
+            category: "Case Study"
+        },
+        {
+            id: 25,
+            title: "Case Study Image 25",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/astlpqkhg57hlmablpls",
+            category: "Case Study"
+        },
+        {
+            id: 26,
+            title: "Case Study Image 26",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/athv3hyegv87cvya9lgg",
+            category: "Case Study"
+        },
+        {
+            id: 27,
+            title: "Case Study Image 27",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/bom0fgbxidamwnlwvodv",
+            category: "Case Study"
+        },
+        {
+            id: 28,
+            title: "Case Study Image 28",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/brgcojnx3fo5mqk5wx0w",
+            category: "Case Study"
+        },
+        {
+            id: 29,
+            title: "Case Study Image 29",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/bv62iyueasrs03zwnnf6",
+            category: "Case Study"
+        },
+        {
+            id: 30,
+            title: "Case Study Image 30",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/ctmkz2ahszfbnaf4af3u",
+            category: "Case Study"
+        },
+        {
+            id: 31,
+            title: "Case Study Image 31",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/eryidqsdp1x5fcjtfw2q",
+            category: "Case Study"
+        },
+        {
+            id: 32,
+            title: "Case Study Image 32",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/f5fs66x90inw0pkixq9h",
+            category: "Case Study"
+        },
+        {
+            id: 33,
+            title: "Case Study Image 33",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/fbftloaw1dyg8hjgpgyw",
+            category: "Case Study"
+        },
+        {
+            id: 34,
+            title: "Case Study Image 34",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/fhfsbkrrm3hziwhphb1o",
+            category: "Case Study"
+        },
+        {
+            id: 35,
+            title: "Case Study Image 35",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/frikdgdsxto3dmvlsax2",
+            category: "Case Study"
+        },
+        {
+            id: 36,
+            title: "Case Study Image 36",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/fwrxxvq2wnsmto6ahfdb",
+            category: "Case Study"
+        },
+        {
+            id: 37,
+            title: "Case Study Image 37",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/hhifqcrt7u82bt575xsh",
+            category: "Case Study"
+        },
+        {
+            id: 38,
+            title: "Case Study Image 38",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/i4mk3qxujxe4cjkgawd4",
+            category: "Case Study"
+        },
+        {
+            id: 39,
+            title: "Case Study Image 39",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/ii1flmomklchke7ux94v",
+            category: "Case Study"
+        },
+        {
+            id: 40,
+            title: "Case Study Image 40",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/ileiuqlcttpfgqbwghdu",
+            category: "Case Study"
+        },
+        {
+            id: 41,
+            title: "Case Study Image 41",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/im0g7hjts5pqfemz9xf7",
+            category: "Case Study"
+        },
+        {
+            id: 42,
+            title: "Case Study Image 42",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/j4zslz1syi19ey1mtig8",
+            category: "Case Study"
+        },
+        {
+            id: 43,
+            title: "Case Study Image 43",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/jpsbbdxohomiwudfciri",
+            category: "Case Study"
+        },
+        {
+            id: 44,
+            title: "Case Study Image 44",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/lbiggctub6wvi2v5jpls",
+            category: "Case Study"
+        },
+        {
+            id: 45,
+            title: "Case Study Image 45",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/lgyy8eaf6ifhfooto6rw",
+            category: "Case Study"
+        },
+        {
+            id: 46,
+            title: "Case Study Image 46",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/ljhesawlxadkw2gu91ui",
+            category: "Case Study"
+        },
+        {
+            id: 47,
+            title: "Case Study Image 47",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/lmnusdlgbathpx06fuag",
+            category: "Case Study"
+        },
+        {
+            id: 48,
+            title: "Case Study Image 48",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/lpim6i9ldpxkiwekdmza",
+            category: "Case Study"
+        },
+        {
+            id: 49,
+            title: "Case Study Image 49",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/lsg2ixqpshdmw5pk4cyo",
+            category: "Case Study"
+        },
+        {
+            id: 50,
+            title: "Case Study Image 50",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/n1ejrk6ljxdnv4r0ngjq",
+            category: "Case Study"
+        },
+        {
+            id: 51,
+            title: "Case Study Image 51",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/o7lvv3uh1mptruwnkemm",
+            category: "Case Study"
         }
     ]
 

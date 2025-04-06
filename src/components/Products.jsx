@@ -182,7 +182,7 @@ export default function Products() {
                                 
                                 {/* Content for desktop */}
                                 <div className="hidden lg:flex absolute inset-0 flex-col justify-end p-8">
-                                    <h2 className="text-white text-3xl font-bold mb-3 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                                    <h2 className="text-white uppercase text-3xl font-bold mb-3 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                                         {cat.name}
                                     </h2>
                                     <p className="text-white/90 text-base mb-6 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
@@ -213,7 +213,7 @@ export default function Products() {
 
                                 {/* Content for mobile and tablet */}
                                 <div className="lg:hidden absolute inset-0 flex flex-col justify-end p-4 md:p-6">
-                                    <h2 className="text-white text-xl md:text-2xl font-bold mb-2">
+                                    <h2 className="text-white uppercase text-xl md:text-2xl font-bold mb-2">
                                         {cat.name}
                                     </h2>
                                     <p className="text-white/90 text-sm md:text-base mb-4">
@@ -345,7 +345,7 @@ export default function Products() {
                                                     </div>
                                                     <div className="p-4">
                                                         <p className="text-xs font-medium text-[#FE8340] mb-1 block">{product.type}</p>
-                                                        <h3 className="text-lg font-semibold text-[#293E31] mb-2">{product.name}</h3>
+                                                        <h3 className="text-lg uppercase font-semibold text-[#293E31] mb-2">{product.name}</h3>
                                                         <p className="text-sm text-gray-500 line-clamp-2">{product.description}</p>
                                                     </div>
                                                 </motion.div>

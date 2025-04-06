@@ -56,108 +56,108 @@ export const caseStudies = [
             ]
         }
     },
-    {
-        id: "turf-farm-nursery-program",
-        title: "NBS Turf Farm & Nursery Program",
-        subtitle: "Sustainable Sports Turf Programs for Turf Farms and Nurseries",
-        description: "Comprehensive guide for implementing NBS sustainable turf management solutions.",
-        image: "https://images.unsplash.com/photo-1572894234976-13cf71933e95?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80",
-        date: "March 2025",
-        location: "Singapore",
-        products: ["Bio-Stimulator", "ReSiliCa", "Micro-Shield", "Root Max", "K-35", "Max Spreader", "Sapphire", "Bug Shield", "Yield Booster"],
-        pdfUrl: "/src/assets/pdfs/caseStudy/turf-farm-nursery-program.pdf",
-        content: {
-            introduction: "NBS Sustainable Sports Turf programs for Turf Farms and Turf Nurseries can be integrated with your current activities or applied separately for a trial comparison.",
-            sections: [
-                {
-                    title: "Planting Program",
-                    description: "Ideally, arrange to have an NBS Soil Test prior to planting/seeding new turf. Implement the recommendations to fine-tune your soil conditioning and turf nutrition program. Re-test soil every 2 years.",
-                    subsections: [
-                        {
-                            title: "Pre-Plant Solids program",
-                            items: [
-                                "NBS BioStimulator™ / NBS ReSiliCa™ at 60 kg/acre (150 kg/ha) pre-plant",
-                                "NPK granular program at 80% of current application rate",
-                                "NBS Sapphire™ granules at 5% w/w, mixed and spread with granular fertilisers",
-                                "Spread alone or mixed with compost and soil conditioners",
-                                "Pre-plant incorporation of compost and minerals to 15 cm.",
-                                "Supplies essential nutrients, reduces salinity issues, strengthens turf rhizomes, stolons and leaves and feeds soil micro-organisms.",
-                                "Maintain normal application frequency, and gradually reduce NPK fertiliser rates as required."
-                            ]
-                        },
-                        {
-                            title: "Foliar program",
-                            description: "At planting and repeat every 2 weeks.",
-                            items: [
-                                "NBS Micro-Shield™ at 200 g/100 Litres",
-                                "NBS Root Max™ or NBS CMB™ at 500 mL/100 L",
-                                "NBS K-35™ at 300 mL/100 L",
-                                "NBS Max Spreader™ at 25 mL/100 L"
-                            ]
-                        },
-                        {
-                            title: "Armyworm management",
-                            description: "At first sight of Armyworm activity, spray the fairways, tees and greens fortnightly with:",
-                            items: [
-                                "NBS Emulsified Neem Oil™ at 200 mL/100 L water, alone, or",
-                                "Alternated with NBS Bug Shield™ at 200 mL/100 L water"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    title: "Established Turf",
-                    description: "Ideally take an NBS Soil Test once every 2 years. Implement the recommendations to fine-tune your soil conditioning and turf nutrition program.",
-                    subsections: [
-                        {
-                            title: "Solids Program",
-                            items: [
-                                "NPK granular program at 80% of current application rate and frequency",
-                                "NBS Sapphire™ granules at 5% w/w, mixed and spread with granular fertilisers",
-                                "NBS BioStimulator™ / NBS ReSiliCa™ spread at 150 kg/ha (every 60 days)"
-                            ]
-                        },
-                        {
-                            title: "Soil/Foliar Spray",
-                            description: "Treatment of thatch buildup and disease control. Improved drainage and aeration and extension of turf root systems.",
-                            items: [
-                                "NBS Bio-Protect™ at 500 mL/100 Litres",
-                                "NBS Micro-Shield™ at 200 g/100 Litres",
-                                "NBS Root Max™ or NBS CMB™ at 500 mL/100 L",
-                                "NBS K-35™ at 300 mL/100 L",
-                                "NBS Max Spreader™ at 25 mL/100 L"
-                            ],
-                            notes: [
-                                "Add NBS Micro-Nutrient™ at 1.5 g/L (max 1 kg/ha), to a foliar spray 3-4 times per year.",
-                                "Once active root disease has been controlled, the NBS Bio-Protect™ application frequency can be reduced.",
-                                "NBS Micro-Shield™ will tolerate many common fungicides (except carbendazim and captan), so reducing the fungicide frequency will assist with improving beneficial fungal activity and alleviating Black layer.",
-                                "We advise reducing the frequency of fungicide applications to once every 2 weeks, or spraying only when needed, and avoid fungicides when applying the NBS treatments."
-                            ]
-                        },
-                        {
-                            title: "With Pesticide Applications Include",
-                            items: [
-                                "NBS Yield Booster™ at 200-400 mL/100 Litres",
-                                "NBS Emulsified Neem Oil™ at 200-300 mL/100 Litres",
-                                "NBS Max Spreader™ at 25 mL/100 Litres"
-                            ],
-                            optional: [
-                                "Optional addition, if rapid control/repellency is required: NBS Bug Shield™ at 200 mL/100 Litres"
-                            ]
-                        }
-                    ]
-                }
-            ],
-            copyright: "Copyright 2025 NBS Singapore Pte Ltd. Do not copy or distribute without written permission.",
-            keyResults: [
-                "Reduced Chemical Usage",
-                "Improved Turf Health",
-                "Better Disease Resistance",
-                "Enhanced Root Development",
-                "Sustainable Management"
-            ]
-        }
-    },
+    // {
+    //     id: "turf-farm-nursery-program",
+    //     title: "NBS Turf Farm & Nursery Program",
+    //     subtitle: "Sustainable Sports Turf Programs for Turf Farms and Nurseries",
+    //     description: "Comprehensive guide for implementing NBS sustainable turf management solutions.",
+    //     image: "https://images.unsplash.com/photo-1572894234976-13cf71933e95?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80",
+    //     date: "March 2025",
+    //     location: "Singapore",
+    //     products: ["Bio-Stimulator", "ReSiliCa", "Micro-Shield", "Root Max", "K-35", "Max Spreader", "Sapphire", "Bug Shield", "Yield Booster"],
+    //     pdfUrl: "/src/assets/pdfs/caseStudy/turf-farm-nursery-program.pdf",
+    //     content: {
+    //         introduction: "NBS Sustainable Sports Turf programs for Turf Farms and Turf Nurseries can be integrated with your current activities or applied separately for a trial comparison.",
+    //         sections: [
+    //             {
+    //                 title: "Planting Program",
+    //                 description: "Ideally, arrange to have an NBS Soil Test prior to planting/seeding new turf. Implement the recommendations to fine-tune your soil conditioning and turf nutrition program. Re-test soil every 2 years.",
+    //                 subsections: [
+    //                     {
+    //                         title: "Pre-Plant Solids program",
+    //                         items: [
+    //                             "NBS BioStimulator™ / NBS ReSiliCa™ at 60 kg/acre (150 kg/ha) pre-plant",
+    //                             "NPK granular program at 80% of current application rate",
+    //                             "NBS Sapphire™ granules at 5% w/w, mixed and spread with granular fertilisers",
+    //                             "Spread alone or mixed with compost and soil conditioners",
+    //                             "Pre-plant incorporation of compost and minerals to 15 cm.",
+    //                             "Supplies essential nutrients, reduces salinity issues, strengthens turf rhizomes, stolons and leaves and feeds soil micro-organisms.",
+    //                             "Maintain normal application frequency, and gradually reduce NPK fertiliser rates as required."
+    //                         ]
+    //                     },
+    //                     {
+    //                         title: "Foliar program",
+    //                         description: "At planting and repeat every 2 weeks.",
+    //                         items: [
+    //                             "NBS Micro-Shield™ at 200 g/100 Litres",
+    //                             "NBS Root Max™ or NBS CMB™ at 500 mL/100 L",
+    //                             "NBS K-35™ at 300 mL/100 L",
+    //                             "NBS Max Spreader™ at 25 mL/100 L"
+    //                         ]
+    //                     },
+    //                     {
+    //                         title: "Armyworm management",
+    //                         description: "At first sight of Armyworm activity, spray the fairways, tees and greens fortnightly with:",
+    //                         items: [
+    //                             "NBS Emulsified Neem Oil™ at 200 mL/100 L water, alone, or",
+    //                             "Alternated with NBS Bug Shield™ at 200 mL/100 L water"
+    //                         ]
+    //                     }
+    //                 ]
+    //             },
+    //             {
+    //                 title: "Established Turf",
+    //                 description: "Ideally take an NBS Soil Test once every 2 years. Implement the recommendations to fine-tune your soil conditioning and turf nutrition program.",
+    //                 subsections: [
+    //                     {
+    //                         title: "Solids Program",
+    //                         items: [
+    //                             "NPK granular program at 80% of current application rate and frequency",
+    //                             "NBS Sapphire™ granules at 5% w/w, mixed and spread with granular fertilisers",
+    //                             "NBS BioStimulator™ / NBS ReSiliCa™ spread at 150 kg/ha (every 60 days)"
+    //                         ]
+    //                     },
+    //                     {
+    //                         title: "Soil/Foliar Spray",
+    //                         description: "Treatment of thatch buildup and disease control. Improved drainage and aeration and extension of turf root systems.",
+    //                         items: [
+    //                             "NBS Bio-Protect™ at 500 mL/100 Litres",
+    //                             "NBS Micro-Shield™ at 200 g/100 Litres",
+    //                             "NBS Root Max™ or NBS CMB™ at 500 mL/100 L",
+    //                             "NBS K-35™ at 300 mL/100 L",
+    //                             "NBS Max Spreader™ at 25 mL/100 L"
+    //                         ],
+    //                         notes: [
+    //                             "Add NBS Micro-Nutrient™ at 1.5 g/L (max 1 kg/ha), to a foliar spray 3-4 times per year.",
+    //                             "Once active root disease has been controlled, the NBS Bio-Protect™ application frequency can be reduced.",
+    //                             "NBS Micro-Shield™ will tolerate many common fungicides (except carbendazim and captan), so reducing the fungicide frequency will assist with improving beneficial fungal activity and alleviating Black layer.",
+    //                             "We advise reducing the frequency of fungicide applications to once every 2 weeks, or spraying only when needed, and avoid fungicides when applying the NBS treatments."
+    //                         ]
+    //                     },
+    //                     {
+    //                         title: "With Pesticide Applications Include",
+    //                         items: [
+    //                             "NBS Yield Booster™ at 200-400 mL/100 Litres",
+    //                             "NBS Emulsified Neem Oil™ at 200-300 mL/100 Litres",
+    //                             "NBS Max Spreader™ at 25 mL/100 Litres"
+    //                         ],
+    //                         optional: [
+    //                             "Optional addition, if rapid control/repellency is required: NBS Bug Shield™ at 200 mL/100 Litres"
+    //                         ]
+    //                     }
+    //                 ]
+    //             }
+    //         ],
+    //         copyright: "Copyright 2025 NBS Singapore Pte Ltd. Do not copy or distribute without written permission.",
+    //         keyResults: [
+    //             "Reduced Chemical Usage",
+    //             "Improved Turf Health",
+    //             "Better Disease Resistance",
+    //             "Enhanced Root Development",
+    //             "Sustainable Management"
+    //         ]
+    //     }
+    // },
     {
         id: "sapphire-granules",
         title: "NBS Sapphire Granules",

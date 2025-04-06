@@ -101,52 +101,59 @@ export default function ProductDetail() {
         const researchData = {
             "max_spreader": {
                 type: "efficacy-data",
-                title: "Efficacy Data",
-                description: "Trial data showing the effectiveness of Max Spreader in various applications.",
+                title: "Efficacy Data – NBS Max Spreader",
+                description: "NBS Max Spreader has demonstrated exceptional performance in enhancing spray coverage and penetration. The efficacy data shows improved nutrient absorption and reduced surface tension, leading to better distribution of agricultural inputs. This results in more efficient use of pesticides and foliar nutrients, ultimately contributing to improved crop health and reduced input costs.",
                 icon: <BarChart2 className="w-5 h-5" />,
-                pdfUrl: "/src/assets/pdfs/TDS-NBS-MAX-SPREADER.pdf"
+                pdfUrl: "/src/assets/pdfs/caseStudy/TDS-NBS-MAX-SPREADER.pdf",
+                caseStudyLink: "/media/case-study/max-spreader-efficacy"
             },
             "sapphire-granules": {
                 type: "article",
-                title: "Article on Sapphire Granules (Humates)",
-                description: "Detailed article explaining the benefits and applications of Sapphire Granules.",
+                title: "NBS Sapphire Granules (Humates)",
+                description: "Quality humates from Leonardite source with 85-90% solubility and minimum 75% w/w potassium humate content. The study demonstrates superior performance in nutrient chelation, soil conditioning, and fertilizer efficiency. Features DIY liquid humic solution option for cost-effective application, with proven results in improving soil structure and plant nutrient uptake.",
                 icon: <BookOpen className="w-5 h-5" />,
-                pdfUrl: "/src/assets/pdfs/article-sapphire-granules.pdf"
+                pdfUrl: "/src/assets/pdfs/caseStudy/article-sapphire-granules.pdf",
+                caseStudyLink: "/media/case-study/sapphire-granules"
             },
             "micro-shield": {
                 type: "research-trial",
-                title: "Research Trial on Grapes",
-                description: "Results from research trials showing the effectiveness of Micro-Shield on grape crops.",
+                title: "Microshield Grapes Research Trial",
+                description: "Research trial demonstrating Microshield's effectiveness in controlling post-harvest fungal damage in grapes. Contains Trichoderma viride spores that effectively combat seed and soil-borne plant pathogens. The trial showed significant reduction in post-harvest losses, with improved control over Alterneria, Claudosporium, Aspergillus, and other fungal infections, leading to better grape quality and extended shelf life.",
                 icon: <FileText className="w-5 h-5" />,
-                pdfUrl: "/src/assets/pdfs/research-trial-grapes.pdf"
+                pdfUrl: "/src/assets/pdfs/caseStudy/research-trial-grapes.pdf",
+                caseStudyLink: "/media/case-study/microshield-grapes-trial"
             },
             "bio-stimulator": {
                 type: "case-study",
                 title: "Paddy Case Study",
-                description: "Case study showing the effectiveness of Bio-Stimulator in paddy cultivation.",
+                description: "The NBS Bio Stimulator significantly improved soil fertility and microbial activity in paddy cultivation. Research showed enhanced root development and organic matter content, leading to better nutrient absorption and 30% increased yield. Key benefits include improved soil structure, enhanced microbial diversity, and sustainable farming practices.",
                 icon: <FileCheck className="w-5 h-5" />,
-                pdfUrl: "/src/assets/pdfs/paddy-case-study.pdf"
+                pdfUrl: "/src/assets/pdfs/caseStudy/paddy-case-study.pdf",
+                caseStudyLink: "/media/case-study/paddy-case-study"
             },
             "bug-shield": {
                 type: "case-study",
                 title: "Paddy Case Study",
-                description: "Case study showing the effectiveness of Bug Shield in paddy cultivation.",
+                description: "NBS Bug Shield demonstrated exceptional results in paddy cultivation by strengthening natural plant defenses and promoting stress-free growth. The case study revealed reduced pesticide requirements, improved plant vigor, and enhanced crop resilience. The product contributed to healthier crops with minimal chemical inputs.",
                 icon: <FileCheck className="w-5 h-5" />,
-                pdfUrl: "/src/assets/pdfs/paddy-case-study.pdf"
+                pdfUrl: "/src/assets/pdfs/caseStudy/paddy-case-study.pdf",
+                caseStudyLink: "/media/case-study/paddy-case-study"
             },
             "yield-booster": {
                 type: "case-study",
                 title: "Paddy Case Study",
-                description: "Case study showing the effectiveness of Yield Booster in paddy cultivation.",
+                description: "NBS Yield Booster proved highly effective in paddy cultivation, showing a 25-30% increase in yield. The case study demonstrated improved grain quality, enhanced nutrient uptake, and better chlorophyll production. The product's application resulted in larger, shinier grains with superior taste and nutritional value.",
                 icon: <FileCheck className="w-5 h-5" />,
-                pdfUrl: "/src/assets/pdfs/paddy-case-study.pdf"
+                pdfUrl: "/src/assets/pdfs/caseStudy/paddy-case-study.pdf",
+                caseStudyLink: "/media/case-study/paddy-case-study"
             },
             "bio-protect": {
                 type: "case-study",
                 title: "Paddy Case Study",
-                description: "Case study showing the effectiveness of Bio-Protect in paddy cultivation.",
+                description: "NBS Bio Protect showed remarkable results in paddy cultivation by enhancing plant immunity and stress tolerance. The case study demonstrated improved plant health, reduced disease susceptibility, and better overall crop quality. The product contributed to a 30-day earlier maturity and significant reduction in pesticide usage.",
                 icon: <FileCheck className="w-5 h-5" />,
-                pdfUrl: "/src/assets/pdfs/paddy-case-study.pdf"
+                pdfUrl: "/src/assets/pdfs/caseStudy/paddy-case-study.pdf",
+                caseStudyLink: "/media/case-study/paddy-case-study"
             }
         };
 
@@ -180,7 +187,7 @@ export default function ProductDetail() {
                     <div className="md:col-span-7 lg:col-span-6">
                         <div className="space-y-6">
                             <div>
-                                <h1 className="text-3xl font-bold text-[#293E31] mb-4">{product.name}</h1>
+                                <h1 className="text-3xl font-bold text-[#293E31] uppercase mb-4">{product.name}</h1>
                                 <div className="flex flex-wrap gap-2 mb-4">
                                     <Link to={`/products/${category}`} className="bg-[#293E31] text-white px-3 py-1 rounded-full text-sm font-medium uppercase">
                                         {productCategories[category]?.name || category}
@@ -512,11 +519,22 @@ export default function ProductDetail() {
                                                                 <span className="text-sm font-medium text-[#FE8340] uppercase tracking-wider">{data.type.replace(/-/g, ' ')}</span>
                                                                 <h3 className="text-xl font-semibold text-[#293E31] mt-1">{data.title}</h3>
                                                                 <p className="text-gray-600 mt-3">{data.description}</p>
+                                                                {data.caseStudyLink && (
+                                                                    <Link
+                                                                        to={data.caseStudyLink}
+                                                                        className="inline-flex items-center gap-2 text-[#FE8340] hover:text-[#e06724] mt-4 font-medium"
+                                                                    >
+                                                                        View Full Case Study
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                                                                        </svg>
+                                                                    </Link>
+                                                                )}
                                                             </div>
                                                         </div>
                                                     </div>
 
-                                                    <div className="w-full md:w-auto">
+                                                    <div className="w-full md:w-auto flex flex-col gap-3">
                                                         <a
                                                             href={data.pdfUrl}
                                                             target="_blank"

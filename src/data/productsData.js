@@ -394,7 +394,7 @@ export const productCategories = {
                         id: "bio-stimulator",
                         name: "NBS BIO STIMULATOR™",
                         type: "Organic Granular Fertiliser for Soil Application",
-                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/catalog/Humates/ll020sm9oywnpjlcrssh",
+                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/golf/ov6inrw5rp0g6whq0a1b",
                         description: "NBS BIO STIMULATOR™ is formulated with organic matter, organic calcium, and organic carbon. It disperses in the soil upon contact with moisture, releasing nutrients gradually while chelating soil nutrients to bolster plant absorption.",
                         suitableFor: "Grain crops, vegetables, fruit crops, lawns, turf, floriculture, and ornamental plants.",
                         keyBenefits: [
@@ -521,7 +521,7 @@ export const productCategories = {
                         id: "pseudo-tech",
                         name: "NBS PSEUDO TECH™",
                         type: "Microbial and Plant Immunity Enhancer",
-                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/catalog/Microbes%20and%20bio%20stimulants/x5cnezjr7ilczffbztbx",
+                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/golf/p0ekd8fyycn7ionls8p5",
                         description: "NBS PSEUDO TECH™ is a microbial-based solution containing Pseudomonas fluorescens, a naturally occurring bacterium known to promote plant health. It works by stimulating plant immunity and supporting beneficial microbial activity in the soil, contributing to overall plant vigour. This environmentally friendly product is safe for use around children, pets, and beneficial organisms.",
                         suitableFor: "All crops and can be applied as a soil drench or foliar spray.",
                         keyPerformance: [
@@ -622,7 +622,7 @@ export const productCategories = {
                         id: "root-max-turf",
                         name: "NBS ROOT MAX™",
                         type: "Organic Fertiliser Foliar spray",
-                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/catalog/Liquid/hhz69fqxzm9uoqatgaqm",
+                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/golf/hfmgrjc6duliixuvfvzd",
                         description: "NBS ROOT MAX™ is a premium amenity turf and soil enhancer tonic, formulated with Organic Matter, Organic Carbon, and Organic NPK to improve soil structure, nutrient availability, and overall landscape health.",
                         suitableFor: "Lawns, sports turf, golf courses, and ornamental landscapes.",
                         keyPerformance: [
@@ -676,7 +676,7 @@ export const productCategories = {
                         id: "yield-booster",
                         name: "NBS YIELD BOOSTER™",
                         type: "Organic Fertiliser Foliar Spray",
-                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/catalog/Liquid/h2g5ozc2us3smkue1zwq",
+                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/golf/gxf0l4balwmfeummdhq0",
                         description: "NBS YIELD BOOSTER™ is an organic foliar fertiliser containing organic matter, plant-derived organic carbon sources, organic N-P-K, and plant extract auxins that enhance nutrient absorption, improve plant resilience and boost overall turf quality.",
                         suitableFor: "Lawns, turf, ornamental plants, and landscapes.",
                         keyPerformance: [
@@ -705,7 +705,7 @@ export const productCategories = {
                         id: "k-35",
                         name: "NBS K-35™",
                         type: "Organic Fertiliser Foliar Spray",
-                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/catalog/Liquid/kmx8blxw1tytrysukesw",
+                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/golf/ztaekvqclxafdifebpva",
                         description: "NBS K-35™ is a high-analysis, pH-buffered liquid potassium complexed with organic acids, designed to overcome pH-related uptake issues and provide a super-available form of potassium to the turf.",
                         suitableFor: "Lawns, turf, ornamental plants, and landscapes.",
                         keyPerformance: [
@@ -746,7 +746,7 @@ export const productCategories = {
                         id: "cmb",
                         name: "NBS CMB™",
                         type: "Advanced Fertiliser for Photosynthesis & Cell Division – Foliar & Soil Application",
-                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/catalog/Liquid/ckmg8qtaioqxwlfz6pg9",
+                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/golf/xzrasobew8wjnqxoyast",
                         description: "NBS CMB™ is a synergistic blend of organic calcium, magnesium, and boron, enriched with natural complexing agents and plant growth promotants, designed to enhance turf strength, promote uniform growth, and improve overall resilience",
                         suitableFor: "Turf, ornamental plants, shrubs, and trees.",
                         keyPerformance: [
@@ -795,7 +795,7 @@ export const productCategories = {
                         id: "silicare",
                         name: "NBS SILICARE™",
                         type: "Revolutionary Rapid-Uptake Silica Fertiliser",
-                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/catalog/Liquid/fkvdjixre7egkmunb6tb",
+                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/golf/kzazyb3wolzw9jgsgjb4",
                         description: "NBS SILICARE™ is a silica-based fertiliser in its 99.99% bio-available form, comprising Ortho Silicic Acid, Silicon as SiO2, and Potassium as K2O. Silica is a recognised immune elicitor, reducing the need for chemical intervention.",
                         suitableFor: "Grain crops, vegetables, fruit crops, orchards, vineyards, turf, floriculture, and ornamental plants",
                         keyPerformance: [
@@ -816,7 +816,7 @@ export const productCategories = {
                         id: "size-plus",
                         name: "NBS SIZE PLUS™",
                         type: "Organic Fertiliser Foliar Spray",
-                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/catalog/Liquid/w2ocaigu5s5gts2ebtjg",
+                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/golf/tr0gzjoyoclq4ri76pld",
                         description: "NBS SIZE PLUS™ is formulated with organic potassium (K), organic matter, organic nitrogen (N), and bio-stimulants derived from plant extracts to increase the size and weight of fruits and vegetables. Its 100% water-soluble formula is easily absorbed through leaves, fruits, and roots, promoting cell division, elongation, and overall growth for higher yields.",
                         suitableFor: "All fruits, vegetables, and tuber crops such as potatoes, carrots, and sugar beets",
                         keyPerformance: [
@@ -839,7 +839,7 @@ export const productCategories = {
                         id: "max_spreader",
                         name: "NBS MAX SPREADER™",
                         type: "Organic Wetting Agent & Spreader",
-                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/catalog/Liquid/vsfb9nikpe5asu9demwy",
+                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/golf/wr4afc16m8zd6cne2seq",
                         description: "NBS MAX SPREADER™ is an economical, versatile, and highly effective spreader formulated from natural materials, including organic carbon and non-ionic silicon compounds derived from rice husk. It is designed to enhance the distribution of liquid fertilisers and other soil treatments, ensuring even coverage and improved nutrient availability.",
                         suitableFor: "Lawns, golf courses, sports turf, and ornamental landscapes.",
                         keyPerformance: [
@@ -881,7 +881,7 @@ export const productCategories = {
                         id: "micro-nutrient",
                         name: "NBS MICRO NUTRIENT™",
                         type: "Organic Micro-Nutrient Fertiliser",
-                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/catalog/Solids/mnrqqglqzs8quyrgs59l",
+                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/golf/liwbcmpj4mxys1qjqopm",
                         description: "NBS MICRO NUTRIENT™ is an organic amino chelate fertiliser formulated for foliar spray and soil application. It combines natural organic matter and plant extracts with a complete amino acid-chelated micro-nutrient blend for maximum bioavailability, tolerability, and absorption. This formulation includes Fe, Mg, Zn, Cu, Mn, B, Mo, and Organic Nitrogen, providing essential nutrients to bolster plant health and productivity.",
                         suitableFor: "Lawns, turf, ornamental plants, sports pitches and landscapes.",
                         keyPerformance: [
@@ -913,7 +913,7 @@ export const productCategories = {
                         id: "silicon-Fertiliser",
                         name: "NBS SILICON Fertiliser™",
                         type: "Organic Granular Fertiliser",
-                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/catalog/Solids/qzsxsrohhymur4khp8ni",
+                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/golf/lmkdqneegap6nv2fn9wy",
                         description: "NBS SILICON FERTILIZER™ is a soil-applied formula enriched with Organic Matter, SiO₂, CaO, MgO, Zn, and Cu. It contains silicon in an amorphous form, ensuring safe handling and application, unlike crystalline silicon, which may cause respiratory discomfort or adverse reactions. Soon after application, NBS SILICON FERTILISER™ will disperse into fine particles in contact with moisture, releasing Silicon into the soil. The silicon component attaches to the soil colloids and prevents phosphorus from being locked- up soon after application. The organic matter content of NBS Silicon Fertiliser™ will help complex soil nutrients to extend their availability.  Silicon has an important role in the uptake and vascular transport of mineral nutrients and can greatly improve the mechanical strength and plant resistance to fungal diseases and  wear and tear with intensive use.",
                         suitableFor: "Golf courses, Lawns, sports turf, ornamental plants, and landscapes.",
                         keyPerformance: [
@@ -948,7 +948,7 @@ export const productCategories = {
                         id: "neem-Fertiliser",
                         name: "NBS NEEM Fertiliser™",
                         type: "Organic Fertiliser for Turf and Ornamental Applications",
-                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/catalog/Solids/mgv3heiqwbtbiqzkn2bd",
+                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/golf/kuuyyb21loladbrn8z6z",
                         description: "NBS NEEM Fertiliser™ is a premium organic fertiliser formulated with organic matter, nitrogen, carbon, phosphorus, potassium, and azadirachtin. It revitalises soil health and supports plant growth, offering an eco-friendly solution to improve soil structure and bolster plant resilience against environmental stresses.",
                         suitableFor: "golf courses (greens, tees, and fairways), sports turf, professional lawns, and ornamental landscapes. It's particularly effective in high-traffic areas, stress-prone environments, and wherever premium turf quality is required",
                         keyPerformance: [
@@ -976,7 +976,7 @@ export const productCategories = {
                         id: "resilica-soil-conditioner",
                         name: "NBS ReSilica™",
                         type: "Advanced Organic Turf & Landscape Fertilizer",
-                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/catalog/Solids/d0dnerduqriyh7666ffu",
+                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/golf/xmc3viz038gnttpagvp0",
                         description: "NBS ReSilica™ is a premium organic fertilizer and soil conditioner specifically formulated for high-performance turf and ornamental landscapes. Its unique composition includes 12% calcium, 8-10% silicon (SiO2), 35-40% organic carbon, and 12% sulphur, along with plant biostimulants and a balanced NPK ratio. This innovative blend strengthens plants' physical and biochemical defences, enhances nutrient uptake, and improves overall soil health.",
                         suitableFor: "Golf courses, sports turf, lawns, ornamental landscapes, fairways, and trees. It's particularly effective in high-traffic areas, stress-prone environments, and wherever premium turf quality is required. NBS ReSilica™ is also excellent for maintaining the health and vigor of ornamental trees and shrubs in landscaped areas.",
                         keyBenefits: [
@@ -1013,7 +1013,7 @@ export const productCategories = {
                         id: "green-compost",
                         name: "NBS Green Compost™",
                         type: "Sustainable Compost, Fertiliser & Soil Conditioner",
-                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/catalog/Solids/iif8hgvdf2wjq9jhktur",
+                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/golf/a46tx63qzhy26absgxbw",
                         description: "Produced from recycled green waste under controlled conditions, NBS Green Compost™ is a nutrient-rich, humified compost that enhances soil fertility and supports beneficial soil microbiology. It is carefully screened to remove larger particles, retaining the essential minerals and biology that promote plant health. Suitable for various agricultural and landscaping applications, including eco-mulching and soil conditioning.",
                         suitableFor: "Turf, lawns, ornamental plants, and landscapes",
                         keyBenefits: [
@@ -1051,7 +1051,7 @@ export const productCategories = {
                         id: "sapphire-granules",
                         name: "NBS SAPPHIRE GRANULES™",
                         type: "Organic Fertiliser for Soil Application",
-                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/catalog/Humates/y54m5ak4j7jsgqlawqja",
+                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/golf/tphsez4k2txlcpcvfdcs",
                         description: "NBS SAPPHIRE GRANULES™ are a high-quality water-soluble potassium humate product derived from leonardite, designed to improve soil structure and nutrient availability in turf and landscape settings.",
                         suitableFor: "Lawns, golf courses, sports turf, and ornamental landscapes.",
                         keyPerformance: [
@@ -1122,7 +1122,7 @@ export const productCategories = {
                         id: "sapphire-liquid",
                         name: "NBS SAPPHIRE LIQUID™",
                         type: "Concentrated Liquid Carbon for Fertiliser Stability, Soil Activation & Growth Enhancement",
-                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/catalog/Humates/o16rtaetd8orogvlijev",
+                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/golf/jy7cdxspvrxvowlaizmg",
                         description: "NBS SAPPHIRE LIQUID™ is a powerful liquid carbon formulation designed to stabilise fertilisers, enhance nutrient absorption, activate soil microbiology, and condition the soil. It prevents nitrogen loss, reduces leaching, buffers sodium, and improves plant root development for sustained health and vigor.",
                         suitableFor: "Golf courses, sports turf, landscapes, broadacre crops, fruit crops, pasture, vegetable, and grain crops.",
                         keyPerformance: [
@@ -1164,7 +1164,7 @@ export const productCategories = {
                         id: "bug-shield",
                         name: "NBS BUG SHIELD™",
                         type: "Organic Botanical Biostimulant",
-                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/catalog/Microbes%20and%20bio%20stimulants/ow3grvm2wqiacbmszxhp",
+                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/golf/r7dg3m1z1mlflx27sbyt",
                         description: "NBS BUG SHIELD™ is an organic botanical formulation composed of organic matter, organic carbon, natural NPK (Nitrogen, Phosphorus, Potassium), carrier oils, and spice oils. This unique blend not only serves as an effective plant nutrient but also simulates plants' vigour against various environmental stressors, promoting overall plant health and vitality.",
                         suitableFor: "Golf courses, lawns, sports turf, and ornamental landscapes.",
                         keyPerformance: [
@@ -1195,7 +1195,7 @@ export const productCategories = {
                         id: "bio-guard",
                         name: "NBS BIO-GUARD™",
                         type: "Organic Bio-stimulant",
-                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/catalog/Microbes%20and%20bio%20stimulants/tflairb1hgwjyhgsbwme",
+                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/golf/yprvsrszfyvbicxjptg5",
                         description: "NBS BIO-GUARD™ is an innovative organic botanical formulation designed to enhance turf and ornamental plant health in high-performance environments. Its unique blend of natural ingredients, including Azadirachtin and a silicone-based spreader, offers superior wetting and penetration properties to support plant resilience and soil vitality.",
                         suitableFor: "Golf course greens, tees, and fairways, Sports turf and stadium pitches, High-traffic lawns and ornamental landscapes, Professional landscape installations.",
                         keyPerformance: [
@@ -1231,7 +1231,7 @@ export const productCategories = {
                         id: "bio-protect",
                         name: "NBS BIO PROTECT™",
                         type: "Organic Mineral Solution for Golf Courses, Lawns & Turf Health",
-                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/catalog/Microbes%20and%20bio%20stimulants/dis31j1nrajfrrsthqsc",
+                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/golf/bpc6phct7yz6e9y7nbxt",
                         description: "NBS BIO PROTECT™ is an organically certified formulation designed to enhance turf and landscape vitality. Combining organic matter with mineral potassium and phosphorus, it supports plant health, strengthens natural defences, and promotes robust growth.",
                         suitableFor: "Lawns, golf courses, sports turf, and ornamental landscapes.",
                         keyPerformance: [
@@ -1308,7 +1308,7 @@ export const productCategories = {
                         id: "bio-defender",
                         name: "NBS BIO-DEFENDER™",
                         type: "Naturally occurring Microbial",
-                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/catalog/Microbes%20and%20bio%20stimulants/tvvkjrxp9mshh1cbuxev",
+                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/golf/q2mcy0frfn0xfd6tfn0j",
                         description: "BIO-DEFENDER™ is a talc-based formulation enriched with naturally occurring beneficial microbes, including Beauveria bassiana, Metarhizium anisopliae, and Lecanicillium lecanii. It is designed to enhance the soil microbiome and promote overall plant health in turf and landscape settings.",
                         suitableFor: "Golf courses, lawns, sports turf, and ornamental landscapes.",
                         keyPerformance: [
@@ -1344,7 +1344,7 @@ export const productCategories = {
                         id: "microshield",
                         name: "NBS MICROSHIELD™",
                         type: "Beneficial Microbial Bio-Inoculant for Soil & Plant Health",
-                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/catalog/Microbes%20and%20bio%20stimulants/rnfvilmcn9rkv8x6rt7f",
+                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/golf/x8ajnmav9k2ukd2fv2bj",
                         description: "NBS MICROSHIELD™ is a talc-based formulation containing beneficial microorganisms, including Trichoderma harzianum, Trichoderma lignorum, and Trichoderma koningii. These naturally occurring microbes are known to promote root growth, enhance nutrient uptake, and improve overall plant health. This product is environmentally friendly and safe for use around children, pets, and beneficial organisms.",
                         suitableFor: "Lawns, golf courses, sports turf, and ornamental landscapes.",
                         keyPerformance: [
@@ -1354,7 +1354,7 @@ export const productCategories = {
                             "Soil Enrichment Catalyst: Improves soil aeration, structure, and organic matter retention and supports humus formation.",
                             "Eco-Conscious Formula: Safe for people, pets, and the environment—zero harmful residues.",
                         ],
-                            applicationRates: {
+                        applicationRates: {
                             table: true,
                             data: [
                                 {
@@ -1374,7 +1374,7 @@ export const productCategories = {
                         id: "speed-compost",
                         name: "NBS SPEED COMPOST™",
                         type: "Organic Compost Accelerator for Rapid Decomposition & Soil Enrichment",
-                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/catalog/Microbes%20and%20bio%20stimulants/vuvjll48ry7zedvhtz3q",
+                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/golf/ajzw7pvqsazzhtggfjgx",
                         description: "NBS SPEED COMPOST™ is a powerful organic manure formulation enriched with cellulolytic composting microbes, including Azotobacter chroococcum, Bacillus polymyxa, Pseudomonas fluorescens, Trichoderma, and Chaetomium. These beneficial microorganisms actively break down organic matter, accelerating the composting process while improving soil fertility. By producing essential enzymes such as cellulases, proteases, and amylases, they efficiently convert raw compost, straw, and organic residues into nutrient-rich humus. This process enhances soil health, boosts microbial diversity, and maximizes nutrient availability, creating an ideal foundation for vigorous plant growth.",
                         suitableFor: "Golf courses, sports fields, ornamental landscapes, and turf renovation projects. Ideal for composting organic waste from turf maintenance, grass clippings, and landscape trimmings to improve soil quality and sustainability.",
                         keyPerformance: [
