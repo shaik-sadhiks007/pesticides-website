@@ -25,14 +25,15 @@ const slides = [
     ctaLink: "/products/sportsAndTurf"
   },
   {
-    image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/HomeBanner/x3pftpemnyrghxh7qaby",
+    image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/HomeBanner/crtpbiyshcupa97wvcej",
     title: "Tailored Solutions for Every Soil, Turf and Crop Challenge",
     subtitle: "Exceptional Programs for Agriculture, Horticulture and Amenity spaces",
     cta: "Get started today",
     ctaLink: "/services"
   },
   {
-    image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/HomeBanner/crtpbiyshcupa97wvcej",
+    image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/HomeBanner/x3pftpemnyrghxh7qaby",
+
     title: "Global Reach, Local Expertise: Seamless Exports Anywhere",
     subtitle: "Looking for a Franchise, Distributorship, or Collaboration? We Deliver Bulk Supplies and Build Partnerships Worldwide with Ease",
     cta: "Partner with Us Today",
@@ -67,7 +68,7 @@ export function HomeBanner() {
       {/* Slides */}
       <div className="relative h-full overflow-hidden">
         {slides.map((slide, index) => {
-          
+
           return (
             <div
               key={index}
@@ -94,7 +95,7 @@ export function HomeBanner() {
                   {slide.subtitle}
                 </p>
                 <div>
-                  <Link 
+                  <Link
                     to={slides[currentSlide].ctaLink}
                     onClick={(e) => {
                       console.log('Navigating to:', slides[currentSlide].ctaLink);

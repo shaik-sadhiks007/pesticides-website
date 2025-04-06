@@ -85,7 +85,7 @@ export default function EmailUs() {
 
       <form action="https://formsubmit.co/shaik.sadhiks727@gmail.com" method="POST" className="space-y-6">
         {/* Customize your redirect */}
-        <input type="hidden" name="_next" value="http://localhost:5173/" />
+        <input type="hidden" name="_next" value={window.location.href}  />
         <input type="hidden" name="_subject" value="New Contact Form Submission" />
         <input type="hidden" name="_template" value="table" />
         

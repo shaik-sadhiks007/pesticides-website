@@ -417,14 +417,19 @@ export default function ProductDetail() {
                                     </p>
                                 </div>
 
-                                <form onSubmit={handleSubmit} className="space-y-6">
+                                <form action="https://formsubmit.co/vm.vmgroupeu@gmail.com" method="POST" className="space-y-6">
+                                    <input type="hidden" name="_subject" value={`Product Enquiry: ${product.name}`} />
+                                    <input type="hidden" name="_template" value="table" />
+                                    <input type="hidden" name="_next" value={window.location.href} />
+                                    <input type="hidden" name="product" value={product.name} />
+                                    <input type="hidden" name="product_category" value={productCategories[category]?.name || category} />
+                                    <input type="hidden" name="product_subcategory" value={productCategories[category]?.subcategories[subcategory]?.name || subcategory} />
+                                    
                                     <div>
                                         <Input
                                             type="text"
                                             name="fullName"
                                             placeholder="Your Full Name*"
-                                            value={formData.fullName}
-                                            onChange={handleInputChange}
                                             required
                                             className="w-full border-b-2 border-t-0 border-x-0 border-[#293E31] focus:border-[#FE8340] bg-transparent py-3 rounded-none focus:ring-0 placeholder:text-gray-500"
                                         />
@@ -434,8 +439,6 @@ export default function ProductDetail() {
                                             type="email"
                                             name="email"
                                             placeholder="Email Address*"
-                                            value={formData.email}
-                                            onChange={handleInputChange}
                                             required
                                             className="w-full border-b-2 border-t-0 border-x-0 border-[#293E31] focus:border-[#FE8340] bg-transparent py-3 rounded-none focus:ring-0 focus:outline-none focus:shadow-none placeholder:text-gray-500"
                                         />
@@ -445,11 +448,17 @@ export default function ProductDetail() {
                                             type="tel"
                                             name="phone"
                                             placeholder="Telephone Number*"
-                                            value={formData.phone}
-                                            onChange={handleInputChange}
                                             required
                                             className="w-full border-b-2 border-t-0 border-x-0 border-[#293E31] focus:border-[#FE8340] bg-transparent py-3 rounded-none focus:ring-0 placeholder:text-gray-500"
                                         />
+                                    </div>
+                                    <div>
+                                        <textarea
+                                            name="message"
+                                            placeholder="Your Message (Optional)"
+                                            rows="4"
+                                            className="w-full border-b-2 border-t-0 border-x-0 border-[#293E31] focus:border-[#FE8340] bg-transparent py-3 rounded-none focus:ring-0 placeholder:text-gray-500"
+                                        ></textarea>
                                     </div>
                                     <button
                                         type="submit"

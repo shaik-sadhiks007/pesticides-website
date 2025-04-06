@@ -78,7 +78,7 @@ export default function Services() {
           image={service.image}
           mobileImageFirst={service.mobileImageFirst}
           icon={service.icon}
-          // bgColor={"#FCF9F4"}
+        // bgColor={"#FCF9F4"}
         />
       ))}
 
@@ -96,9 +96,11 @@ export default function Services() {
             reliable services can transform your agricultural operations. Let's cultivate
             success together!
           </p>
-          <Button className="bg-[#FE8340] hover:bg-[#e06724] text-white px-8 py-3 cursor-pointer">
+          <Link to="/contact-us">
+            <Button className="bg-[#FE8340] hover:bg-[#e06724] text-white px-8 py-3 cursor-pointer">
               Contact Us <ChevronRight className="ml-2 h-5 w-5" />
             </Button>
+          </Link>
         </div>
       </section>
     </main>
