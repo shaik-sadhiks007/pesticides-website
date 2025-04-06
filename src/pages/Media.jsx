@@ -1,17 +1,45 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Button } from "../components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs"
 import { Play, Download, ChevronRight, Image as ImageIcon, FileText, BarChart2 } from "lucide-react"
 import ProductsBanner from "../assets/productImages/productBanner.jpg"
-import { Link } from "react-router-dom"
+import { Link, useParams, useLocation, useNavigate } from "react-router-dom"
 import { caseStudies } from "../data/caseStudies"
 
 const Media = () => {
     const [isLoaded, setIsLoaded] = useState(true)
+    const { category } = useParams()
+    const location = useLocation()
+    const navigate = useNavigate()
+    const [activeTab, setActiveTab] = useState("blogs")
 
-    // Dummy blog data
+    // Determine active tab based on current route
+    useEffect(() => {
+        const path = location.pathname
+        if (path.includes("/media/case-study")) {
+            setActiveTab("case-studies")
+        } else if (path.includes("/media/gallery")) {
+            setActiveTab("gallery")
+        } else if (path.includes("/media/blogs")) {
+            setActiveTab("blogs")
+        }
+    }, [location])
+
+    // Handle tab change
+    const handleTabChange = (value) => {
+        setActiveTab(value)
+        if (value === "blogs") {
+            navigate("/media/blogs")
+        } else if (value === "case-studies") {
+            navigate("/media/case-study")
+        } else if (value === "gallery") {
+            navigate("/media/gallery")
+        }
+    }
+
+    // Dummy blog data with categories
     const blogs = [
         {
             id: 1,
@@ -19,7 +47,8 @@ const Media = () => {
             description: "Learn about the principles and benefits of nutrition farming for sustainable agriculture.",
             image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80",
             date: "March 15, 2024",
-            readTime: "5 min read"
+            readTime: "5 min read",
+            category: "agriculture"
         },
         {
             id: 2,
@@ -27,9 +56,33 @@ const Media = () => {
             description: "Discover the importance of soil balancing and how it affects crop yields and quality.",
             image: "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80",
             date: "March 10, 2024",
-            readTime: "7 min read"
+            readTime: "7 min read",
+            category: "agriculture"
+        },
+        {
+            id: 3,
+            title: "Sustainable Farming Practices",
+            description: "Explore eco-friendly farming methods that protect the environment while maintaining productivity.",
+            image: "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80",
+            date: "March 5, 2024",
+            readTime: "6 min read",
+            category: "sustainability"
+        },
+        {
+            id: 4,
+            title: "Reducing Carbon Footprint in Agriculture",
+            description: "Learn how modern farming techniques can help reduce greenhouse gas emissions.",
+            image: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80",
+            date: "February 28, 2024",
+            readTime: "8 min read",
+            category: "sustainability"
         }
     ]
+
+    // Filter blogs based on category if provided
+    const filteredBlogs = category 
+        ? blogs.filter(blog => blog.category === category)
+        : blogs
 
     // Dummy gallery data
     const galleryImages = [
@@ -393,7 +446,7 @@ const Media = () => {
 
             <div className="min-h-screen bg-[#DACEC2] py-12">
                 <div className="container mx-auto  max-w-6xl px-4">
-                    <Tabs defaultValue="blogs" className="space-y-8">
+                    <Tabs value={activeTab} onValueChange={handleTabChange} className="space-y-8">
                         <TabsList className="bg-[#FCF9F4]">
                             <TabsTrigger value="blogs">Blogs</TabsTrigger>
                             <TabsTrigger value="case-studies">Case Studies</TabsTrigger>
@@ -401,8 +454,14 @@ const Media = () => {
                         </TabsList>
 
                         <TabsContent value="blogs" className="space-y-8">
+                            {category && (
+                                <div className="mb-6">
+                                    <h2 className="text-2xl font-bold text-[#293E31] capitalize">{category} Blogs</h2>
+                                    <p className="text-gray-600">Explore our articles on {category}.</p>
+                                </div>
+                            )}
                             <div className="grid md:grid-cols-2 gap-6">
-                                {blogs.map((blog) => (
+                                {filteredBlogs.map((blog) => (
                                     <Link to={`/media/blog/${blog.id}`} key={blog.id}>
                                         <Card className="hover:shadow-lg transition-shadow duration-300 cursor-pointer">
                                             <div className="relative aspect-video">
@@ -411,6 +470,9 @@ const Media = () => {
                                                     alt={blog.title}
                                                     className="w-full h-full object-cover rounded-t-lg"
                                                 />
+                                                <div className="absolute top-4 right-4 bg-[#293E31] text-white text-xs px-3 py-1 rounded-full capitalize">
+                                                    {blog.category}
+                                                </div>
                                             </div>
                                             <CardHeader>
                                                 <div className="flex justify-between items-center text-sm text-gray-500 mb-2">

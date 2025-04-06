@@ -241,10 +241,169 @@ export default function Header() {
                 </div>
               </div>
             </div>
+            <div className="relative group">
+              <Link
+                to="/crop-programs"
+                className={`${location.pathname.startsWith("/crop-programs") ? "text-[#FE8340]" : "text-white hover:text-[#FE8340]"} text-sm xl:text-sm flex items-center gap-1 whitespace-nowrap`}
+                onClick={handleLinkClick}
+              >
+                Crop Programs
+                <ChevronDown size={16} className="transition-transform duration-300 group-hover:rotate-180" />
+              </Link>
+              {/* Crop Programs Dropdown Menu */}
+              <div className="absolute left-0 mt-2 w-[550px] lg:w-[600px] bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <div className="p-4 lg:p-6">
+                  <div className="grid grid-cols-2 gap-x-6 lg:gap-x-8">
+                    <div className="space-y-3 lg:space-y-4">
+                      <Link
+                        to="/crop-programs/maize"
+                        className="text-[#FE8340] uppercase font-semibold text-sm xl:text-base block hover:text-[#293E31] transition-colors flex items-center justify-between relative group-hover:text-[#293E31]"
+                        onClick={handleLinkClick}
+                      >
+                        <span>Maize Crop Program</span>
+                        <ChevronRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </Link>
+                      <Link
+                        to="/crop-programs/hydro-fast"
+                        className="text-[#FE8340] uppercase font-semibold text-sm xl:text-base block hover:text-[#293E31] transition-colors flex items-center justify-between relative group-hover:text-[#293E31]"
+                        onClick={handleLinkClick}
+                      >
+                        <span>NBS HYDRO FAST</span>
+                        <ChevronRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </Link>
+                      <Link
+                        to="/crop-programs/coffee"
+                        className="text-[#FE8340] uppercase font-semibold text-sm xl:text-base block hover:text-[#293E31] transition-colors flex items-center justify-between relative group-hover:text-[#293E31]"
+                        onClick={handleLinkClick}
+                      >
+                        <span>Litter Digestion Program - Coffee</span>
+                        <ChevronRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </Link>
+                      <Link
+                        to="/crop-programs/anti-frost"
+                        className="text-[#FE8340] uppercase font-semibold text-sm xl:text-base block hover:text-[#293E31] transition-colors flex items-center justify-between relative group-hover:text-[#293E31]"
+                        onClick={handleLinkClick}
+                      >
+                        <span>NBS Anti-frost Protocol</span>
+                        <ChevronRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </Link>
+                    </div>
+                    <div className="space-y-3 lg:space-y-4">
+                      <Link
+                        to="/crop-programs/downy-mildew"
+                        className="text-[#FE8340] uppercase font-semibold text-sm xl:text-base block hover:text-[#293E31] transition-colors flex items-center justify-between relative group-hover:text-[#293E31]"
+                        onClick={handleLinkClick}
+                      >
+                        <span>Downy Mildew Control Program</span>
+                        <ChevronRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </Link>
+                      <Link
+                        to="/crop-programs/nitrate-conversion"
+                        className="text-[#FE8340] uppercase font-semibold text-sm xl:text-base block hover:text-[#293E31] transition-colors flex items-center justify-between relative group-hover:text-[#293E31]"
+                        onClick={handleLinkClick}
+                      >
+                        <span>Nitrate Conversion Program</span>
+                        <ChevronRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </Link>
+                      <Link
+                        to="/crop-programs/rice"
+                        className="text-[#FE8340] uppercase font-semibold text-sm xl:text-base block hover:text-[#293E31] transition-colors flex items-center justify-between relative group-hover:text-[#293E31]"
+                        onClick={handleLinkClick}
+                      >
+                        <span>Rice Crop Program</span>
+                        <ChevronRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </Link>
+                      <Link
+                        to="/crop-programs/pepper"
+                        className="text-[#FE8340] uppercase font-semibold text-sm xl:text-base block hover:text-[#293E31] transition-colors flex items-center justify-between relative group-hover:text-[#293E31]"
+                        onClick={handleLinkClick}
+                      >
+                        <span>Phytophthora Control Program - Pepper</span>
+                        <ChevronRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <Link to="/about" className={`${isActive("/about")} text-sm xl:text-sm whitespace-nowrap`} onClick={handleLinkClick}>About</Link>
-            <Link to="/crop-programs" className={`${isActive("/crop-programs")} text-sm xl:text-sm whitespace-nowrap`} onClick={handleLinkClick}>Crop Programs</Link>
             <Link to="/services" className={`${isActive("/services")} text-sm xl:text-sm whitespace-nowrap`} onClick={handleLinkClick}>Services</Link>
-            <Link to="/media" className={`${isActive("/media")} text-sm xl:text-sm whitespace-nowrap`} onClick={handleLinkClick}>Media</Link>
+            <div className="relative group">
+              <Link
+                to="/media"
+                className={`${location.pathname.startsWith("/media") ? "text-[#FE8340]" : "text-white hover:text-[#FE8340]"} text-sm xl:text-sm flex items-center gap-1 whitespace-nowrap`}
+                onClick={handleLinkClick}
+              >
+                Media
+                <ChevronDown size={16} className="transition-transform duration-300 group-hover:rotate-180" />
+              </Link>
+              <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="py-1">
+                  <div className="relative group/blogs">
+                    <div className="flex items-center justify-between px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">
+                      <span>Blogs</span>
+                      <ChevronRight className="h-4 w-4" />
+                    </div>
+                    <div className="absolute left-full top-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover/blogs:opacity-100 group-hover/blogs:visible transition-all duration-200">
+                      <div className="py-1">
+                        <Link
+                          to="/media/blogs/agriculture"
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        >
+                          Agriculture
+                        </Link>
+                        <Link
+                          to="/media/blogs/sustainability"
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        >
+                          Sustainability
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="relative group/case-studies">
+                    <div className="flex items-center justify-between px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">
+                      <span>Case Studies</span>
+                      <ChevronRight className="h-4 w-4" />
+                    </div>
+                    <div className="absolute left-full top-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover/case-studies:opacity-100 group-hover/case-studies:visible transition-all duration-200">
+                      <div className="py-1">
+                        <Link
+                          to="/media/case-study/paddy-case-study"
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        >
+                          Paddy Case Study
+                        </Link>
+                        <Link
+                          to="/media/case-study/microshield-grapes-trial"
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        >
+                          Microshield Grapes Trial
+                        </Link>
+                        <Link
+                          to="/media/case-study/sapphire-granules"
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        >
+                          Sapphire Granules Study
+                        </Link>
+                        <Link
+                          to="/media/case-study/max-spreader-efficacy"
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        >
+                          Max Spreader Efficacy
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                  <Link
+                    to="/media/gallery"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    Gallery
+                  </Link>
+                </div>
+              </div>
+            </div>
             <Link to="/contact-us" className={`${isActive("/contact-us")} text-sm xl:text-sm whitespace-nowrap`} onClick={handleLinkClick}>Contact</Link>
           </nav>
 
@@ -484,6 +643,77 @@ export default function Header() {
                 </div>
               </details>
             </div>
+            <div className="border-b border-[#3a4f3f] last:border-b-0">
+              <details className="group">
+                <summary className={`${isActive("/crop-programs")} text-lg py-2 flex justify-between items-center cursor-pointer`}>
+                  <span>Crop Programs</span>
+                  <ChevronDown
+                    size={20}
+                    className="transition-transform duration-300 group-open:rotate-180"
+                  />
+                </summary>
+                <div className="pl-4 space-y-3 pt-2 pb-2">
+                  <div className="space-y-2">
+                    <Link
+                      to="/crop-programs/maize"
+                      className="text-[#FE8340] font-semibold block hover:text-white"
+                      onClick={handleLinkClick}
+                    >
+                      Maize Crop Program
+                    </Link>
+                    <Link
+                      to="/crop-programs/hydro-fast"
+                      className="text-[#FE8340] font-semibold block hover:text-white"
+                      onClick={handleLinkClick}
+                    >
+                      NBS HYDRO FAST
+                    </Link>
+                    <Link
+                      to="/crop-programs/coffee"
+                      className="text-[#FE8340] font-semibold block hover:text-white"
+                      onClick={handleLinkClick}
+                    >
+                      Litter Digestion Program - Coffee
+                    </Link>
+                    <Link
+                      to="/crop-programs/anti-frost"
+                      className="text-[#FE8340] font-semibold block hover:text-white"
+                      onClick={handleLinkClick}
+                    >
+                      NBS Anti-frost Protocol
+                    </Link>
+                    <Link
+                      to="/crop-programs/downy-mildew"
+                      className="text-[#FE8340] font-semibold block hover:text-white"
+                      onClick={handleLinkClick}
+                    >
+                      Downy Mildew Control Program
+                    </Link>
+                    <Link
+                      to="/crop-programs/nitrate-conversion"
+                      className="text-[#FE8340] font-semibold block hover:text-white"
+                      onClick={handleLinkClick}
+                    >
+                      Nitrate Conversion Program
+                    </Link>
+                    <Link
+                      to="/crop-programs/rice"
+                      className="text-[#FE8340] font-semibold block hover:text-white"
+                      onClick={handleLinkClick}
+                    >
+                      Rice Crop Program
+                    </Link>
+                    <Link
+                      to="/crop-programs/pepper"
+                      className="text-[#FE8340] font-semibold block hover:text-white"
+                      onClick={handleLinkClick}
+                    >
+                      Phytophthora Control Program - Pepper
+                    </Link>
+                  </div>
+                </div>
+              </details>
+            </div>
             <Link
               to="/about"
               className={`${isActive("/about")} text-lg py-2 border-b border-[#3a4f3f] last:border-b-0`}
@@ -492,26 +722,94 @@ export default function Header() {
               About
             </Link>
             <Link
-              to="/crop-programs"
-              className={`${isActive("/crop-programs")} text-lg py-2 border-b border-[#3a4f3f] last:border-b-0`}
-              onClick={handleLinkClick}
-            >
-              Crop Programs
-            </Link>
-            <Link
               to="/services"
               className={`${isActive("/services")} text-lg py-2 border-b border-[#3a4f3f] last:border-b-0`}
               onClick={handleLinkClick}
             >
               Services
             </Link>
-            <Link
-              to="/media"
-              className={`${isActive("/media")} text-lg py-2 border-b border-[#3a4f3f] last:border-b-0`}
-              onClick={handleLinkClick}
-            >
-              Media
-            </Link>
+            <div className="border-b border-[#3a4f3f] last:border-b-0">
+              <details className="group">
+                <summary className={`${isActive("/media")} text-lg py-2 flex justify-between items-center cursor-pointer`}>
+                  <span>Media</span>
+                  <ChevronDown
+                    size={20}
+                    className="transition-transform duration-300 group-open:rotate-180"
+                  />
+                </summary>
+                <div className="pl-4 space-y-3 pt-2 pb-2">
+                  <div className="mb-3">
+                    <details className="group/blogs">
+                      <summary className="text-[#FE8340] font-semibold block hover:text-white cursor-pointer flex justify-between items-center">
+                        <span>Blogs</span>
+                        <ChevronDown size={16} className="transition-transform duration-300 group-open/blogs:rotate-180" />
+                      </summary>
+                      <div className="pl-4 space-y-2 mt-2">
+                        <Link
+                          to="/media/blogs/agriculture"
+                          className="text-gray-300 hover:text-[#FE8340] text-sm block"
+                          onClick={handleLinkClick}
+                        >
+                          Agriculture
+                        </Link>
+                        <Link
+                          to="/media/blogs/sustainability"
+                          className="text-gray-300 hover:text-[#FE8340] text-sm block"
+                          onClick={handleLinkClick}
+                        >
+                          Sustainability
+                        </Link>
+                      </div>
+                    </details>
+                  </div>
+                  <div className="mb-3">
+                    <details className="group/case-studies">
+                      <summary className="text-[#FE8340] font-semibold block hover:text-white cursor-pointer flex justify-between items-center">
+                        <span>Case Studies</span>
+                        <ChevronDown size={16} className="transition-transform duration-300 group-open/case-studies:rotate-180" />
+                      </summary>
+                      <div className="pl-4 space-y-2 mt-2">
+                        <Link
+                          to="/media/case-study/paddy-case-study"
+                          className="text-gray-300 hover:text-[#FE8340] text-sm block"
+                          onClick={handleLinkClick}
+                        >
+                          Paddy Case Study
+                        </Link>
+                        <Link
+                          to="/media/case-study/microshield-grapes-trial"
+                          className="text-gray-300 hover:text-[#FE8340] text-sm block"
+                          onClick={handleLinkClick}
+                        >
+                          Microshield Grapes Trial
+                        </Link>
+                        <Link
+                          to="/media/case-study/sapphire-granules"
+                          className="text-gray-300 hover:text-[#FE8340] text-sm block"
+                          onClick={handleLinkClick}
+                        >
+                          Sapphire Granules Study
+                        </Link>
+                        <Link
+                          to="/media/case-study/max-spreader-efficacy"
+                          className="text-gray-300 hover:text-[#FE8340] text-sm block"
+                          onClick={handleLinkClick}
+                        >
+                          Max Spreader Efficacy
+                        </Link>
+                      </div>
+                    </details>
+                  </div>
+                  <Link
+                    to="/media/gallery"
+                    className="text-[#FE8340] font-semibold block hover:text-white"
+                    onClick={handleLinkClick}
+                  >
+                    Gallery
+                  </Link>
+                </div>
+              </details>
+            </div>
             <Link
               to="/contact-us"
               className={`${isActive("/contact-us")} text-lg py-2 border-b border-[#3a4f3f] last:border-b-0`}

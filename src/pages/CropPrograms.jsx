@@ -1,10 +1,11 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Calendar, Leaf, Droplet, Sun, ChevronRight, CheckCircle2, Download } from "lucide-react"
 import { Button } from "../components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../components/ui/accordion"
 import ProductsBanner from "../assets/productImages/productBanner.jpg"
+import { useParams, useNavigate } from "react-router-dom"
 
 // Import PDF files
 import maize from "../assets/pdfs/maize-program.pdf"
@@ -453,13 +454,33 @@ const cropPrograms = [
 ]
 
 const CropPrograms = () => {
+    const { programId } = useParams()
+    const navigate = useNavigate()
     const [selectedProgram, setSelectedProgram] = useState(cropPrograms[0])
-    const [isLoaded, setIsLoaded] = useState(true)
 
-    const handleDownload = () => {
-        if (selectedProgram.pdfFile) {
+    useEffect(() => {
+        if (programId) {
+            const program = cropPrograms.find(p => 
+                p.name.toLowerCase().replace(/\s+/g, '-').includes(programId.toLowerCase())
+            )
+            if (program) {
+                setSelectedProgram(program)
+                // Scroll to the program section
+                const element = document.getElementById(`program-${program.id}`)
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' })
+                }
+            } else {
+                // If program not found, navigate to main crop programs page
+                navigate('/crop-programs')
+            }
+        }
+    }, [programId, navigate])
+
+    const handleDownload = (pdfFile) => {
+        if (pdfFile) {
             const link = document.createElement('a')
-            link.href = selectedProgram.pdfFile
+            link.href = pdfFile
             link.download = `${selectedProgram.name.toLowerCase().replace(/\s+/g, '-')}-program.pdf`
             document.body.appendChild(link)
             link.click()
@@ -482,7 +503,7 @@ const CropPrograms = () => {
                 <div className="absolute inset-0 bg-black/40">
                     <motion.section
                         initial={{ opacity: 0 }}
-                        animate={{ opacity: isLoaded ? 1 : 0 }}
+                        animate={{ opacity: 1 }}
                         transition={{ duration: 0.8 }}
                         className="relative h-full flex items-center text-white py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8"
                     >
@@ -566,8 +587,9 @@ const CropPrograms = () => {
                                 {cropPrograms.map((program) => (
                                     <Card
                                         key={program.id}
+                                        id={`program-${program.id}`}
                                         className={`cursor-pointer transition-all bg-[#DACEC2] ${
-                                            selectedProgram.id === program.id
+                                            selectedProgram?.id === program.id
                                                 ? "border-[#f47834] shadow-lg"
                                                 : "border border-black"
                                         }`}
@@ -583,132 +605,134 @@ const CropPrograms = () => {
                         </div>
 
                         <div className="lg:col-span-2">
-                            <Card className="bg-[#DACEC2] border border-black">
-                                <CardHeader>
-                                    <CardTitle className="text-xl sm:text-2xl text-black">{selectedProgram.name}</CardTitle>
-                                    <CardDescription className="text-sm sm:text-base text-black/70">{selectedProgram.description}</CardDescription>
-                                </CardHeader>
-                                <CardContent>
-                                    {selectedProgram.objective && (
-                                        <div className="mb-4 sm:mb-6">
-                                            <h3 className="font-semibold mb-2 sm:mb-3 text-black">Program Objective</h3>
-                                            <p className="text-black/70 bg-[#DACEC2]/20 p-3 sm:p-4 rounded-lg text-sm sm:text-base">{selectedProgram.objective}</p>
-                                        </div>
-                                    )}
-
-                                    <div className="mb-4 sm:mb-6">
-                                        <h3 className="font-semibold mb-2 sm:mb-3 text-black">Recommended Products</h3>
-                                        <div className="flex flex-wrap gap-2">
-                                            {selectedProgram.products.map((product) => (
-                                                <span key={product} className="bg-[#293E31] text-[#DACEC2] px-3 py-1.5 rounded-full text-xs sm:text-sm">
-                                                    {product}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    </div>
-
-                                    {selectedProgram.features && (
-                                        <div className="mb-4 sm:mb-6">
-                                            <h3 className="font-semibold mb-2 sm:mb-3 text-black">Key Features</h3>
-                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
-                                                {selectedProgram.features.map((feature, index) => (
-                                                    <div key={index} className="flex items-start gap-2">
-                                                        <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-[#293E31] mt-0.5 flex-shrink-0" />
-                                                        <span className="text-[#293E31] text-sm sm:text-base">{feature}</span>
-                                                    </div>
-                                                ))}
+                            {selectedProgram && (
+                                <Card className="bg-[#DACEC2] border border-black">
+                                    <CardHeader>
+                                        <CardTitle className="text-xl sm:text-2xl text-black">{selectedProgram.name}</CardTitle>
+                                        <CardDescription className="text-sm sm:text-base text-black/70">{selectedProgram.description}</CardDescription>
+                                    </CardHeader>
+                                    <CardContent>
+                                        {selectedProgram.objective && (
+                                            <div className="mb-4 sm:mb-6">
+                                                <h3 className="font-semibold mb-2 sm:mb-3 text-black">Program Objective</h3>
+                                                <p className="text-black/70 bg-[#DACEC2]/20 p-3 sm:p-4 rounded-lg text-sm sm:text-base">{selectedProgram.objective}</p>
                                             </div>
-                                        </div>
-                                    )}
-
-                                    <Accordion type="single" collapsible className="space-y-2">
-                                        {selectedProgram.stages.map((stage, index) => (
-                                            <AccordionItem key={index} value={`stage-${index}`} className="border border-[#293E31] rounded-lg bg-[#DACEC2]/50">
-                                                <AccordionTrigger className="px-4 py-2">
-                                                    <div className="flex items-center gap-2">
-                                                        <span className="text-[#f47834]">{index + 1}.</span>
-                                                        <span className="text-sm sm:text-base text-black">{stage.name}</span>
-                                                        <span className="text-xs text-[#293E31]/70 ml-2">({stage.duration})</span>
-                                                    </div>
-                                                </AccordionTrigger>
-                                                <AccordionContent className="px-4 pb-4">
-                                                    <div className="space-y-3">
-                                                        <p className="text-[#293E31] text-sm sm:text-base">{stage.instructions}</p>
-                                                        {stage.products.length > 0 && (
-                                                            <div className="flex flex-wrap gap-2">
-                                                                {stage.products.map((product) => (
-                                                                    <span key={product} className="bg-[#293E31]/10 text-[#293E31] px-2 py-1 rounded-full text-xs sm:text-sm">
-                                                                        {product}
-                                                                    </span>
-                                                                ))}
-                                                            </div>
-                                                        )}
-                                                    </div>
-                                                </AccordionContent>
-                                            </AccordionItem>
-                                        ))}
-
-                                        {selectedProgram.plantCare && (
-                                            <>
-                                                <div className="mt-4 sm:mt-6 mb-2 sm:mb-4">
-                                                    <h3 className="font-semibold text-base sm:text-lg text-black">Plant Care Protocol</h3>
-                                                </div>
-                                                {selectedProgram.plantCare.map((care, index) => (
-                                                    <AccordionItem key={`care-${index}`} value={`care-${index}`} className="border border-[#293E31] rounded-lg bg-[#DACEC2]/50">
-                                                        <AccordionTrigger className="px-4 py-2">
-                                                            <div className="flex items-center gap-2">
-                                                                <span className="text-[#f47834]">{index + 1}.</span>
-                                                                <span className="text-sm sm:text-base text-black">{care.name}</span>
-                                                                <span className="text-xs text-[#293E31]/70 ml-2">({care.duration})</span>
-                                                            </div>
-                                                        </AccordionTrigger>
-                                                        <AccordionContent className="px-4 pb-4">
-                                                            <div className="space-y-3">
-                                                                <p className="text-[#293E31] text-sm sm:text-base">{care.instructions}</p>
-                                                                {care.products.length > 0 && (
-                                                                    <div className="flex flex-wrap gap-2">
-                                                                        {care.products.map((product) => (
-                                                                            <span key={product} className="bg-[#293E31]/10 text-[#293E31] px-2 py-1 rounded-full text-xs sm:text-sm">
-                                                                                {product}
-                                                                            </span>
-                                                                        ))}
-                                                                    </div>
-                                                                )}
-                                                            </div>
-                                                        </AccordionContent>
-                                                    </AccordionItem>
-                                                ))}
-                                            </>
                                         )}
-                                    </Accordion>
 
-                                    {selectedProgram.materialEstimate && (
-                                        <div className="mt-4 sm:mt-6">
-                                            <h3 className="font-semibold mb-2 sm:mb-3 text-black">{selectedProgram.materialEstimate.title}</h3>
-                                            <div className="bg-[#DACEC2]/20 p-3 sm:p-4 rounded-lg">
-                                                <ul className="space-y-2">
-                                                    {selectedProgram.materialEstimate.items.map((item, index) => (
-                                                        <li key={index} className="flex items-center gap-2">
-                                                            <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-black" />
-                                                            <span className="text-black/70 text-sm sm:text-base">{item}</span>
-                                                        </li>
-                                                    ))}
-                                                </ul>
+                                        <div className="mb-4 sm:mb-6">
+                                            <h3 className="font-semibold mb-2 sm:mb-3 text-black">Recommended Products</h3>
+                                            <div className="flex flex-wrap gap-2">
+                                                {selectedProgram.products.map((product) => (
+                                                    <span key={product} className="bg-[#293E31] text-[#DACEC2] px-3 py-1.5 rounded-full text-xs sm:text-sm">
+                                                        {product}
+                                                    </span>
+                                                ))}
                                             </div>
                                         </div>
-                                    )}
 
-                                    <div className="mt-6 sm:mt-8">
-                                        <Button
-                                            onClick={handleDownload}
-                                            className="bg-[#f47834] hover:bg-[#e06724] text-white w-full sm:w-auto text-sm sm:text-base flex items-center gap-2 cursor-pointer"
-                                        >
-                                            <Download className="w-4 h-4" />
-                                            Download Program Guide
-                                        </Button>
-                                    </div>
-                                </CardContent>
-                            </Card>
+                                        {selectedProgram.features && (
+                                            <div className="mb-4 sm:mb-6">
+                                                <h3 className="font-semibold mb-2 sm:mb-3 text-black">Key Features</h3>
+                                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+                                                    {selectedProgram.features.map((feature, index) => (
+                                                        <div key={index} className="flex items-start gap-2">
+                                                            <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-[#293E31] mt-0.5 flex-shrink-0" />
+                                                            <span className="text-[#293E31] text-sm sm:text-base">{feature}</span>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        <Accordion type="single" collapsible className="space-y-2">
+                                            {selectedProgram.stages.map((stage, index) => (
+                                                <AccordionItem key={index} value={`stage-${index}`} className="border border-[#293E31] rounded-lg bg-[#DACEC2]/50">
+                                                    <AccordionTrigger className="px-4 py-2">
+                                                        <div className="flex items-center gap-2">
+                                                            <span className="text-[#f47834]">{index + 1}.</span>
+                                                            <span className="text-sm sm:text-base text-black">{stage.name}</span>
+                                                            <span className="text-xs text-[#293E31]/70 ml-2">({stage.duration})</span>
+                                                        </div>
+                                                    </AccordionTrigger>
+                                                    <AccordionContent className="px-4 pb-4">
+                                                        <div className="space-y-3">
+                                                            <p className="text-[#293E31] text-sm sm:text-base">{stage.instructions}</p>
+                                                            {stage.products.length > 0 && (
+                                                                <div className="flex flex-wrap gap-2">
+                                                                    {stage.products.map((product) => (
+                                                                        <span key={product} className="bg-[#293E31]/10 text-[#293E31] px-2 py-1 rounded-full text-xs sm:text-sm">
+                                                                            {product}
+                                                                        </span>
+                                                                    ))}
+                                                                </div>
+                                                            )}
+                                                        </div>
+                                                    </AccordionContent>
+                                                </AccordionItem>
+                                            ))}
+
+                                            {selectedProgram.plantCare && (
+                                                <>
+                                                    <div className="mt-4 sm:mt-6 mb-2 sm:mb-4">
+                                                        <h3 className="font-semibold text-base sm:text-lg text-black">Plant Care Protocol</h3>
+                                                    </div>
+                                                    {selectedProgram.plantCare.map((care, index) => (
+                                                        <AccordionItem key={`care-${index}`} value={`care-${index}`} className="border border-[#293E31] rounded-lg bg-[#DACEC2]/50">
+                                                            <AccordionTrigger className="px-4 py-2">
+                                                                <div className="flex items-center gap-2">
+                                                                    <span className="text-[#f47834]">{index + 1}.</span>
+                                                                    <span className="text-sm sm:text-base text-black">{care.name}</span>
+                                                                    <span className="text-xs text-[#293E31]/70 ml-2">({care.duration})</span>
+                                                                </div>
+                                                            </AccordionTrigger>
+                                                            <AccordionContent className="px-4 pb-4">
+                                                                <div className="space-y-3">
+                                                                    <p className="text-[#293E31] text-sm sm:text-base">{care.instructions}</p>
+                                                                    {care.products.length > 0 && (
+                                                                        <div className="flex flex-wrap gap-2">
+                                                                            {care.products.map((product) => (
+                                                                                <span key={product} className="bg-[#293E31]/10 text-[#293E31] px-2 py-1 rounded-full text-xs sm:text-sm">
+                                                                                    {product}
+                                                                                </span>
+                                                                            ))}
+                                                                        </div>
+                                                                    )}
+                                                                </div>
+                                                            </AccordionContent>
+                                                        </AccordionItem>
+                                                    ))}
+                                                </>
+                                            )}
+                                        </Accordion>
+
+                                        {selectedProgram.materialEstimate && (
+                                            <div className="mt-4 sm:mt-6">
+                                                <h3 className="font-semibold mb-2 sm:mb-3 text-black">{selectedProgram.materialEstimate.title}</h3>
+                                                <div className="bg-[#DACEC2]/20 p-3 sm:p-4 rounded-lg">
+                                                    <ul className="space-y-2">
+                                                        {selectedProgram.materialEstimate.items.map((item, index) => (
+                                                            <li key={index} className="flex items-center gap-2">
+                                                                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-black" />
+                                                                <span className="text-black/70 text-sm sm:text-base">{item}</span>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        <div className="mt-6 sm:mt-8">
+                                            <Button
+                                                onClick={() => handleDownload(selectedProgram.pdfFile)}
+                                                className="bg-[#f47834] hover:bg-[#e06724] text-white w-full sm:w-auto text-sm sm:text-base flex items-center gap-2 cursor-pointer"
+                                            >
+                                                <Download className="w-4 h-4" />
+                                                Download Program Guide
+                                            </Button>
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            )}
                         </div>
                     </div>
                 </div>

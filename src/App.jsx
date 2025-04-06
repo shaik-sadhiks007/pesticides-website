@@ -43,10 +43,15 @@ function App() {
                   <Route path="/products/:category/:subcategory" element={<Products />} />
                   <Route path="/products/:category/:subcategory/:productId" element={<ProductDetail />} />
                   <Route path="/crop-programs" element={<CropPrograms />} />
+                  <Route path="/crop-programs/:programId" element={<CropPrograms />} />
                   <Route path="/services" element={<Services />} />
                   <Route path="/media" element={<Media />} />
+                  <Route path="/media/blogs" element={<Media />} />
+                  <Route path="/media/blogs/:category" element={<Media />} />
                   <Route path="/media/blog/:id" element={<BlogPost />} />
+                  <Route path="/media/case-study" element={<Media />} />
                   <Route path="/media/case-study/:id" element={<CaseStudyDetail />} />
+                  <Route path="/media/gallery" element={<Media />} />
                   <Route path="/contact-us" element={<Contact />} />
                   {/* <Route path="/email-us" element={<EmailUs />} /> */}
                 </Routes>
