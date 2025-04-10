@@ -71,8 +71,8 @@ const Media = () => {
         {
             id: 1,
             title: "Case Study Image 1",
-           image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/dymsnkmeqgljoklehuko",
-           category: "Case Study"
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/dymsnkmeqgljoklehuko",
+            category: "Case Study"
         },
         {
             id: 2,
@@ -193,7 +193,73 @@ const Media = () => {
             title: "Case Study Image 51",
             image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/o7lvv3uh1mptruwnkemm",
             category: "Case Study"
-        }
+        },
+        {
+            id: 52,
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/paddy/wopv4vcte6nzg9n1r4iu",
+            title: "Treated Farm NBS Kit showing.",
+            category: "Case Study"
+        },
+        {
+            id: 53,
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/paddy/ilj2e1vrci4cnulih8if",
+            title: "Controlled Crop",
+            category: "Case Study"
+        },
+        {
+            id: 54,
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/paddy/tmctl2ynwa0ye1kieo8a",
+            title: "Treated Farm NBS Kit",
+            category: "Case Study"
+        },
+        {
+            id: 55,
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/paddy/llneyiicz680dfsc07bk",
+            title: "Controlled Farm",
+            category: "Case Study"
+        },
+        {
+            id: 56,
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/paddy/affrprtlkwpw4u65typ3",
+            title: "Treated Farm NBS Kit",
+            category: "Case Study"
+        },
+        {
+            id: 57,
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/paddy/ebobnndvpreya5sxmgqh",
+            title: "Controlled Crop",
+            category: "Case Study"
+        },
+        {
+            id: 58,
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/paddy/mtalcahl58eaiuqclxss",
+            title: "Treated Farm (NBS) Kit",
+            category: "Case Study"
+        },
+        {
+            id: 59,
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/paddy/tseriaj0ojh7r6uz1ppe",
+            title: "Controlled Crop",
+            category: "Case Study"
+        },
+        {
+            id: 60,
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/paddy/gqjwffaozr3piwttd0ua",
+            title: "Treated Farm (NBS) Kit",
+            category: "Case Study"
+        },
+        {
+            id: 61,
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/paddy/fsqejjhlag1sajdavdp7",
+            title: "Controlled Crop",
+            category: "Case Study"
+        },
+        {
+            id: 62,
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/paddy/euelieiwhamptkbz98zt",
+            title: "Final Crop Treated (NBS Kit)",
+            category: "Case Study"
+        },
     ]
 
     return (
@@ -237,7 +303,15 @@ const Media = () => {
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.6, duration: 0.5 }}
                             >
-                                <Button className="bg-[#f47834] hover:bg-[#e06724] text-white px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base">
+                                <Button 
+                                    className="bg-[#f47834] hover:bg-[#e06724] text-white px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base"
+                                    onClick={() => {
+                                        const contentSection = document.getElementById('content-section');
+                                        if (contentSection) {
+                                            contentSection.scrollIntoView({ behavior: 'smooth' });
+                                        }
+                                    }}
+                                >
                                     Browse Content <ChevronRight className="ml-2 h-4 w-4" />
                                 </Button>
                             </motion.div>
@@ -246,7 +320,7 @@ const Media = () => {
                 </div>
             </div>
 
-            <div className="min-h-screen bg-[#DACEC2] py-12">
+            <div id="content-section" className="min-h-screen bg-[#DACEC2] py-12">
                 <div className="container mx-auto  max-w-6xl px-4">
                     <Tabs value={activeTab} onValueChange={handleTabChange} className="space-y-8">
                         <TabsList className="bg-[#FCF9F4]">

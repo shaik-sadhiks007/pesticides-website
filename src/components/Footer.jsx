@@ -114,10 +114,20 @@ export default function Footer() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-6 max-w-6xl mx-auto">
             {/* Links */}
             <div className="lg:col-span-6 flex flex-wrap justify-center lg:justify-start gap-4 lg:gap-6">
-              <Link to="/policy" className="text-gray-200 hover:text-[#FE8340] transition-colors">Policy</Link>
-              <Link to="/termsandconditions" className="text-gray-200 hover:text-[#FE8340] transition-colors">Terms and Conditions</Link>
-              <Link to="/disclaimer" className="text-gray-200 hover:text-[#FE8340] transition-colors">Disclaimer</Link>
-              <Link to="/sustainability" className="text-gray-200 hover:text-[#FE8340] transition-colors">Sustainability</Link>
+              <Link 
+                to="/privacy-policy" 
+                className="text-gray-200 hover:text-[#FE8340] transition-colors"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              >
+                Privacy Policy
+              </Link>
+              <Link 
+                to="/terms-and-conditions" 
+                className="text-gray-200 hover:text-[#FE8340] transition-colors"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              >
+                Terms and Conditions
+              </Link>
             </div>
 
             {/* Socials */}
@@ -133,7 +143,7 @@ export default function Footer() {
 
             {/* Copyright */}
             <div className="lg:col-span-2 text-center lg:text-right">
-              {/* <p className="text-gray-400 text-sm">© {new Date().getFullYear()} VM ECOGROW</p> */}
+              <p className="text-gray-400 text-sm">© {new Date().getFullYear()} VM ECOGROW</p>
             </div>
           </div>
         </div>

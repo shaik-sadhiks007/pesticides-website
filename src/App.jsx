@@ -20,6 +20,8 @@ import Media from "./pages/Media"
 import BlogPost from "./pages/BlogPost"
 import CaseStudyDetail from "./pages/CaseStudyDetail"
 import EmailUs from "./components/sections/EmailUs"
+import PrivacyPolicy from "./pages/PrivacyPolicy"
+import TermsAndConditions from "./pages/TermsAndConditions"
 import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
 
 function App() {
@@ -53,6 +55,8 @@ function App() {
                   <Route path="/media/case-study/:id" element={<CaseStudyDetail />} />
                   <Route path="/media/gallery" element={<Media />} />
                   <Route path="/contact-us" element={<Contact />} />
+                  <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                  <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
                   {/* <Route path="/email-us" element={<EmailUs />} /> */}
                 </Routes>
               </main>
