@@ -39,6 +39,16 @@ export const caseStudies = [
                 "With the use of the NBS kit, the Paddy Crop matured 30 days before the controlled plot paddy crop.",
                 "The final crop produced was healthy due to which the use of pesticides was reduced to a minimum, which saved a huge cost to the farmers."
             ],
+            analysisImages: [
+                {
+                    url: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/paddy/dwqxtvpkhhzgft43lh4a",
+                    title: "Comparison of Plant Growth"
+                },
+                {
+                    url: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/paddy/uom9l62bkkufgtpvuc15",
+                    title: "Showing higher yield when using NBS Magic Kit as compared to conventional farming"
+                }
+            ],
             conclusion: [
                 "The Magic Kit offers transformative benefits for modern farming practices, making it a valuable tool for sustainable agriculture. Its advantages include:",
                 "30% Increase in Crop Yield: Farmers experience a significant boost in productivity, enabling them to grow more produce on the same land area.",
@@ -47,6 +57,64 @@ export const caseStudies = [
                 "Decreased Pesticide Use: The reduction in chemical inputs results in healthier crops with minimal residues, benefiting both farmers and consumers.",
                 "Additionally, the Magic Kit improves crop quality, producing larger, shinier, tastier, and more nutritious produce. This opens opportunities for farmers to access health-conscious markets and potentially achieve premium pricing due to the superior quality of their products.",
                 "The emphasis on soil improvement also suggests long-term benefits, enhancing farmland sustainability and productivity beyond the initial growing season. These features make the Magic Kit a holistic solution to key agricultural challenges, offering increased yields, healthier produce, reduced environmental impact, and improved soil health—all critical elements for sustainable farming."
+            ],
+            conclusionImages: [
+                {
+                    id: 1,
+                    url: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/paddy/wopv4vcte6nzg9n1r4iu",
+                    title: "Treated Farm NBS Kit showing."
+                },
+                {
+                    id: 2,
+                    url: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/paddy/ilj2e1vrci4cnulih8if",
+                    title: "Controlled Crop"
+                },
+                {
+                    id: 3,
+                    url: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/paddy/tmctl2ynwa0ye1kieo8a",
+                    title: "Treated Farm NBS Kit"
+                },
+                {
+                    id: 4,
+                    url: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/paddy/llneyiicz680dfsc07bk",
+                    title: "Controlled Farm"
+                },
+                {
+                    id: 5,
+                    url: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/paddy/affrprtlkwpw4u65typ3",
+                    title: "Treated Farm NBS Kit"
+                },
+                {
+                    id: 6,
+                    url: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/paddy/ebobnndvpreya5sxmgqh",
+                    title: "Controlled Crop"
+                },
+                {
+                    id: 7,
+                    url: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/paddy/mtalcahl58eaiuqclxss",
+                    title: "Treated Farm (NBS) Kit"
+                },
+                {
+                    id: 8,
+                    url: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/paddy/tseriaj0ojh7r6uz1ppe",
+                    title: "Controlled Crop"
+                },
+                {
+                    id: 9,
+                    url: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/paddy/gqjwffaozr3piwttd0ua",
+                    title: "Treated Farm (NBS) Kit"
+                },
+                {
+                    id: 10,
+                    url: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/paddy/fsqejjhlag1sajdavdp7",
+                    title: "Controlled Crop"
+                },
+                {
+                    id: 11,
+                    url: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/paddy/euelieiwhamptkbz98zt",
+                    title: "Final Crop Treated (NBS Kit)"
+                },
+                
             ],
             researcher: {
                 name: "Kashish Dewan",
@@ -260,6 +328,24 @@ export const caseStudies = [
                 "Organic Certified Product: NBS Max Spreader is approved by multiple organic certification bodies, making it suitable for organic farming operations.",
                 "Additionally, NBS Max Spreader is compatible with all types of sprays and soil applications, making it a versatile solution for various agricultural needs. Its low dosage requirement (0.1 ml per litre for foliar applications and 0.25 ml per litre for soil applications) makes it an economical choice for farmers."
             ],
+            conclusionImages: [
+                {
+                    id: 1,
+                    url: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/max_spreader/gzwfubidlhz9t3sk7kot",
+                    title: "Diametric Spread Test"
+                },
+                {
+                    id: 2,
+                    url: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/max_spreader/ha0jja2p7aomxwhlfvof",
+                    title: "Pesticide Efficacy with NBS MAX SPREADER Test"
+                },
+                {
+                    id: 3,
+                    url: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/max_spreader/u7vfe7hpqqzo8z6xai6k",
+                    title: "Fertilizer Dispersion and Penetration in Soil Test"
+                },
+            ],
+            
             researcher: {
                 name: "R&D Department",
                 title: "Research and Development Team",

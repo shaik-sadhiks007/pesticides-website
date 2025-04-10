@@ -4,6 +4,8 @@ import { InstagramIcon } from "./icons/InstagramIcon"
 import { TwitterIcon } from "./icons/TwitterIcon"
 import { GmailIcon } from "./icons/GmailIcon"
 import { Mail, MapPin, Phone } from "lucide-react"
+import hunger from "../assets/footerIcons/hunger.gif"
+import partnership from "../assets/footerIcons/partnership.gif"
 
 export default function Footer() {
   return (
@@ -20,11 +22,27 @@ export default function Footer() {
                 registered in England and Wales with
                 Company no. 15714820
               </p>
-              <img
-                src="https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/trustedBrands/qhcewnqw2g8bdpncygcv"
-                alt="Trusted Brand Badge"
-                className="absolute left-[-20px] sm:left-[-25px] md:left-[-40px] lg:left-[-50px] top-[-20px] sm:top-[-25px] md:top-[-80px] lg:top-[-80px] w-[70px] sm:w-[85px] md:w-[100px] lg:w-[110px] h-auto object-contain transform rotate-[325deg] -z-10"
-              />
+              <div className="flex items-center md:items-center gap-2 md:gap-4 mt-4">
+                <img
+                  src="https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/trustedBrands/qhcewnqw2g8bdpncygcv"
+                  alt="Trusted Brand Badge"
+                  className="w-[60px] h-[50px] md:w-[80px] md:h-[60px] lg:w-[80px] lg:h-[70px]"
+                />
+                <div className="w-[50px] h-[50px] md:w-[70px] md:h-[40px] lg:w-[70px] lg:h-[70px] bg-transparent">
+                  <img
+                    src={hunger}
+                    alt="Hunger Free"
+                    className="w-full h-full"
+                  />
+                </div>
+                <div className="w-[50px] h-[50px] md:w-[70px] md:h-[40px] lg:w-[70px] lg:h-[70px] bg-transparent">
+                  <img
+                    src={partnership}
+                    alt="Partnership"
+                    className="w-full h-full"
+                  />
+                </div>
+              </div>
             </div>
           </div>
 

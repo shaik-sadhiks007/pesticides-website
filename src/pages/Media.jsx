@@ -62,12 +62,30 @@ const Media = () => {
     ]
 
     // Filter blogs based on category if provided
-    const filteredBlogs = category 
+    const filteredBlogs = category
         ? blogs.filter(blog => blog.category === category)
         : blogs
 
     // Dummy gallery data
     const galleryImages = [
+        {
+            id: 1,
+            title: "Case Study Image 1",
+           image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/dymsnkmeqgljoklehuko",
+           category: "Case Study"
+        },
+        {
+            id: 2,
+            title: "Case Study Image 2",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/oxcutaw1rhrwxzshr3go",
+            category: "Case Study"
+        },
+        {
+            id: 3,
+            title: "Case Study Image 3",
+            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/krs2emsan3noexi1pryh",
+            category: "Case Study"
+        },
         {
             id: 8,
             title: "Case Study Image 8",
@@ -249,8 +267,8 @@ const Media = () => {
                                     <Link to={`/media/blog/${blog.id}`} key={blog.id}>
                                         <Card className="hover:shadow-lg transition-shadow duration-300 cursor-pointer">
                                             <div className="relative aspect-video">
-                                                <img 
-                                                    src={blog.image} 
+                                                <img
+                                                    src={blog.image}
                                                     alt={blog.title}
                                                     className="w-full h-full object-cover rounded-t-lg"
                                                 />
@@ -278,8 +296,8 @@ const Media = () => {
                                     <Link to={`/media/case-study/${study.id}`} key={study.id}>
                                         <Card className="hover:shadow-lg transition-shadow duration-300 cursor-pointer h-full">
                                             <div className="relative aspect-video">
-                                                <img 
-                                                    src={study.image} 
+                                                <img
+                                                    src={study.image}
                                                     alt={study.title}
                                                     className="w-full h-full object-cover rounded-t-lg"
                                                 />
@@ -299,7 +317,7 @@ const Media = () => {
                                                 <p className="text-gray-600 line-clamp-3 mb-4">{study.description}</p>
                                                 <div className="flex flex-wrap gap-2 mt-2">
                                                     {study.products.slice(0, 3).map((product, index) => (
-                                                        <span 
+                                                        <span
                                                             key={index}
                                                             className="bg-[#f9fcf4] text-[#293E31] text-xs px-2 py-1 rounded-full border border-[#e0e7d5]"
                                                         >
@@ -329,8 +347,8 @@ const Media = () => {
                                 {galleryImages.map((image) => (
                                     <Card key={image.id} className="overflow-hidden">
                                         <div className="relative aspect-square group">
-                                            <img 
-                                                src={image.image} 
+                                            <img
+                                                src={image.image}
                                                 alt={image.title}
                                                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                             />
@@ -338,10 +356,10 @@ const Media = () => {
                                                 <ImageIcon className="w-12 h-12 text-white" />
                                             </div>
                                         </div>
-                                        <CardHeader>
+                                        {/* <CardHeader>
                                             <CardTitle className="text-[#293E31]">{image.title}</CardTitle>
                                             <CardDescription className="text-[#293E31]">{image.category}</CardDescription>
-                                        </CardHeader>
+                                        </CardHeader> */}
                                     </Card>
                                 ))}
                             </div>

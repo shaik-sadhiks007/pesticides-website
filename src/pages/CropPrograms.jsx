@@ -16,6 +16,7 @@ import downyMildew from "../assets/pdfs/downy-mildew.pdf"
 import nitrateConversion from "../assets/pdfs/nitrate-conversion.pdf"
 import rice from "../assets/pdfs/rice-program.pdf"
 import pepper from "../assets/pdfs/pepper-program.pdf"
+import thripsProgram from "../assets/pdfs/thrips-program.pdf"
 import { Link } from "react-router-dom"
 
 const cropPrograms = [
@@ -450,6 +451,73 @@ const cropPrograms = [
             "Strengthens plant resistance against Phytophthora"
         ],
         objective: "To enhance soil structure, organic carbon levels, and root system health, creating an environment that prevents Phytophthora infections in pepper vines and promotes stronger, more resilient plants."
+    },
+    {
+        id: 9,
+        name: "Thrips Crop Program - All Crops",
+        pdfFile: thripsProgram,
+        description: "Comprehensive multi-layered program for effective thrips control using biological and nutritional approaches",
+        duration: "As Needed",
+        products: [
+            "Bio Defender™",
+            "Max Spreader™",
+            "Triple Twenty",
+            "Kelp",
+            "Ammonium Molybdate"
+        ],
+        stages: [
+            {
+                name: "Initial Application",
+                duration: "First Treatment",
+                instructions: "Mix the following products and apply in the afternoon or when daily temperatures are lower and/or humidities are higher. Pre-soak Bio Defender™ in clean water (non-chlorinated) for at least 1 hour to hydrate spores. Use more than 300 L/ha but observe max product rates.",
+                products: ["Bio Defender™", "Max Spreader™", "Triple Twenty", "Kelp", "Ammonium Molybdate"],
+                rates: [
+                    "Bio Defender™: 3 g/L (900 g/ha, max 1.0 kg/ha)",
+                    "Max Spreader™: 0.15 mL/L (45 mL/ha, max 50 mL/ha)",
+                    "Triple Twenty: 30 mL/L (900 mL/ha, max 1.25 L/ha)",
+                    "Kelp: 1 g/L (300 g/ha, max 500 g/ha)",
+                    "Ammonium Molybdate: 0.25 g/L (75 g/ha, max 90 g/ha)"
+                ]
+            },
+            {
+                name: "Follow-up Applications",
+                duration: "7-8 Days After Initial",
+                instructions: "Repeat the application 7-8 days after the initial treatment, then every 10-14 days until thrips are controlled. Maintain the same product ratios and application timing.",
+                products: ["Bio Defender™", "Max Spreader™", "Triple Twenty", "Kelp", "Ammonium Molybdate"]
+            }
+        ],
+        features: [
+            "Multi-layered approach combining biological and nutritional solutions",
+            "Optimized spray coverage and adhesion for better results",
+            "Enhanced plant resilience and natural defense mechanisms",
+            "Improved nutrient uptake and metabolic efficiency",
+            "Supports beneficial microbial activity",
+            "Flexible application timing based on pest pressure",
+            "Environmentally friendly biological control",
+            "Comprehensive plant health support"
+        ],
+        rationale: [
+            {
+                title: "Bio Defender™",
+                description: "Integrates three microbial strains to support foliar and soil ecosystems. Two strains are active in canopy environments, while Metarhizium anisopliae contributes to soil microbial diversity when applied to the root zone. These microbes interact synergistically with plant surfaces to enhance natural resilience."
+            },
+            {
+                title: "Max Spreader™",
+                description: "Optimizes spray coverage and adhesion, improving nutrient and microbial delivery. Its formulation promotes efficient resource utilization by plants, aiding in maintaining robust physiological functions under stress."
+            },
+            {
+                title: "Triple Twenty",
+                description: "Delivers nitrogen, phosphorus, and triacontanol to boost chlorophyll synthesis, photosynthetic efficiency, and sugar transport. Enriched with trace elements, vitamins, and enzymes, it strengthens metabolic pathways linked to plant vitality. Humates and kelp enhance nutrient uptake and cellular resilience."
+            },
+            {
+                title: "Kelp",
+                description: "Provides plant-growth-supporting compounds, including stress-alleviating hormones, to mitigate environmental pressures. Alginates serve as a substrate for beneficial microbial activity, fostering symbiotic relationships between plants and their microbiome."
+            },
+            {
+                title: "Ammonium Molybdate",
+                description: "Activates enzymatic pathways to optimize nitrogen metabolism, promoting the conversion of nitrates into complex proteins. This process refines sap composition, aligning with plant health priorities."
+            }
+        ]
     }
 ]
 

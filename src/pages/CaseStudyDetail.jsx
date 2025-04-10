@@ -100,6 +100,22 @@ const CaseStudyDetail = () => {
                 ) : (
                   <p className="text-gray-700 mb-6">{study.content.analysis}</p>
                 )}
+                {study.content.analysisImages && (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-6">
+                    {study.content.analysisImages.map((image, index) => (
+                      <div key={index} className="rounded-lg">
+                        <img
+                          src={image}
+                          alt={`Analysis Image ${index + 1}`}
+                          className="w-full h-full hover:scale-105 transition-transform duration-300"
+                        />
+                        <div className="p-2 bg-transparent text-sm text-[#293E31] font-medium text-center">
+                          {image.title}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </>
             )}
 
@@ -112,6 +128,22 @@ const CaseStudyDetail = () => {
                   ))
                 ) : (
                   <p className="text-gray-700 mb-4">{study.content.conclusion}</p>
+                )}
+                {study.content.conclusionImages && (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-6">
+                    {study.content.conclusionImages.map((image, index) => (
+                      <div key={index} className="rounded-lg overflow-hidden">
+                        <img
+                          src={image.url}
+                          alt={image.title}
+                          className="w-full h-48 hover:scale-105 transition-transform duration-300"
+                        />
+                        <div className="p-2 bg-transparent text-sm text-[#293E31] font-medium text-center">
+                          {image.title}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 )}
               </>
             )}
@@ -272,6 +304,22 @@ const CaseStudyDetail = () => {
                     ) : (
                       <p className="text-gray-700 mb-6">{study.content.analysis}</p>
                     )}
+                    {study.content.analysisImages && (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-6">
+                        {study.content.analysisImages.map((image, index) => (
+                          <div key={index} className="rounded-lg ">
+                            <img
+                              src={image.url}
+                              alt={image.title}
+                              className="w-full h-48 hover:scale-105 transition-transform duration-300"
+                            />
+                            <div className="p-2 bg-transparent text-sm text-[#293E31] font-medium text-center">
+                              {image.title}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </>
                 )}
 
@@ -284,6 +332,22 @@ const CaseStudyDetail = () => {
                       ))
                     ) : (
                       <p className="text-gray-700 mb-4">{study.content.conclusion}</p>
+                    )}
+                    {study.content.conclusionImages && (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-6">
+                        {study.content.conclusionImages.map((image, index) => (
+                          <div key={index} className="rounded-lg">
+                            <img
+                              src={image.url}
+                              alt={image.title}
+                              className="w-full h-48 hover:scale-105 transition-transform duration-300"
+                            />
+                            <div className="p-2 bg-transparent text-sm text-[#293E31] font-medium text-center">
+                              {image.title}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     )}
                   </>
                 )}

@@ -1,7 +1,7 @@
 import { CheckCircle2, Leaf, TrendingUp, Globe, TestTube, ChevronRight, PackageCheck, Truck, Shield } from "lucide-react"
 import Aboutus from "../assets/about.avif"
 import { motion } from "framer-motion"
-import { Button } from "../components/ui/button"
+import { Button } from "../components/ui/Button"
 import { useState, useEffect } from "react"
 import FarmIcon from "../components/FarmIcon"
 import { AlternatingSection } from "../components/sections/AlternatingSection"
@@ -96,7 +96,10 @@ export default function Services() {
             reliable services can transform your agricultural operations. Let's cultivate
             success together!
           </p>
-          <Link to="/contact-us">
+          <Link 
+            to="/contact-us" 
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
             <Button className="bg-[#FE8340] hover:bg-[#e06724] text-white px-8 py-3 cursor-pointer">
               Contact Us <ChevronRight className="ml-2 h-5 w-5" />
             </Button>

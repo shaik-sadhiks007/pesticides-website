@@ -350,12 +350,6 @@ export default function Header() {
                         >
                           Agriculture
                         </Link>
-                        <Link
-                          to="/media/blogs/sustainability"
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        >
-                          Sustainability
-                        </Link>
                       </div>
                     </div>
                   </div>
@@ -475,27 +469,84 @@ export default function Header() {
       </div>
 
       {/* Mobile/Tablet Header */}
-      <div className="lg:hidden bg-[#FE8340] w-full p-4 flex justify-between items-center shadow-md">
-        <Link to="/" className="flex items-center gap-3">
-          <img
-            src="https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/logo/eckhtn4r99sznxbyfru7"
-            alt="VM ECOGROW Logo"
-            className="w-12 h-12 md:w-14 md:h-14 object-contain"
-          />
-          <div>
-            <h1 className="text-[#293E31] font-bold text-lg md:text-xl">
-              VM ECOGROW
-            </h1>
-            <p className="text-[#293E31] text-xs md:text-sm">
-              Smart Inputs, Sustainable Outputs
-            </p>
-          </div>
-        </Link>
+      <div className="lg:hidden bg-[#FE8340] w-full p-3 sm:p-4 flex flex-col sm:flex-row sm:justify-between sm:items-center shadow-md">
+        <div className="flex items-center justify-between w-full sm:w-auto">
+          <Link to="/" className="flex items-center gap-2 sm:gap-3">
+            <img
+              src="https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/logo/eckhtn4r99sznxbyfru7"
+              alt="VM ECOGROW Logo"
+              className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 object-contain"
+            />
+            <div>
+              <h1 className="text-[#293E31] font-bold text-2xl sm:text-lg md:text-3xl">
+                VM ECOGROW
+              </h1>
+              <p className="text-[#293E31] text-xs sm:text-sm">
+                Smart Inputs, Sustainable Outputs
+              </p>
+            </div>
+          </Link>
 
-        {/* Menu Button */}
+          {/* Menu Button */}
+          <button
+            onClick={toggleMenu}
+            className="text-[#293E31] p-2 rounded-full hover:bg-[#ff9f6a] transition-colors sm:hidden"
+            aria-label="Toggle menu"
+          >
+            <Menu size={24} />
+          </button>
+        </div>
+
+        {/* Search Bar - Visible on larger mobile screens */}
+        <div className="mt-3 sm:mt-0 sm:ml-4 sm:flex-1 sm:max-w-md">
+          <div className="relative w-full" ref={searchRef}>
+            <form onSubmit={handleSearch} className="flex items-center">
+              <div className="relative w-full">
+                <Input
+                  type="text"
+                  placeholder="Search products or services"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pr-10 bg-[#3a4f3f] border-[#3a4f3f] text-white placeholder:text-gray-300 focus-visible:ring-[#FE8340] rounded-full text-sm sm:text-base"
+                />
+                <Button
+                  type="submit"
+                  size="icon"
+                  variant="ghost"
+                  className="absolute right-0 top-0 h-full text-white hover:text-[#FE8340] hover:bg-transparent"
+                >
+                  <Search size={18} />
+                </Button>
+              </div>
+            </form>
+
+            {/* Search Results Dropdown */}
+            {showSearchResults && searchResults.length > 0 && (
+              <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-lg shadow-lg z-50 max-h-96 overflow-y-auto">
+                {searchResults.map((result, index) => (
+                  <Link
+                    key={index}
+                    to={result.path}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleSearchResultClick(index);
+                    }}
+                    className="block p-3 hover:bg-gray-100 cursor-pointer border-b border-gray-200 last:border-b-0 transition-colors"
+                  >
+                    <div className="font-medium text-[#293E31]">{result.title}</div>
+                    <div className="text-sm text-gray-600">{result.description}</div>
+                  </Link>
+                ))}
+              </div>
+            )}
+
+          </div>
+        </div>
+
+        {/* Menu Button - Visible on larger mobile screens */}
         <button
           onClick={toggleMenu}
-          className="text-[#293E31] p-2 rounded-full hover:bg-[#ff9f6a] transition-colors"
+          className="hidden sm:block text-[#293E31] p-2 rounded-full hover:bg-[#ff9f6a] transition-colors ml-4"
           aria-label="Toggle menu"
         >
           <Menu size={24} />
@@ -515,15 +566,22 @@ export default function Header() {
           {/* Menu Header */}
           <div className="flex justify-between items-center p-4 border-b border-[#3a4f3f]">
             <div className="flex items-center gap-3">
-              <img
-                src="https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/logo/iq9mm2k96zmximny8dbr"
-                alt="VM ECOGROW Logo"
-                className="w-10 h-10 md:w-12 md:h-12 object-contain"
-              />
-              <div>
-                <h2 className="text-white font-bold text-lg md:text-xl">VM ECOGROW</h2>
-                <p className="text-white text-xs md:text-sm">Smart Inputs, Sustainable Outputs</p>
-              </div>
+             
+              <Link to="/" className="flex items-center gap-2 sm:gap-3">
+                <img
+                  src="https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/logo/iq9mm2k96zmximny8dbr"
+                  alt="VM ECOGROW Logo"
+                  className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 object-contain"
+                />
+                <div>
+                  <h1 className="text-white font-bold text-2xl sm:text-lg md:text-3xl">
+                    VM ECOGROW
+                  </h1>
+                  <p className="text-white text-xs sm:text-sm">
+                    Smart Inputs, Sustainable Outputs
+                  </p>
+                </div>
+              </Link>
             </div>
             <button
               onClick={toggleMenu}
@@ -534,65 +592,26 @@ export default function Header() {
             </button>
           </div>
 
-          {/* Search Bar */}
-          <div className="p-4 border-b border-[#3a4f3f]">
-            <form onSubmit={handleSearch} className="flex items-center">
-              <div className="relative w-full">
-                <Input
-                  type="text"
-                  placeholder="Search products or services"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pr-10 bg-[#3a4f3f] border-[#3a4f3f] text-white placeholder:text-gray-300 focus-visible:ring-[#FE8340] rounded-full"
-                />
-                <Button
-                  type="submit"
-                  size="icon"
-                  variant="ghost"
-                  className="absolute right-0 top-0 h-full text-white hover:text-[#FE8340] hover:bg-transparent"
-                >
-                  <Search size={18} />
-                </Button>
-              </div>
-            </form>
-
-            {/* Search Results */}
-            {showSearchResults && searchResults.length > 0 && (
-              <div className="mt-2 bg-white rounded-lg shadow-lg max-h-48 overflow-y-auto">
-                {searchResults.map((result, index) => (
-                  <div
-                    key={index}
-                    onClick={() => handleSearchResultClick(index)}
-                    className="block p-3 hover:bg-gray-100 cursor-pointer border-b border-gray-200 last:border-b-0"
-                  >
-                    <div className="font-medium text-[#293E31]">{result.title}</div>
-                    <div className="text-sm text-gray-600">{result.description}</div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-
           {/* Navigation Links */}
           <nav className="flex flex-col p-4 space-y-3 overflow-y-auto max-h-[calc(100vh-200px)]">
             <Link
               to="/"
-              className={`${isActive("/")} text-lg py-2 border-b border-[#3a4f3f] last:border-b-0`}
+              className={`${isActive("/")} text-lg py-2 border-b border-[#3a4f3f] last:border-b-0 text-left`}
               onClick={handleLinkClick}
             >
               Home
             </Link>
             <Link
               to="/about"
-              className={`${isActive("/about")} text-lg py-2 border-b border-[#3a4f3f] last:border-b-0`}
+              className={`${isActive("/about")} text-lg py-2 border-b border-[#3a4f3f] last:border-b-0 text-left`}
               onClick={handleLinkClick}
             >
               About
             </Link>
             <div className="border-b border-[#3a4f3f] last:border-b-0">
               <details className="group">
-                <summary className={`${isActive("/products")} text-lg py-2 flex justify-between items-center cursor-pointer`}>
-                  <span>Products</span>
+                <summary className={`${isActive("/products")} text-lg py-2 flex justify-between items-center cursor-pointer text-left`}>
+                  <Link to="/products" className="text-left">Products</Link>
                   <ChevronDown
                     size={20}
                     className="transition-transform duration-300 group-open:rotate-180"
@@ -603,7 +622,7 @@ export default function Header() {
                     <div key={categoryKey} className="mb-3">
                       <Link
                         to={`/products/${categoryKey}`}
-                        className="text-[#FE8340] font-semibold block hover:text-white"
+                        className="text-[#FE8340] font-semibold block hover:text-white text-left"
                         onClick={handleLinkClick}
                       >
                         {category.name}
@@ -612,7 +631,7 @@ export default function Header() {
                         {Object.entries(category.subcategories).map(([subcategoryKey, subcategory]) => (
                           <div key={subcategoryKey}>
                             <details className="group/sub">
-                              <summary className="text-white hover:text-[#FE8340] cursor-pointer flex justify-between items-center">
+                              <summary className="text-white hover:text-[#FE8340] cursor-pointer flex justify-between items-center text-left">
                                 <span>{subcategory.name}</span>
                                 <ChevronDown size={16} className="transition-transform duration-300 group-open/sub:rotate-180" />
                               </summary>
@@ -621,7 +640,7 @@ export default function Header() {
                                   <Link
                                     key={product.id}
                                     to={`/products/${categoryKey}/${subcategoryKey}/${product.id}`}
-                                    className="text-gray-300 hover:text-[#FE8340] text-sm block"
+                                    className="text-gray-300 hover:text-[#FE8340] text-sm block text-left"
                                     onClick={handleLinkClick}
                                   >
                                     {product.name}
@@ -639,8 +658,8 @@ export default function Header() {
             </div>
             <div className="border-b border-[#3a4f3f] last:border-b-0">
               <details className="group">
-                <summary className={`${isActive("/crop-programs")} text-lg py-2 flex justify-between items-center cursor-pointer`}>
-                  <span>Crop Programs</span>
+                <summary className={`${isActive("/crop-programs")} text-lg py-2 flex justify-between items-center cursor-pointer text-left`}>
+                  <Link to="/crop-programs" className="text-left">Crop Programs</Link>
                   <ChevronDown
                     size={20}
                     className="transition-transform duration-300 group-open:rotate-180"
@@ -650,56 +669,56 @@ export default function Header() {
                   <div className="space-y-2">
                     <Link
                       to="/crop-programs/maize"
-                      className="text-[#FE8340] font-semibold block hover:text-white"
+                      className="text-[#FE8340] font-semibold block hover:text-white text-left"
                       onClick={handleLinkClick}
                     >
                       Maize Crop Program
                     </Link>
                     <Link
                       to="/crop-programs/hydro-fast"
-                      className="text-[#FE8340] font-semibold block hover:text-white"
+                      className="text-[#FE8340] font-semibold block hover:text-white text-left"
                       onClick={handleLinkClick}
                     >
                       NBS HYDRO FAST
                     </Link>
                     <Link
                       to="/crop-programs/coffee"
-                      className="text-[#FE8340] font-semibold block hover:text-white"
+                      className="text-[#FE8340] font-semibold block hover:text-white text-left"
                       onClick={handleLinkClick}
                     >
                       Litter Digestion Program - Coffee
                     </Link>
                     <Link
                       to="/crop-programs/anti-frost"
-                      className="text-[#FE8340] font-semibold block hover:text-white"
+                      className="text-[#FE8340] font-semibold block hover:text-white text-left"
                       onClick={handleLinkClick}
                     >
                       NBS Anti-frost Protocol
                     </Link>
                     <Link
                       to="/crop-programs/downy-mildew"
-                      className="text-[#FE8340] font-semibold block hover:text-white"
+                      className="text-[#FE8340] font-semibold block hover:text-white text-left"
                       onClick={handleLinkClick}
                     >
                       Downy Mildew Control Program
                     </Link>
                     <Link
                       to="/crop-programs/nitrate-conversion"
-                      className="text-[#FE8340] font-semibold block hover:text-white"
+                      className="text-[#FE8340] font-semibold block hover:text-white text-left"
                       onClick={handleLinkClick}
                     >
                       Nitrate Conversion Program
                     </Link>
                     <Link
                       to="/crop-programs/rice"
-                      className="text-[#FE8340] font-semibold block hover:text-white"
+                      className="text-[#FE8340] font-semibold block hover:text-white text-left"
                       onClick={handleLinkClick}
                     >
                       Rice Crop Program
                     </Link>
                     <Link
                       to="/crop-programs/pepper"
-                      className="text-[#FE8340] font-semibold block hover:text-white"
+                      className="text-[#FE8340] font-semibold block hover:text-white text-left"
                       onClick={handleLinkClick}
                     >
                       Phytophthora Control Program - Pepper
@@ -711,15 +730,15 @@ export default function Header() {
 
             <Link
               to="/services"
-              className={`${isActive("/services")} text-lg py-2 border-b border-[#3a4f3f] last:border-b-0`}
+              className={`${isActive("/services")} text-lg py-2 border-b border-[#3a4f3f] last:border-b-0 text-left`}
               onClick={handleLinkClick}
             >
               Services
             </Link>
             <div className="border-b border-[#3a4f3f] last:border-b-0">
               <details className="group">
-                <summary className={`${isActive("/media")} text-lg py-2 flex justify-between items-center cursor-pointer`}>
-                  <span>Media</span>
+                <summary className={`${isActive("/media")} text-lg py-2 flex justify-between items-center cursor-pointer text-left`}>
+                  <Link to="/media" className="text-left">Media</Link>
                   <ChevronDown
                     size={20}
                     className="transition-transform duration-300 group-open:rotate-180"
@@ -728,59 +747,52 @@ export default function Header() {
                 <div className="pl-4 space-y-3 pt-2 pb-2">
                   <div className="mb-3">
                     <details className="group/blogs">
-                      <summary className="text-[#FE8340] font-semibold block hover:text-white cursor-pointer flex justify-between items-center">
+                      <summary className="text-[#FE8340] font-semibold block hover:text-white cursor-pointer flex justify-between items-center text-left">
                         <span>Blogs</span>
                         <ChevronDown size={16} className="transition-transform duration-300 group-open/blogs:rotate-180" />
                       </summary>
                       <div className="pl-4 space-y-2 mt-2">
                         <Link
                           to="/media/blogs/agriculture"
-                          className="text-gray-300 hover:text-[#FE8340] text-sm block"
+                          className="text-gray-300 hover:text-[#FE8340] text-sm block text-left"
                           onClick={handleLinkClick}
                         >
                           Agriculture
-                        </Link>
-                        <Link
-                          to="/media/blogs/sustainability"
-                          className="text-gray-300 hover:text-[#FE8340] text-sm block"
-                          onClick={handleLinkClick}
-                        >
-                          Sustainability
                         </Link>
                       </div>
                     </details>
                   </div>
                   <div className="mb-3">
                     <details className="group/case-studies">
-                      <summary className="text-[#FE8340] font-semibold block hover:text-white cursor-pointer flex justify-between items-center">
+                      <summary className="text-[#FE8340] font-semibold block hover:text-white cursor-pointer flex justify-between items-center text-left">
                         <span>Case Studies</span>
                         <ChevronDown size={16} className="transition-transform duration-300 group-open/case-studies:rotate-180" />
                       </summary>
                       <div className="pl-4 space-y-2 mt-2">
                         <Link
                           to="/media/case-study/paddy-case-study"
-                          className="text-gray-300 hover:text-[#FE8340] text-sm block"
+                          className="text-gray-300 hover:text-[#FE8340] text-sm block text-left"
                           onClick={handleLinkClick}
                         >
                           Paddy Case Study
                         </Link>
                         <Link
                           to="/media/case-study/microshield-grapes-trial"
-                          className="text-gray-300 hover:text-[#FE8340] text-sm block"
+                          className="text-gray-300 hover:text-[#FE8340] text-sm block text-left"
                           onClick={handleLinkClick}
                         >
                           Microshield Grapes Trial
                         </Link>
                         <Link
                           to="/media/case-study/sapphire-granules"
-                          className="text-gray-300 hover:text-[#FE8340] text-sm block"
+                          className="text-gray-300 hover:text-[#FE8340] text-sm block text-left"
                           onClick={handleLinkClick}
                         >
                           Sapphire Granules Study
                         </Link>
                         <Link
                           to="/media/case-study/max-spreader-efficacy"
-                          className="text-gray-300 hover:text-[#FE8340] text-sm block"
+                          className="text-gray-300 hover:text-[#FE8340] text-sm block text-left"
                           onClick={handleLinkClick}
                         >
                           Max Spreader Efficacy
@@ -790,7 +802,7 @@ export default function Header() {
                   </div>
                   <Link
                     to="/media/gallery"
-                    className="text-[#FE8340] font-semibold block hover:text-white"
+                    className="text-[#FE8340] font-semibold block hover:text-white text-left"
                     onClick={handleLinkClick}
                   >
                     Gallery
@@ -800,7 +812,7 @@ export default function Header() {
             </div>
             <Link
               to="/contact-us"
-              className={`${isActive("/contact-us")} text-lg py-2 border-b border-[#3a4f3f] last:border-b-0`}
+              className={`${isActive("/contact-us")} text-lg py-2 border-b border-[#3a4f3f] last:border-b-0 text-left`}
               onClick={handleLinkClick}
             >
               Contact
@@ -810,8 +822,8 @@ export default function Header() {
           {/* Contact Information */}
           <div className="p-4 border-t border-[#3a4f3f] mt-auto bg-[#293E31]">
             <div className="flex flex-col text-white ">
-              <div className="flex flex-col md:flex-row md:gap-4 space-y-3">
-                <a href="tel:+447442590367" className="hover:text-[#FE8340] transition-colors text-sm flex items-center gap-2">
+              <div className="flex flex-col md:flex-row md:gap-4 space-y-3 md:mb-2">
+                <a href="tel:+447442590367" className="hover:text-[#FE8340] md:mb-0 transition-colors text-sm flex items-center gap-2">
                   <Phone size={16} className="text-[#FE8340] flex-shrink-0" />
                   +44 7442590367
                 </a>
