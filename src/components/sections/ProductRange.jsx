@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom"
-import { Button } from "../ui/button"
+import { Button } from "../ui/Button"
 import { ChevronDown, ChevronRight } from "lucide-react"
 import { useEffect, useState, useRef } from "react"
 import Slider from "react-slick";
@@ -222,7 +222,7 @@ export default function ProductRange() {
                          product.subcategoryKey === "humates" ? "Humates" : product.subcategoryKey}
                       </span>
                     </div>
-                    <h3 className="text-base font-semibold text-[#293E31] mb-4">{product.name}</h3>
+                    <h3 className="text-base font-semibold text-[#293E31] mb-4 uppercase">{product.name}</h3>
                     <Button className="w-full bg-[#f47834] hover:bg-[#e06724] text-white mt-auto">
                       View Details
                     </Button>

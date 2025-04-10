@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Calendar, Leaf, Droplet, Sun, ChevronRight, CheckCircle2, Download } from "lucide-react"
-import { Button } from "../components/ui/button"
+import { Button } from "../components/ui/Button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../components/ui/accordion"
 import ProductsBanner from "../assets/productImages/productBanner.jpg"
@@ -460,7 +460,7 @@ const CropPrograms = () => {
 
     useEffect(() => {
         if (programId) {
-            const program = cropPrograms.find(p => 
+            const program = cropPrograms.find(p =>
                 p.name.toLowerCase().replace(/\s+/g, '-').includes(programId.toLowerCase())
             )
             if (program) {
@@ -588,17 +588,16 @@ const CropPrograms = () => {
                                     <Card
                                         key={program.id}
                                         id={`program-${program.id}`}
-                                        className={`cursor-pointer transition-all bg-[#DACEC2] ${
-                                            selectedProgram?.id === program.id
-                                                ? "border-[#f47834] shadow-lg"
-                                                : "border border-black"
-                                        }`}
+                                        className={`cursor-pointer transition-all bg-[#DACEC2] ${selectedProgram?.id === program.id
+                                            ? "border-[#f47834] shadow-lg"
+                                            : "border border-black"
+                                            }`}
                                         onClick={() => setSelectedProgram(program)}
                                     >
                                         <CardHeader className="py-3">
                                             <CardTitle className="text-base sm:text-lg text-black">{program.name}</CardTitle>
                                             <CardDescription className="text-sm text-[#293E31]/80">{program.duration}</CardDescription>
-                                        </CardHeader>   
+                                        </CardHeader>
                                     </Card>
                                 ))}
                             </div>
@@ -650,7 +649,7 @@ const CropPrograms = () => {
                                                     <AccordionTrigger className="px-4 py-2">
                                                         <div className="flex items-center gap-2">
                                                             <span className="text-[#f47834]">{index + 1}.</span>
-                                                            <span className="text-sm sm:text-base text-black">{stage.name}</span>
+                                                            <span className="text-sm sm:text-base text-black text-left">{stage.name}</span>
                                                             <span className="text-xs text-[#293E31]/70 ml-2">({stage.duration})</span>
                                                         </div>
                                                     </AccordionTrigger>
@@ -748,13 +747,13 @@ const CropPrograms = () => {
                         className="text-center mb-8"
                     >
                         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-black">
-                            🌱 Need a Tailored Solution for Your Crops? 🌱
+                            Need a Tailored Solution for Your Crops and Turf?
                         </h2>
                         <p className="text-lg sm:text-xl mb-2 text-black">
                             Didn't find a crop program that fits your needs?
                         </p>
-                        <p className="text-base sm:text-lg text-black/70 max-w-2xl ">
-                            💡 We specialize in customized solutions! Whether it's a unique crop, soil deficiency, or a specific growth stage challenge—our experts are here to help.
+                        <p className="text-base sm:text-lg text-black/70 w-full flex justify-center items-center text-center">
+                            We help you identify the root cause of any issue—whether it's a single problem or multiple challenges across growth stages—and provide tailored solutions to overcome them.
                         </p>
                     </motion.div>
 
@@ -766,35 +765,35 @@ const CropPrograms = () => {
                     >
                         <div className="space-y-6">
                             <h3 className="text-xl sm:text-2xl font-semibold">
-                                📩 Get a Personalized Crop Program Today!
+                                What We Offer !
                             </h3>
                             <div className="space-y-4">
                                 <div className="flex items-start gap-3">
                                     <div className="text-[#f47834] text-xl">🔹</div>
                                     <div>
-                                        <h4 className="font-medium text-black">Tailored Nutrient Plans</h4>
-                                        <p className="text-black/70 text-sm">Custom nutrition programs based on your crop's specific needs</p>
+                                        <h4 className="font-medium text-black">Comprehensive Problem Diagnosis</h4>
+                                        <p className="text-black/70 text-sm">We dig deep to uncover the underlying causes of issues.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-3">
                                     <div className="text-[#f47834] text-xl">🔹</div>
                                     <div>
-                                        <h4 className="font-medium text-black">Soil & Deficiency Diagnosis</h4>
-                                        <p className="text-black/70 text-sm">Expert analysis of your soil conditions and nutrient requirements</p>
+                                        <h4 className="font-medium text-black">Customized Solutions</h4>
+                                        <p className="text-black/70 text-sm">Targeted interventions for every growth stage to maximize productivity and health.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-3">
                                     <div className="text-[#f47834] text-xl">🔹</div>
                                     <div>
-                                        <h4 className="font-medium text-black">Stage-Specific Growth Solutions</h4>
-                                        <p className="text-black/70 text-sm">Targeted interventions for each growth stage</p>
+                                        <h4 className="font-medium text-black">Continuous Support</h4>
+                                        <p className="text-black/70 text-sm">Expert guidance throughout the growing season.</p>
                                     </div>
                                 </div>
                             </div>
-                            <div className="pt-4">
+                            {/* <div className="pt-4">
                                 <p className="text-lg mb-4 text-black">📞 Let's Talk! Click below & our team will assist you.</p>
-                                <Link 
-                                    to="/contact-us" 
+                                <Link
+                                    to="/contact-us"
                                     onClick={() => {
                                         window.scrollTo(0, 0);
                                     }}
@@ -802,35 +801,170 @@ const CropPrograms = () => {
                                     <Button
                                         className="bg-[#f47834] hover:bg-[#e06724] text-white px-8 py-3 text-base sm:text-lg w-full sm:w-auto flex items-center justify-center gap-2"
                                     >
-                                        Request a Custom Plan
+                                        Request a Call back and Place an Enquiry Now
                                         <ChevronRight className="w-5 h-5" />
                                     </Button>
                                 </Link>
-                            </div>
+                            </div> */}
                         </div>
 
                         <div className="bg-white border border-black p-6 sm:p-8 rounded-lg">
-                            <h3 className="text-xl font-semibold mb-6 text-black">Why Choose a Custom Program?</h3>
+                            <h3 className="text-xl font-semibold mb-6 text-black">Why Choose Us?</h3>
                             <div className="space-y-4">
                                 <div className="flex items-start gap-3">
                                     <CheckCircle2 className="w-5 h-5 text-[#f47834] mt-1" />
-                                    <p className="text-black/70">Optimized for your specific crop variety and growing conditions</p>
+                                    <p className="text-black/70">Optimized for Your Needs: Solutions tailored to your specific crop variety and growing conditions.</p>
                                 </div>
                                 <div className="flex items-start gap-3">
                                     <CheckCircle2 className="w-5 h-5 text-[#f47834] mt-1" />
-                                    <p className="text-black/70">Addresses unique challenges in your farming operation</p>
+                                    <p className="text-black/70">Cost-Effective: Programs designed to fit your budget while delivering maximum value.</p>
                                 </div>
-                                <div className="flex items-start gap-3">
+                                {/* <div className="flex items-start gap-3">
                                     <CheckCircle2 className="w-5 h-5 text-[#f47834] mt-1" />
                                     <p className="text-black/70">Continuous support and adjustments throughout the growing season</p>
                                 </div>
                                 <div className="flex items-start gap-3">
                                     <CheckCircle2 className="w-5 h-5 text-[#f47834] mt-1" />
                                     <p className="text-black/70">Cost-effective solutions tailored to your budget</p>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
+
+
                     </motion.div>
+                </div>
+            </div>
+
+            {/* Enquiry Form Section */}
+            <div className="bg-[#DACEC2] py-16">
+                <div className="container mx-auto max-w-4xl px-4">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                        className="text-center mb-12"
+                    >
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">📝 Get Started Today!</h2>
+                        <p className="text-lg text-black/70">
+                            Fill out the form below and our team will get back to you shortly.
+                        </p>
+                    </motion.div>
+
+                    <div className="bg-[#DACEC2] p-6 md:p-8">
+                        <form
+                            action="https://formsubmit.co/vm.vmgroupeu@gmail.com"
+                            method="POST"
+                            className="space-y-6"
+                        >
+                            {/* Form Configuration */}
+                            <input type="hidden" name="_subject" value="New Crop Program Enquiry" />
+                            <input type="hidden" name="_template" value="table" />
+                            <input type="hidden" name="_next" value={window.location.href} />
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                {/* Name Field */}
+                                <div>
+                                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1 ">
+                                        Full Name *
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        id="name"
+                                        required
+                                        className="w-full px-4 py-2 border border-black rounded-lg focus:ring-[#f47834] focus:border-[#f47834] text-black"
+                                        placeholder="John Doe"
+                                    />
+                                </div>
+
+                                {/* Company Name Field */}
+                                <div>
+                                    <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
+                                        Company's Name *
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="company"
+                                        id="company"
+                                        required
+                                        className="w-full px-4 py-2 border border-black rounded-lg focus:ring-[#f47834] focus:border-[#f47834] text-black"
+                                        placeholder="Your Company Name"
+                                    />
+                                </div>
+
+                                {/* Email Field */}
+                                <div>
+                                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                                        Email Address *
+                                    </label>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        id="email"
+                                        required
+                                        className="w-full px-4 py-2 border border-black rounded-lg focus:ring-[#f47834] focus:border-[#f47834] text-black"
+                                        placeholder="you@example.com"
+                                    />
+                                </div>
+
+                                {/* Contact Field */}
+                                <div>
+                                    <label htmlFor="contact" className="block text-sm font-medium text-gray-700 mb-1">
+                                        Contact Number *
+                                    </label>
+                                    <input
+                                        type="tel"
+                                        name="contact"
+                                        id="contact"
+                                        required
+                                        className="w-full px-4 py-2 border border-black rounded-lg focus:ring-[#f47834] focus:border-[#f47834] text-black"
+                                        placeholder="Your phone number"
+                                    />
+                                </div>
+                            </div>
+
+                            {/* Address Field */}
+                            <div>
+                                <label htmlFor="address" className="block text-sm font-medium text-gray-700 mb-1">
+                                    Address *
+                                </label>
+                                <input
+                                    type="text"
+                                    name="address"
+                                    id="address"
+                                    required
+                                    className="w-full px-4 py-2 border border-black rounded-lg focus:ring-[#f47834] focus:border-[#f47834] text-black"
+                                    placeholder="Your complete address"
+                                />
+                            </div>
+
+                            {/* Query Box */}
+                            <div>
+                                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                                    Your Query *
+                                </label>
+                                <textarea
+                                    name="message"
+                                    id="message"
+                                    rows="4"
+                                    required
+                                    className="w-full px-4 py-2 border border-black rounded-lg focus:ring-[#f47834] focus:border-[#f47834] text-black"
+                                    placeholder="Please describe your requirements or questions..."
+                                ></textarea>
+                            </div>
+
+                            {/* Submit Button */}
+                            <div className="flex justify-center">
+                                <button
+                                    type="submit"
+                                    className="bg-[#f47834] hover:bg-[#e06724] text-white px-8 py-3 rounded-lg font-medium text-lg transition-colors duration-300 flex items-center gap-2"
+                                >
+                                    Submit
+                                    <ChevronRight className="w-5 h-5" />
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </>

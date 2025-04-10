@@ -1,8 +1,8 @@
 export default function MessageCard() {
     return (
         <section className="bg-[#DACEC2] py-12 md:py-16">
-            <div className="container px-4 md:px-8">
-                <div className="max-w-3xl mx-auto">
+            <div className="w-full px-4 md:px-8">
+                <div className="flex flex-col items-center justify-center">
                     <h2 className="text-2xl md:text-3xl font-bold text-[#293E31] mb-4 text-center">Message from Our Team</h2>
                     <div className="w-36 h-1 bg-[#FE8340] mx-auto mb-6"></div>
 
@@ -25,7 +25,7 @@ export default function MessageCard() {
 
                                 <p className="text-[#5A7260] mb-10 text-lg">
                                     We value your feedback and inquiries, as they help us continually improve our services and products.
-                                    Thank you for choosing VM ECOGROW India as your agricultural partner. We look forward to hearing from
+                                    Thank you for choosing VM ECOGROW as your agricultural partner. We look forward to hearing from
                                     you and contributing to your farming success.
                                 </p>
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { Button } from "../components/ui/button"
+import { Button } from "../components/ui/Button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs"
 import { Play, Download, ChevronRight, Image as ImageIcon, FileText, BarChart2 } from "lucide-react"
@@ -59,24 +59,6 @@ const Media = () => {
             readTime: "7 min read",
             category: "agriculture"
         },
-        {
-            id: 3,
-            title: "Sustainable Farming Practices",
-            description: "Explore eco-friendly farming methods that protect the environment while maintaining productivity.",
-            image: "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80",
-            date: "March 5, 2024",
-            readTime: "6 min read",
-            category: "sustainability"
-        },
-        {
-            id: 4,
-            title: "Reducing Carbon Footprint in Agriculture",
-            description: "Learn how modern farming techniques can help reduce greenhouse gas emissions.",
-            image: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80",
-            date: "February 28, 2024",
-            readTime: "8 min read",
-            category: "sustainability"
-        }
     ]
 
     // Filter blogs based on category if provided
@@ -86,48 +68,6 @@ const Media = () => {
 
     // Dummy gallery data
     const galleryImages = [
-        {
-            id: 1,
-            title: "Case Study Image 1",
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/othdcrcellr78lfhe3jj",
-            category: "Case Study"
-        },
-        {
-            id: 2,
-            title: "Case Study Image 2",
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/pxrcmqq62ipg9bhjgp3j",
-            category: "Case Study"
-        },
-        {
-            id: 3,
-            title: "Case Study Image 3",
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/rhmclx4oqhlfdszdbxei",
-            category: "Case Study"
-        },
-        {
-            id: 4,
-            title: "Case Study Image 4",
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/rupgxil53p5hgrpl5snq",
-            category: "Case Study"
-        },
-        {
-            id: 5,
-            title: "Case Study Image 5",
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/rxt4wcsyear4fwfnkspe",
-            category: "Case Study"
-        },
-        {
-            id: 6,
-            title: "Case Study Image 6",
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/sbtn5g2smgpqr18hu3ya",
-            category: "Case Study"
-        },
-        {
-            id: 7,
-            title: "Case Study Image 7",
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/t6zdvtdgelagl3d2rosx",
-            category: "Case Study"
-        },
         {
             id: 8,
             title: "Case Study Image 8",
@@ -147,12 +87,6 @@ const Media = () => {
             category: "Case Study"
         },
         {
-            id: 11,
-            title: "Case Study Image 11",
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/uwhgz6a9szliibwnpsuj",
-            category: "Case Study"
-        },
-        {
             id: 12,
             title: "Case Study Image 12",
             image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/uxbij6bffo9awyenc8gz",
@@ -165,69 +99,15 @@ const Media = () => {
             category: "Case Study"
         },
         {
-            id: 14,
-            title: "Case Study Image 14",
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/vddf8pn0c1azudhcdenc",
-            category: "Case Study"
-        },
-        {
-            id: 15,
-            title: "Case Study Image 15",
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/vexwxcpzio0ni21l1gxu",
-            category: "Case Study"
-        },
-        {
-            id: 16,
-            title: "Case Study Image 16",
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/vsouuarrg83vw3oanben",
-            category: "Case Study"
-        },
-        {
-            id: 17,
-            title: "Case Study Image 17",
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/vvmawy2rspfsj9b9z2nh",
-            category: "Case Study"
-        },
-        {
             id: 18,
             title: "Case Study Image 18",
             image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/wy7jvfmudvqw2znx3tjn",
             category: "Case Study"
         },
         {
-            id: 19,
-            title: "Case Study Image 19",
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/xvr4iy1rssyj3fd5seoi",
-            category: "Case Study"
-        },
-        {
-            id: 20,
-            title: "Case Study Image 20",
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/y4vf8qtqwszv7aafdl0i",
-            category: "Case Study"
-        },
-        {
-            id: 21,
-            title: "Case Study Image 21",
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/ydfsuyocqymvhufjpy6n",
-            category: "Case Study"
-        },
-        {
             id: 22,
             title: "Case Study Image 22",
             image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/ylgk5r2ic1txjkcgbaqt",
-            category: "Case Study"
-        },
-        {
-            id: 23,
-            title: "Case Study Image 23",
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/ywsd9hvvxieravpoumrv",
-            category: "Case Study"
-        },
-        {
-            id: 24,
-            title: "Case Study Image 24",
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/yztzviczhtmcyfb0m4ny",
             category: "Case Study"
         },
         {
@@ -249,24 +129,6 @@ const Media = () => {
             category: "Case Study"
         },
         {
-            id: 28,
-            title: "Case Study Image 28",
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/brgcojnx3fo5mqk5wx0w",
-            category: "Case Study"
-        },
-        {
-            id: 29,
-            title: "Case Study Image 29",
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/bv62iyueasrs03zwnnf6",
-            category: "Case Study"
-        },
-        {
-            id: 30,
-            title: "Case Study Image 30",
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/ctmkz2ahszfbnaf4af3u",
-            category: "Case Study"
-        },
-        {
             id: 31,
             title: "Case Study Image 31",
             image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/eryidqsdp1x5fcjtfw2q",
@@ -276,48 +138,6 @@ const Media = () => {
             id: 32,
             title: "Case Study Image 32",
             image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/f5fs66x90inw0pkixq9h",
-            category: "Case Study"
-        },
-        {
-            id: 33,
-            title: "Case Study Image 33",
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/fbftloaw1dyg8hjgpgyw",
-            category: "Case Study"
-        },
-        {
-            id: 34,
-            title: "Case Study Image 34",
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/fhfsbkrrm3hziwhphb1o",
-            category: "Case Study"
-        },
-        {
-            id: 35,
-            title: "Case Study Image 35",
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/frikdgdsxto3dmvlsax2",
-            category: "Case Study"
-        },
-        {
-            id: 36,
-            title: "Case Study Image 36",
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/fwrxxvq2wnsmto6ahfdb",
-            category: "Case Study"
-        },
-        {
-            id: 37,
-            title: "Case Study Image 37",
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/hhifqcrt7u82bt575xsh",
-            category: "Case Study"
-        },
-        {
-            id: 38,
-            title: "Case Study Image 38",
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/i4mk3qxujxe4cjkgawd4",
-            category: "Case Study"
-        },
-        {
-            id: 39,
-            title: "Case Study Image 39",
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/ii1flmomklchke7ux94v",
             category: "Case Study"
         },
         {
@@ -339,51 +159,15 @@ const Media = () => {
             category: "Case Study"
         },
         {
-            id: 43,
-            title: "Case Study Image 43",
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/jpsbbdxohomiwudfciri",
-            category: "Case Study"
-        },
-        {
-            id: 44,
-            title: "Case Study Image 44",
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/lbiggctub6wvi2v5jpls",
-            category: "Case Study"
-        },
-        {
             id: 45,
             title: "Case Study Image 45",
             image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/lgyy8eaf6ifhfooto6rw",
             category: "Case Study"
         },
         {
-            id: 46,
-            title: "Case Study Image 46",
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/ljhesawlxadkw2gu91ui",
-            category: "Case Study"
-        },
-        {
-            id: 47,
-            title: "Case Study Image 47",
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/lmnusdlgbathpx06fuag",
-            category: "Case Study"
-        },
-        {
-            id: 48,
-            title: "Case Study Image 48",
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/lpim6i9ldpxkiwekdmza",
-            category: "Case Study"
-        },
-        {
             id: 49,
             title: "Case Study Image 49",
             image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/lsg2ixqpshdmw5pk4cyo",
-            category: "Case Study"
-        },
-        {
-            id: 50,
-            title: "Case Study Image 50",
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/n1ejrk6ljxdnv4r0ngjq",
             category: "Case Study"
         },
         {
@@ -449,7 +233,7 @@ const Media = () => {
                     <Tabs value={activeTab} onValueChange={handleTabChange} className="space-y-8">
                         <TabsList className="bg-[#FCF9F4]">
                             <TabsTrigger value="blogs">Blogs</TabsTrigger>
-                            <TabsTrigger value="case-studies">Case Studies</TabsTrigger>
+                            <TabsTrigger value="case-studies">Results</TabsTrigger>
                             <TabsTrigger value="gallery">Gallery</TabsTrigger>
                         </TabsList>
 

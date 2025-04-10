@@ -12,77 +12,79 @@ export default function Footer() {
         <div className="grid grid-cols-12 gap-8 max-w-6xl mx-auto">
 
           {/* Company Info */}
-          <div className="col-span-12 md:col-span-3 space-y-3 text-center md:text-left">
+          <div className="col-span-12 md:col-span-3 space-y-3 text-center md:text-left relative pb-8 sm:pb-0">
             <h2 className="font-semibold text-2xl text-[#FE8340]">VM ECOGROW</h2>
-            <p className="text-gray-200 leading-relaxed">
-              is a trading name of VM Group Europe Ltd,<br />
-              registered in England and Wales with<br />
-              Company no. 15714820
-            </p>
+            <div className="flex flex-col items-center md:items-start">
+              <p className="text-gray-200 leading-relaxed text-left mb-2">
+                is a trading name of VM Group Europe Ltd,
+                registered in England and Wales with
+                Company no. 15714820
+              </p>
+              <img
+                src="https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/trustedBrands/qhcewnqw2g8bdpncygcv"
+                alt="Trusted Brand Badge"
+                className="absolute left-[-20px] sm:left-[-25px] md:left-[-40px] lg:left-[-50px] top-[-20px] sm:top-[-25px] md:top-[-80px] lg:top-[-80px] w-[70px] sm:w-[85px] md:w-[100px] lg:w-[110px] h-auto object-contain transform rotate-[325deg] -z-10"
+              />
+            </div>
           </div>
 
           {/* Operating Hours */}
-          <div className="col-span-12 md:col-span-3 space-y-3  flex flex-col items-center">
+          <div className="col-span-12 md:col-span-3 space-y-3 flex flex-col items-center sm:items-start md:items-center lg:items-center">
             <h2 className="font-semibold text-2xl text-[#FE8340]">Operating Hours</h2>
-            <div className="text-gray-200 leading-relaxed text-start">
+            <div className="text-gray-200 leading-relaxed text-center sm:text-start md:text-center">
               <p>Mon - Fri: 9am - 6pm</p>
               <p>Saturday: 10am - 4pm</p>
               <p>Sunday: Closed</p>
             </div>
           </div>
 
-          {/* Contact + Map */}
-          <div className="col-span-12 md:col-span-6 space-y-4 text-center md:text-left">
-            <h2 className="font-semibold text-2xl text-[#FE8340] text-center ">Contact Us</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Find Us - Map Section */}
+          <div className="col-span-12 sm:col-span-6 md:col-span-3 space-y-3 flex flex-col items-center">
+            <h2 className="font-semibold text-2xl text-[#FE8340]">Find Us</h2>
+            <div className="w-full h-[180px] sm:h-[200px] md:h-[160px] lg:h-[200px] rounded-lg overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2403.8578646298374!2d-1.1822903!3d52.95098050000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4879c3dffa0449e9%3A0xb721bcb687e7b3ba!2sVM%20GROUP%20EUROPE%20LIMITED!5e0!3m2!1sen!2sin!4v1743844260918!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="VM GROUP EUROPE LIMITED Location"
+              ></iframe>
+            </div>
+          </div>
 
-              {/* Embedded Map */}
-              <div className="w-full h-[150px] sm:h-[250px] md:h-[150px] rounded-lg overflow-hidden">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2403.8578646298374!2d-1.1822903!3d52.95098050000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4879c3dffa0449e9%3A0xb721bcb687e7b3ba!2sVM%20GROUP%20EUROPE%20LIMITED!5e0!3m2!1sen!2sin!4v1743844260918!5m2!1sen!2sin"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="VM GROUP EUROPE LIMITED Location"
-                ></iframe>
+          {/* Contact Info Section */}
+          <div className="col-span-12 sm:col-span-6 md:col-span-3 space-y-3 flex flex-col items-center sm:items-start">
+            <h2 className="font-semibold text-2xl text-[#FE8340] text-center sm:text-left">Contact Us</h2>
+            <div className="space-y-2 text-gray-200 w-full max-w-[280px] sm:max-w-full md:max-w-[220px] lg:max-w-[280px]">
+              <div className="leading-relaxed flex items-start gap-2">
+                <span className="text-[#FE8340] mt-1 flex-shrink-0"><MapPin size={18} className="text-[#FE8340]" /></span>
+                <span className="text-left text-xs sm:text-xs md:text-xs lg:text-sm">
+                  VM Group Europe Ltd, Ingenuity Centre,
+                  University Of Nottingham Innovation Park,
+                  Triumph Road, Nottingham, England, NG7 2TU
+                </span>
               </div>
-
-              {/* Contact Info */}
-              <div className="space-y-2 text-gray-200">
-                <div className="leading-relaxed flex items-center gap-2">
-                  {/* <span className="">
-                    <MapPin size={18} className="text-[#FE8340]" />
-                  </span> */}
-                  <span className="flex items-center gap-2">
-                    <span className="text-[#FE8340]"><MapPin size={18} className="text-[#FE8340]" /></span>
-                    <span className="">Innovation Park, Triumph Road,
-                      Nottingham, NG7 2TU
-                    </span>
-                  </span>
-                </div>
-                <div className="flex justify-center md:justify-start items-center gap-2">
-                  <Phone size={18} className="text-[#FE8340]" />
-                  <a href="tel:+447442590367" className="hover:text-[#FE8340] transition-colors">
-                    +44 7442590367
-                  </a>
-                </div>
-                <div className="flex justify-center md:justify-start items-center gap-2">
-                  <Phone size={18} className="text-[#FE8340]" />
-                  <a href="tel:+447377420266" className="hover:text-[#FE8340] transition-colors">
-                    +44 7377420266
-                  </a>
-                </div>
-                <div className="flex justify-center md:justify-start items-center gap-2">
-                  <Mail size={18} className="text-[#FE8340]" />
-                  <a href="mailto:connect@vmecogrow.com" className="hover:text-[#FE8340] transition-colors">
-                    connect@vmecogrow.com
-                  </a>
-                </div>
+              <div className="flex justify-start items-center gap-2">
+                <Phone size={18} className="text-[#FE8340] flex-shrink-0" />
+                <a href="tel:+447442590367" className="hover:text-[#FE8340] transition-colors text-xs sm:text-xs md:text-xs lg:text-sm">
+                  +44 7442590367
+                </a>
               </div>
-
+              <div className="flex justify-start items-center gap-2">
+                <Phone size={18} className="text-[#FE8340] flex-shrink-0" />
+                <a href="tel:+447377420266" className="hover:text-[#FE8340] transition-colors text-xs sm:text-xs md:text-xs lg:text-sm">
+                  +44 7405336635
+                </a>
+              </div>
+              <div className="flex justify-start items-center gap-2">
+                <Mail size={18} className="text-[#FE8340] flex-shrink-0" />
+                <a href="mailto:connect@vmecogrow.com" className="hover:text-[#FE8340] transition-colors text-xs sm:text-xs md:text-xs lg:text-sm">
+                  connect@vmecogrow.com
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -113,7 +115,7 @@ export default function Footer() {
 
             {/* Copyright */}
             <div className="lg:col-span-2 text-center lg:text-right">
-              <p className="text-gray-400 text-sm">© {new Date().getFullYear()} VM ECOGROW</p>
+              {/* <p className="text-gray-400 text-sm">© {new Date().getFullYear()} VM ECOGROW</p> */}
             </div>
           </div>
         </div>

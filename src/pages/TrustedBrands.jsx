@@ -14,7 +14,7 @@ const brands = [
   { name: "Krushnai", imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/trustedBrands/cimz5xx9pc94bhu4ci4e" },
   { name: "Sahyadri", imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/trustedBrands/esflguyfgn94wixwmkqg" },
   { name: "Coffee Brand 7", imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/trustedBrands/ejmtshsjr1epsynx1xqg" },
-  { name: "Coffee Brand 6", imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/trustedBrands/qhcewnqw2g8bdpncygcv" }
+  // { name: "Coffee Brand 6", imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/trustedBrands/qhcewnqw2g8bdpncygcv" }
 ];
 
 const TrustedBrands = () => {

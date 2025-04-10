@@ -297,7 +297,7 @@ export const productCategories = {
                         imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/catalog/Solids/d0dnerduqriyh7666ffu",
                         description: "A unique blend of organic carbon, calcium, silicon, sulphur, and plant bio-stimulants, complemented by background NPK to enhance soil structure, strengthen plant resilience, and improve nutrient availability.",
                         suitableFor: "Golf courses, sports turf, lawns, ornamental landscapes, fairways, and trees",
-                        keyBenefits: [
+                        keyPerformance: [
                             "Enhances soil health while providing essential minerals for plant growth.",
                             "Strengthens cell strength, membrane function, and physical defenses for stems and leaves against environmental challenges.",
                             "Enhances plant resilience, strengthens immunity, and improves structural integrity for overall health.",
@@ -334,7 +334,7 @@ export const productCategories = {
                         imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/catalog/Solids/iif8hgvdf2wjq9jhktur",
                         description: "Produced from recycled green waste under controlled conditions, NBS Green Compost™ is a nutrient-rich, humified compost that enhances soil fertility and supports beneficial soil microbiology. It is carefully screened to remove larger particles, retaining the essential minerals and biology that promote plant health.",
                         suitableFor: "Various agricultural and landscaping applications, including eco-mulching and soil conditioning.",
-                        keyBenefits: [
+                        keyPerformance: [
                             "Improves soil structure, fertility, and microbial activity, leading to healthier plant growth.",
                             "When applied as mulch, it helps retain soil moisture, reduces the need for frequent watering, and acts as a physical barrier that reduces weed growth by limiting light exposure to the soil surface.",
                             "Encourages the establishment of beneficial soil fungi, contributing to a balanced soil ecosystem."
@@ -394,10 +394,10 @@ export const productCategories = {
                         id: "bio-stimulator",
                         name: "NBS BIO STIMULATOR™",
                         type: "Organic Granular Fertiliser for Soil Application",
-                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/golf/ov6inrw5rp0g6whq0a1b",
+                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/catalog/Humates/ll020sm9oywnpjlcrssh",
                         description: "NBS BIO STIMULATOR™ is formulated with organic matter, organic calcium, and organic carbon. It disperses in the soil upon contact with moisture, releasing nutrients gradually while chelating soil nutrients to bolster plant absorption.",
                         suitableFor: "Grain crops, vegetables, fruit crops, lawns, turf, floriculture, and ornamental plants.",
-                        keyBenefits: [
+                        keyPerformance: [
                             "Improves soil structure and cultivates microbial activity.",
                             "Strengthens plant immunity against diseases.",
                             "Chelates soil nutrients for better plant absorption, enhancing soil fertility and ensuring sustained nutrient availability."
@@ -521,7 +521,7 @@ export const productCategories = {
                         id: "pseudo-tech",
                         name: "NBS PSEUDO TECH™",
                         type: "Microbial and Plant Immunity Enhancer",
-                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/golf/p0ekd8fyycn7ionls8p5",
+                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/catalog/Microbes%20and%20bio%20stimulants/x5cnezjr7ilczffbztbx",
                         description: "NBS PSEUDO TECH™ is a microbial-based solution containing Pseudomonas fluorescens, a naturally occurring bacterium known to promote plant health. It works by stimulating plant immunity and supporting beneficial microbial activity in the soil, contributing to overall plant vigour. This environmentally friendly product is safe for use around children, pets, and beneficial organisms.",
                         suitableFor: "All crops and can be applied as a soil drench or foliar spray.",
                         keyPerformance: [
@@ -979,7 +979,7 @@ export const productCategories = {
                         imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/golf/xmc3viz038gnttpagvp0",
                         description: "NBS ReSilica™ is a premium organic fertilizer and soil conditioner specifically formulated for high-performance turf and ornamental landscapes. Its unique composition includes 12% calcium, 8-10% silicon (SiO2), 35-40% organic carbon, and 12% sulphur, along with plant biostimulants and a balanced NPK ratio. This innovative blend strengthens plants' physical and biochemical defences, enhances nutrient uptake, and improves overall soil health.",
                         suitableFor: "Golf courses, sports turf, lawns, ornamental landscapes, fairways, and trees. It's particularly effective in high-traffic areas, stress-prone environments, and wherever premium turf quality is required. NBS ReSilica™ is also excellent for maintaining the health and vigor of ornamental trees and shrubs in landscaped areas.",
-                        keyBenefits: [
+                        keyPerformance: [
                             "Improved Turf Density and Colour: Enhances overall appearance and health",
                             "Enhanced Wear Tolerance: Ideal for high-traffic areas on golf courses and sports fields",
                             "Increased Resistance: Reduces the need for fungicides and other chemical treatments",
@@ -1016,7 +1016,7 @@ export const productCategories = {
                         imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/golf/a46tx63qzhy26absgxbw",
                         description: "Produced from recycled green waste under controlled conditions, NBS Green Compost™ is a nutrient-rich, humified compost that enhances soil fertility and supports beneficial soil microbiology. It is carefully screened to remove larger particles, retaining the essential minerals and biology that promote plant health. Suitable for various agricultural and landscaping applications, including eco-mulching and soil conditioning.",
                         suitableFor: "Turf, lawns, ornamental plants, and landscapes",
-                        keyBenefits: [
+                        keyPerformance: [
                             "Improves soil structure, fertility, and microbial activity",
                             "Enhances moisture retention when used as mulch",
                             "Reduces weed growth by limiting light exposure to the soil surface",
@@ -1090,10 +1090,10 @@ export const productCategories = {
                         id: "bio-stimulator",
                         name: "NBS BIO STIMULATOR™",
                         type: "Organic Granular Fertiliser for Soil Application",
-                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/catalog/Humates/ll020sm9oywnpjlcrssh",
+                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/golf/ov6inrw5rp0g6whq0a1b",
                         description: "NBS BIO STIMULATOR™ is formulated with organic matter, organic calcium and organic carbon. It disperses in the soil upon contact with moisture, releasing nutrients gradually while chelating soil nutrients to bolster plant absorption. It also supports beneficial soil microbes and restoring natural cycles. A slow-release formula, it remains active for over two months, making it ideal for application under mulching paper.",
                         suitableFor: " Golf courses, trees and fairways, sports turf, lawns, and landscape plantings.",
-                        keyBenefits: [
+                        keyPerformance: [
                             "Enhances soil structure and promotes beneficial microbial activity",
                             "Supports overall health, resilience and immunises against diseases",
                             "Improves nutrient availability and uptake through chelation, contributing to better soil fertility"
@@ -1272,7 +1272,7 @@ export const productCategories = {
                         id: "pseudo-tech",
                         name: "NBS PSEUDO TECH™",
                         type: "Microbial Plant Health Enhancer for Premium Turf and Landscapes",
-                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/catalog/Microbes%20and%20bio%20stimulants/x5cnezjr7ilczffbztbx",
+                        imgSrc: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/golf/p0ekd8fyycn7ionls8p5",
                         description: "PSEUDO TECH™ is an advanced microbial solution featuring beneficial Pseudomonas fluorescens, specifically formulated for high-performance turf and ornamental landscapes. This innovative product supports plant health by enhancing natural defence mechanisms and promoting beneficial soil microbial activity, resulting in more resilient and vibrant turf and ornamentals.",
                         suitableFor: "Golf courses (greens, tees, and fairways), sports turf and athletic fields, High-end lawns and ornamental gardens, Commercial Landscaping",
                         keyPerformance: [

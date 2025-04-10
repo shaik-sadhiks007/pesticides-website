@@ -5,7 +5,7 @@ import { productCategories } from "../data/productsData"
 import { useProducts } from "../context/ProductContext"
 import { useSearch } from "../context/SearchContext"
 import { Input } from "./ui/input"
-import { Button } from "./ui/button"
+import { Button } from "./ui/Button"
 import { cn } from "../lib/utils"
 
 export default function Header() {
@@ -29,7 +29,6 @@ export default function Header() {
   // Close dropdowns when location changes
   useEffect(() => {
     setIsMenuOpen(false)
-    document.body.style.overflow = 'unset'
   }, [location])
 
   // Close search results when clicking outside
@@ -96,13 +95,10 @@ export default function Header() {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
-    // Prevent scrolling when menu is open
-    document.body.style.overflow = !isMenuOpen ? 'hidden' : 'unset'
   }
 
   const handleLinkClick = () => {
     setIsMenuOpen(false)
-    document.body.style.overflow = 'unset'
     // Force close all dropdowns by removing hover classes
     const dropdowns = document.querySelectorAll('.group-hover\\:opacity-100, .group-hover\\:visible')
     dropdowns.forEach(dropdown => {
@@ -121,13 +117,13 @@ export default function Header() {
   const handleSearchResultClick = (path) => {
     // Close the search results dropdown
     setShowSearchResults(false)
-    
+
     // Clear the search query
     clearSearch()
-    
+
     // Navigate to the selected path
     navigate(path)
-    
+
     // Force a scroll to top when navigating
     window.scrollTo(0, 0)
   }
@@ -159,7 +155,10 @@ export default function Header() {
         <div className="flex-1 flex flex-col min-w-0 ">
           {/* Navigation Links */}
           <nav className="flex items-center space-x-4 xl:space-x-6 px-4 xl:px-6 py-4">
+
             <Link to="/" className={`${isActive("/")} text-sm xl:text-sm whitespace-nowrap`} onClick={handleLinkClick}>Home</Link>
+            <Link to="/about" className={`${isActive("/about")} text-sm xl:text-sm whitespace-nowrap`} onClick={handleLinkClick}>About</Link>
+
             <div className="relative group">
               <Link
                 to="/products"
@@ -326,7 +325,6 @@ export default function Header() {
                 </div>
               </div>
             </div>
-            <Link to="/about" className={`${isActive("/about")} text-sm xl:text-sm whitespace-nowrap`} onClick={handleLinkClick}>About</Link>
             <Link to="/services" className={`${isActive("/services")} text-sm xl:text-sm whitespace-nowrap`} onClick={handleLinkClick}>Services</Link>
             <div className="relative group">
               <Link
@@ -363,7 +361,7 @@ export default function Header() {
                   </div>
                   <div className="relative group/case-studies">
                     <div className="flex items-center justify-between px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">
-                      <span>Case Studies</span>
+                      <span>Results</span>
                       <ChevronRight className="h-4 w-4" />
                     </div>
                     <div className="absolute left-full top-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover/case-studies:opacity-100 group-hover/case-studies:visible transition-all duration-200">
@@ -466,7 +464,7 @@ export default function Header() {
             </a>
             <a href="tel:+447377420266" className="hover:text-[#FE8340] transition-colors text-sm flex items-center gap-2 whitespace-nowrap">
               <Phone size={16} className="text-[#FE8340] flex-shrink-0" />
-              +44 7377420266
+              +44 7405336635
             </a>
           </div>
           <a href="mailto:connect@vmecogrow.com" className="hover:text-[#FE8340] transition-colors text-sm flex items-center gap-2 whitespace-nowrap mt-2">
@@ -595,6 +593,13 @@ export default function Header() {
             >
               Home
             </Link>
+            <Link
+              to="/about"
+              className={`${isActive("/about")} text-lg py-2 border-b border-[#3a4f3f] last:border-b-0`}
+              onClick={handleLinkClick}
+            >
+              About
+            </Link>
             <div className="border-b border-[#3a4f3f] last:border-b-0">
               <details className="group">
                 <summary className={`${isActive("/products")} text-lg py-2 flex justify-between items-center cursor-pointer`}>
@@ -714,13 +719,7 @@ export default function Header() {
                 </div>
               </details>
             </div>
-            <Link
-              to="/about"
-              className={`${isActive("/about")} text-lg py-2 border-b border-[#3a4f3f] last:border-b-0`}
-              onClick={handleLinkClick}
-            >
-              About
-            </Link>
+
             <Link
               to="/services"
               className={`${isActive("/services")} text-lg py-2 border-b border-[#3a4f3f] last:border-b-0`}
@@ -829,7 +828,7 @@ export default function Header() {
                 </a>
                 <a href="tel:+447377420266" className="hover:text-[#FE8340] transition-colors text-sm flex items-center gap-2">
                   <Phone size={16} className="text-[#FE8340] flex-shrink-0" />
-                  +44 7377420266
+                  +44 7405336635
                 </a>
               </div>
               <a href="mailto:connect@vmecogrow.com" className="hover:text-[#FE8340] transition-colors text-sm flex items-center gap-2 mt-3 md:mt-0">

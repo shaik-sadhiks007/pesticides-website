@@ -33,7 +33,7 @@ export default function ContactInfo() {
             <div className="text-center">
               <h1 className="font-semibold text-xl mb-2">University Of Nottingham</h1>
               <h1 className="text-sm">Innovation Park, Triumph Road, Nottingham, NG7 2TU</h1>
-              <h1 className="font-semibold mt-2 text-sm">Tel: <span>+44 7377420266</span></h1>
+              <h1 className="font-semibold mt-2 text-sm">Tel: <span>+44 7405336635</span></h1>
               <h1 className="font-semibold text-sm">Tel: <span>+44 7442590367</span></h1>
               <h1 className="font-semibold hover:text-[#FE8340] transition-colors">Email : <a href="mailto:connect@vmecogrow.com" >connect@vmecogrow.com</a></h1>
 
@@ -70,7 +70,7 @@ export default function ContactInfo() {
             <div className="col-span-4 flex flex-col justify-center h-full">
               <h1 className="font-semibold text-2xl">University Of Nottingham</h1>
               <h1>Innovation Park, Triumph Road, Nottingham, NG7 2TU</h1>
-              <h1 className="font-semibold mt-2">Tel: <span>+44 7377420266</span></h1>
+              <h1 className="font-semibold mt-2">Tel: <span>+44 7405336635</span></h1>
               <h1 className="font-semibold">Tel: <span>+44 7442590367</span></h1>
               <h1 className="font-semibold hover:text-[#FE8340] transition-colors">Email : <a href="mailto:connect@vmecogrow.com" >connect@vmecogrow.com</a></h1>
             </div>

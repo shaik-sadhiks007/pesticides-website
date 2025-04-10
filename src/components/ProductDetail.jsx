@@ -7,10 +7,23 @@ import { useState, useEffect } from "react";
 import { Shuffle } from "lucide-react";
 import { Input } from "../components/ui/input";
 import { FileText, Download, BarChart2, BookOpen, FileCheck } from "lucide-react";
+import paddyCaseStudy from "../assets/pdfs/caseStudy/paddy-case-study.pdf"
+import sapphireGranules from "../assets/pdfs/caseStudy/article-sapphire-granules.pdf"
+import researchTrialGrapes from "../assets/pdfs/caseStudy/research-trial-grapes.pdf"
+import maxSpreader from "../assets/pdfs/caseStudy/TDS-NBS-MAX-SPREADER.pdf"
 
 export default function ProductDetail() {
     const { category, subcategory, productId } = useParams();
     const navigate = useNavigate();
+
+    const handleDownload = (pdfUrl) => {
+        const link = document.createElement('a');
+        link.href = pdfUrl;
+        link.download = pdfUrl.split('/').pop();
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
 
     const product = productCategories[category]?.subcategories[subcategory]?.products.find(
         (p) => p.id === productId
@@ -104,7 +117,7 @@ export default function ProductDetail() {
                 title: "Efficacy Data – NBS Max Spreader",
                 description: "NBS Max Spreader has demonstrated exceptional performance in enhancing spray coverage and penetration. The efficacy data shows improved nutrient absorption and reduced surface tension, leading to better distribution of agricultural inputs. This results in more efficient use of pesticides and foliar nutrients, ultimately contributing to improved crop health and reduced input costs.",
                 icon: <BarChart2 className="w-5 h-5" />,
-                pdfUrl: "/src/assets/pdfs/caseStudy/TDS-NBS-MAX-SPREADER.pdf",
+                pdfUrl: maxSpreader,
                 caseStudyLink: "/media/case-study/max-spreader-efficacy"
             },
             "sapphire-granules": {
@@ -112,7 +125,7 @@ export default function ProductDetail() {
                 title: "NBS Sapphire Granules (Humates)",
                 description: "Quality humates from Leonardite source with 85-90% solubility and minimum 75% w/w potassium humate content. The study demonstrates superior performance in nutrient chelation, soil conditioning, and fertilizer efficiency. Features DIY liquid humic solution option for cost-effective application, with proven results in improving soil structure and plant nutrient uptake.",
                 icon: <BookOpen className="w-5 h-5" />,
-                pdfUrl: "/src/assets/pdfs/caseStudy/article-sapphire-granules.pdf",
+                pdfUrl: sapphireGranules,
                 caseStudyLink: "/media/case-study/sapphire-granules"
             },
             "micro-shield": {
@@ -120,7 +133,7 @@ export default function ProductDetail() {
                 title: "Microshield Grapes Research Trial",
                 description: "Research trial demonstrating Microshield's effectiveness in controlling post-harvest fungal damage in grapes. Contains Trichoderma viride spores that effectively combat seed and soil-borne plant pathogens. The trial showed significant reduction in post-harvest losses, with improved control over Alterneria, Claudosporium, Aspergillus, and other fungal infections, leading to better grape quality and extended shelf life.",
                 icon: <FileText className="w-5 h-5" />,
-                pdfUrl: "/src/assets/pdfs/caseStudy/research-trial-grapes.pdf",
+                pdfUrl: researchTrialGrapes,
                 caseStudyLink: "/media/case-study/microshield-grapes-trial"
             },
             "bio-stimulator": {
@@ -128,7 +141,7 @@ export default function ProductDetail() {
                 title: "Paddy Case Study",
                 description: "The NBS Bio Stimulator significantly improved soil fertility and microbial activity in paddy cultivation. Research showed enhanced root development and organic matter content, leading to better nutrient absorption and 30% increased yield. Key benefits include improved soil structure, enhanced microbial diversity, and sustainable farming practices.",
                 icon: <FileCheck className="w-5 h-5" />,
-                pdfUrl: "/src/assets/pdfs/caseStudy/paddy-case-study.pdf",
+                pdfUrl: paddyCaseStudy,
                 caseStudyLink: "/media/case-study/paddy-case-study"
             },
             "bug-shield": {
@@ -136,7 +149,7 @@ export default function ProductDetail() {
                 title: "Paddy Case Study",
                 description: "NBS Bug Shield demonstrated exceptional results in paddy cultivation by strengthening natural plant defenses and promoting stress-free growth. The case study revealed reduced pesticide requirements, improved plant vigor, and enhanced crop resilience. The product contributed to healthier crops with minimal chemical inputs.",
                 icon: <FileCheck className="w-5 h-5" />,
-                pdfUrl: "/src/assets/pdfs/caseStudy/paddy-case-study.pdf",
+                pdfUrl: paddyCaseStudy,
                 caseStudyLink: "/media/case-study/paddy-case-study"
             },
             "yield-booster": {
@@ -144,7 +157,7 @@ export default function ProductDetail() {
                 title: "Paddy Case Study",
                 description: "NBS Yield Booster proved highly effective in paddy cultivation, showing a 25-30% increase in yield. The case study demonstrated improved grain quality, enhanced nutrient uptake, and better chlorophyll production. The product's application resulted in larger, shinier grains with superior taste and nutritional value.",
                 icon: <FileCheck className="w-5 h-5" />,
-                pdfUrl: "/src/assets/pdfs/caseStudy/paddy-case-study.pdf",
+                pdfUrl: paddyCaseStudy,
                 caseStudyLink: "/media/case-study/paddy-case-study"
             },
             "bio-protect": {
@@ -152,7 +165,7 @@ export default function ProductDetail() {
                 title: "Paddy Case Study",
                 description: "NBS Bio Protect showed remarkable results in paddy cultivation by enhancing plant immunity and stress tolerance. The case study demonstrated improved plant health, reduced disease susceptibility, and better overall crop quality. The product contributed to a 30-day earlier maturity and significant reduction in pesticide usage.",
                 icon: <FileCheck className="w-5 h-5" />,
-                pdfUrl: "/src/assets/pdfs/caseStudy/paddy-case-study.pdf",
+                pdfUrl: paddyCaseStudy,
                 caseStudyLink: "/media/case-study/paddy-case-study"
             }
         };
@@ -165,9 +178,9 @@ export default function ProductDetail() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="py-8 bg-[#DACEC2] px-4"
+            className="py-8 bg-[#DACEC2] px-4 w-full"
         >
-            <div className="container ">
+            <div className="w-full px-4">
                 {/* Product Details Section */}
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
                     {/* Left Column - Image */}
@@ -364,18 +377,18 @@ export default function ProductDetail() {
 
 
                 {/* Suggested Products Section */}
-                <div className="container px-4 mt-16 mb-8">
+                <div className="w-full px-4 mt-16 mb-8">
                     <div className="flex items-center gap-3 mb-6">
                         <Shuffle className="w-6 h-6 text-[#293E31]" />
                         <h2 className="text-2xl font-bold text-[#293E31]">You May Also Like</h2>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="flex w-full flex-wrap justify-center items-center gap-6">
                         {getRandomSuggestedProducts().map((product) => (
                             <motion.div
                                 key={product.id}
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                className="group bg-white rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-lg transition-all duration-300"
+                                className="group bg-white rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-lg transition-all duration-300 w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(25%-1.5rem)]"
                                 onClick={() => navigate(`/products/${category}/${product.subcategoryKey}/${product.id}`)}
                             >
                                 <div className="relative h-[200px]">
@@ -404,7 +417,7 @@ export default function ProductDetail() {
                 </div>
 
                 {/* Product Enquiry Form - Full Width */}
-                <div className="max-w-5xl mx-auto">
+                <div className="w-full flex justify-center items-center">
                     <div className="bg-[#dacec2] p-8">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             {/* Left Side - Form Content */}
@@ -484,7 +497,7 @@ export default function ProductDetail() {
                 </div>
 
                 {/* Disclaimer Section */}
-                <div className="max-w-5xl mx-auto mt-8">
+                <div className="w-full flex justify-center items-center mt-8">
                     <Accordion type="single" defaultValue="disclaimer" collapsible>
                         <AccordionItem value="disclaimer" className="border-b-black">
                             <AccordionTrigger className="text-[#293E31] cursor-pointer text-2xl font-semibold">
@@ -505,7 +518,7 @@ export default function ProductDetail() {
                 </div>
                 {/* Research Results Section - Only show for specific products */}
                 {hasResearchData() && (
-                    <div className="max-w-5xl mx-auto">
+                    <div className="w-full">
                         <Accordion type="single" collapsible>
                             <AccordionItem value="research" className="border-b-black">
                                 <AccordionTrigger className="text-[#293E31] cursor-pointer text-2xl font-semibold">
@@ -533,7 +546,7 @@ export default function ProductDetail() {
                                                                         to={data.caseStudyLink}
                                                                         className="inline-flex items-center gap-2 text-[#FE8340] hover:text-[#e06724] mt-4 font-medium"
                                                                     >
-                                                                        View Full Case Study
+                                                                        View More
                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                                                             <path d="M5 12h14M12 5l7 7-7 7"/>
                                                                         </svg>
@@ -544,15 +557,13 @@ export default function ProductDetail() {
                                                     </div>
 
                                                     <div className="w-full md:w-auto flex flex-col gap-3">
-                                                        <a
-                                                            href={data.pdfUrl}
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
+                                                        <button
+                                                            onClick={() => handleDownload(data.pdfUrl)}
                                                             className="flex items-center justify-center gap-2 bg-[#FE8340] text-white py-3 px-6 rounded-lg hover:bg-[#e06724] transition-colors duration-300 w-full"
                                                         >
                                                             <Download className="w-5 h-5" />
                                                             Download PDF
-                                                        </a>
+                                                        </button>
                                                     </div>
                                                 </div>
 
@@ -561,14 +572,41 @@ export default function ProductDetail() {
                                                     <div className="mt-8 pt-6 border-t border-[#e0e7d5]">
                                                         <h4 className="text-lg font-semibold text-[#293E31] mb-4">Also Featured in This Case Study:</h4>
                                                         <div className="flex flex-wrap gap-3">
-                                                            {["bio-stimulator", "bug-shield", "yield-booster", "bio-protect"].filter(id => id !== product.id).map(id => (
-                                                                <a
-                                                                    key={id}
-                                                                    href={`/products/${category}/${subcategory}/${id}`}
-                                                                    className="inline-flex items-center gap-2 bg-[#293E31] bg-opacity-10 text-[#293E31] py-2 px-4 rounded-full hover:bg-opacity-20 transition-colors duration-300"
+                                                            {[
+                                                                {
+                                                                    id: "bio-stimulator",
+                                                                    name: "Bio Stimulator",
+                                                                    category: "agricultureAndHorticulture",
+                                                                    subcategory: "humates"
+                                                                },
+                                                                {
+                                                                    id: "bug-shield",
+                                                                    name: "Bug Shield",
+                                                                    category: "agricultureAndHorticulture",
+                                                                    subcategory: "microbesAndBioStimulants"
+                                                                },
+                                                                {
+                                                                    id: "yield-booster",
+                                                                    name: "Yield Booster",
+                                                                    category: "agricultureAndHorticulture",
+                                                                    subcategory: "liquidFertilisers"
+                                                                },
+                                                                {
+                                                                    id: "bio-protect",
+                                                                    name: "Bio Protect",
+                                                                    category: "agricultureAndHorticulture",
+                                                                    subcategory: "microbesAndBioStimulants"
+                                                                }
+                                                            ]
+                                                            .filter(item => item.id !== product.id)
+                                                            .map(item => (
+                                                                <Link
+                                                                    key={item.id}
+                                                                    to={`/products/${item.category}/${item.subcategory}/${item.id}`}
+                                                                    className="inline-flex text-white items-center gap-2 bg-[#293E31] bg-opacity-10 text-[#293E31] py-2 px-4 rounded-full hover:bg-opacity-20 transition-colors duration-300"
                                                                 >
-                                                                    {id.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
-                                                                </a>
+                                                                    {item.name}
+                                                                </Link>
                                                             ))}
                                                         </div>
                                                     </div>

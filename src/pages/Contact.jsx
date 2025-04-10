@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Button } from "../components/ui/button"
+import { Button } from "../components/ui/Button"
 import { Input } from "../components/ui/input"
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, ChevronRight, Clock } from "lucide-react"
 import { motion } from "framer-motion"
@@ -42,9 +42,13 @@ export default function Contact() {
             <div className="relative w-full h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-screen overflow-hidden" id="top">
                 {/* Background Image */}
                 <div
-                    className="absolute inset-0 bg-center bg-cover md:bg-fixed"
+                    className="absolute inset-0 bg-center bg-cover bg-no-repeat"
                     style={{
                         backgroundImage: `url("https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/HomeBanner/contactBanner/wnit8xx4jxfnc7tq7vks")`,
+                        backgroundPosition: 'center',
+                        backgroundSize: 'cover',
+                        WebkitBackgroundSize: 'cover',
+                        MozBackgroundSize: 'cover',
                     }}
                 ></div>
 
@@ -179,8 +183,8 @@ export default function Contact() {
 
             {/* Get in Touch Section */}
             <section className="bg-[#DACEC2] py-8 md:py-12">
-                <div className="container px-4 md:px-8">
-                    <div className="max-w-5xl mx-auto">
+                <div className="w-full px-4 md:px-8">
+                    <div className="flex flex-col items-center justify-center">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -210,7 +214,7 @@ export default function Contact() {
                                 <h3 className="text-xl font-semibold text-[#293E31] mb-3">Call Us</h3>
                                 <div className="space-y-1 text-[#293E31]/80">
                                     <a href="tel:+447442590367" className="block hover:text-[#FE8340] transition-colors text-sm">+44 7442590367</a>
-                                    <a href="tel:+447377420266" className="block hover:text-[#FE8340] transition-colors text-sm">+44 7377420266</a>
+                                    <a href="tel:+447377420266" className="block hover:text-[#FE8340] transition-colors text-sm">+44 7405336635</a>
                                 </div>
                             </motion.div>
 
@@ -285,15 +289,15 @@ export default function Contact() {
 
             {/* Let's Grow Together Section */}
             <section className="bg-[#DACEC2]">
-                <div className="container px-4 md:px-8">
-                    <div className="max-w-5xl mx-auto text-center">
+                <div className="w-full px-4 md:px-8">
+                    <div className="flex flex-col items-center justify-center">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5 }}
                             className=""
                         >
-                            <h2 className="text-3xl md:text-4xl font-bold mb-3 text-[#293E31]">Let's Grow Together</h2>
+                            <h2 className="text-3xl md:text-4xl font-bold mb-3 text-[#293E31] text-center">Let's Grow Together</h2>
                             <div className="w-24 h-1 bg-[#FE8340] mx-auto mb-6"></div>
                             <p className="text-lg text-[#293E31]/90 max-w-3xl mx-auto leading-relaxed">
                                 Whether you're a distributor, entrepreneur, or global enterprise, VM ECOGROW
@@ -308,8 +312,8 @@ export default function Contact() {
 
             {/* Connect With Us Section */}
             <section className="bg-[#DACEC2] py-12 md:py-16">
-                <div className="container px-4 md:px-8">
-                    <div className="max-w-4xl mx-auto">
+                <div className="w-full px-4 md:px-8">
+                    <div className="flex flex-col items-center justify-center">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}

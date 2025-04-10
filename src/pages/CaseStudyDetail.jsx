@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Button } from "../components/ui/button";
+import { Button } from "../components/ui/Button";
 import { ArrowLeft, Download, FileText, BarChart2 } from "lucide-react";
-
-// Import the case studies data
-// In a real application, you would fetch this from an API
 import { caseStudies } from "../data/caseStudies";
 
 const CaseStudyDetail = () => {
@@ -13,6 +10,30 @@ const CaseStudyDetail = () => {
   const navigate = useNavigate();
   const [study, setStudy] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
+
+  const handleDownload = (pdfUrl) => {
+    const link = document.createElement('a');
+    link.href = pdfUrl;
+    link.download = `${study.title.toLowerCase().replace(/\s+/g, '-')}.pdf`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const getProductPath = (product) => {
+    // Add mapping for different product categories
+    const categoryMap = {
+      "Bio-Stimulator": '/products/agricultureAndHorticulture/humates/bio-stimulator',
+      "Bug Shield": '/products/agricultureAndHorticulture/microbesAndBioStimulants/bug-shield',
+      "Yield Booster": '/products/agricultureAndHorticulture/liquidFertilisers/yield-booster',
+      "Bio-Protect" : '/products/agricultureAndHorticulture/microbesAndBioStimulants/bio-protect',
+      "Microshield" : '/products/agricultureAndHorticulture/microbesAndBioStimulants/microshield',
+      "Sapphire Granules" : '/products/agricultureAndHorticulture/humates/sapphire-granules',
+      "Max Spreader" : "/products/agricultureAndHorticulture/liquidFertilisers/max_spreader"
+    };
+
+    return categoryMap[product] || `/products/agricultureAndHorticulture/humates/${product.toLowerCase().replace(/\s+/g, '-')}`;
+  };
 
   useEffect(() => {
     // Find the case study by ID
@@ -113,7 +134,7 @@ const CaseStudyDetail = () => {
                     {study.products.map((product, index) => (
                       <Link 
                         key={index} 
-                        to={`/products/plant-nutrition/bio-stimulants/${product.toLowerCase().replace(/\s+/g, '-')}`}
+                        to={getProductPath(product)}
                         className="flex items-center gap-3 p-3 bg-white rounded-lg hover:shadow-md transition-shadow"
                       >
                         <div className="bg-[#293E31] text-white p-2 rounded-full">
@@ -137,15 +158,13 @@ const CaseStudyDetail = () => {
                   </div>
 
                   <div className="mt-6">
-                    <a 
-                      href={study.pdfUrl} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
+                    <button 
+                      onClick={() => handleDownload(study.pdfUrl)}
                       className="flex items-center justify-center gap-2 bg-[#FE8340] text-white py-3 px-6 rounded-lg hover:bg-[#e06724] transition-colors duration-300 w-full"
                     >
                       <Download className="w-5 h-5" />
                       Download Full Case Study
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -287,7 +306,7 @@ const CaseStudyDetail = () => {
                         {study.products.map((product, index) => (
                           <Link 
                             key={index} 
-                            to={`/products/plant-nutrition/bio-stimulants/${product.toLowerCase().replace(/\s+/g, '-')}`}
+                            to={getProductPath(product)}
                             className="flex items-center gap-3 p-3 bg-white rounded-lg hover:shadow-md transition-shadow"
                           >
                             <div className="bg-[#293E31] text-white p-2 rounded-full">
@@ -311,15 +330,13 @@ const CaseStudyDetail = () => {
                       </div>
 
                       <div className="mt-6">
-                        <a 
-                          href={study.pdfUrl} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
+                        <button 
+                          onClick={() => handleDownload(study.pdfUrl)}
                           className="flex items-center justify-center gap-2 bg-[#FE8340] text-white py-3 px-6 rounded-lg hover:bg-[#e06724] transition-colors duration-300 w-full"
                         >
                           <Download className="w-5 h-5" />
                           Download Full Case Study
-                        </a>
+                        </button>
                       </div>
                     </div>
                   </div>
