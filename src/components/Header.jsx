@@ -108,25 +108,25 @@ export default function Header() {
   }
 
   const handleSearch = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     if (searchQuery.trim()) {
-      performSearch(searchQuery)
+      // Perform search and store results
+      performSearch(searchQuery);
+      setShowSearchResults(true);
+    } else {
+      setShowSearchResults(false);
     }
-  }
+  };
 
-  const handleSearchResultClick = (path) => {
-    // Close the search results dropdown
-    setShowSearchResults(false)
-
-    // Clear the search query
-    clearSearch()
-
-    // Navigate to the selected path
-    navigate(path)
-
-    // Force a scroll to top when navigating
-    window.scrollTo(0, 0)
-  }
+  const handleSearchResultClick = (index) => {
+    const result = searchResults[index];
+    if (result) {
+      navigate(result.path);
+      setShowSearchResults(false);
+      setSearchQuery("");
+      setIsMenuOpen(false);
+    }
+  };
 
   return (
     <header className="w-full">
@@ -439,7 +439,7 @@ export default function Header() {
                       to={result.path}
                       onClick={(e) => {
                         e.preventDefault();
-                        handleSearchResultClick(result.path);
+                        handleSearchResultClick(index);
                       }}
                       className="block p-3 hover:bg-gray-100 cursor-pointer border-b border-gray-200 last:border-b-0 transition-colors"
                     >
@@ -560,25 +560,14 @@ export default function Header() {
             {showSearchResults && searchResults.length > 0 && (
               <div className="mt-2 bg-white rounded-lg shadow-lg max-h-48 overflow-y-auto">
                 {searchResults.map((result, index) => (
-                  <Link
+                  <div
                     key={index}
-                    to={result.path}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      // First close the menu
-                      setIsMenuOpen(false);
-                      document.body.style.overflow = 'unset';
-                      // Then navigate after a short delay to ensure the menu is closed
-                      setTimeout(() => {
-                        handleSearchResultClick(result.path);
-                      }, 100);
-                    }}
+                    onClick={() => handleSearchResultClick(index)}
                     className="block p-3 hover:bg-gray-100 cursor-pointer border-b border-gray-200 last:border-b-0"
                   >
                     <div className="font-medium text-[#293E31]">{result.title}</div>
                     <div className="text-sm text-gray-600">{result.description}</div>
-                  </Link>
+                  </div>
                 ))}
               </div>
             )}
