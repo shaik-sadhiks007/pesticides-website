@@ -3,7 +3,7 @@ import { FacebookIcon } from "./icons/FacebookIcon"
 import { InstagramIcon } from "./icons/InstagramIcon"
 import { TwitterIcon } from "./icons/TwitterIcon"
 import { GmailIcon } from "./icons/GmailIcon"
-import { Mail, MapPin, Phone } from "lucide-react"
+import { LinkedinIcon, Mail, MapPin, Phone } from "lucide-react"
 import hunger from "../assets/footerIcons/hunger.gif"
 import partnership from "../assets/footerIcons/partnership.gif"
 
@@ -114,15 +114,15 @@ export default function Footer() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-6 max-w-6xl mx-auto">
             {/* Links */}
             <div className="lg:col-span-6 flex flex-wrap justify-center lg:justify-start gap-4 lg:gap-6">
-              <Link 
-                to="/privacy-policy" 
+              <Link
+                to="/privacy-policy"
                 className="text-gray-200 hover:text-[#FE8340] transition-colors"
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               >
                 Privacy Policy
               </Link>
-              <Link 
-                to="/terms-and-conditions" 
+              <Link
+                to="/terms-and-conditions"
                 className="text-gray-200 hover:text-[#FE8340] transition-colors"
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               >
@@ -134,10 +134,12 @@ export default function Footer() {
             <div className="lg:col-span-4 flex flex-col lg:flex-row items-center justify-center gap-4">
               <span className="text-[#FE8340] font-semibold whitespace-nowrap">Get Updates:</span>
               <div className="flex items-center gap-4 relative z-50">
-                <a href="#" className="text-[#FE8340] hover:opacity-80 transition-opacity"><FacebookIcon className="w-6 h-6" /></a>
-                <a href="#" className="text-[#FE8340] hover:opacity-80 transition-opacity"><TwitterIcon className="w-6 h-6" /></a>
-                <a href="#" className="text-[#FE8340] hover:opacity-80 transition-opacity"><InstagramIcon className="w-6 h-6" /></a>
+                {/* <a href="https://www.instagram.com/vmecogrow/" className="text-[#FE8340] hover:opacity-80 transition-opacity"><FacebookIcon className="w-6 h-6" /></a> */}
+                {/* <a href="#" className="text-[#FE8340] hover:opacity-80 transition-opacity"><TwitterIcon className="w-6 h-6" /></a> */}
+                <a href="https://www.instagram.com/vmecogrow/" target="_blank" rel="noopener noreferrer" className="text-[#FE8340] hover:opacity-80 transition-opacity"><InstagramIcon className="w-6 h-6" /></a>
+                <a href="https://www.linkedin.com/company/vm-group-europe-ltd/" target="_blank" rel="noopener noreferrer" className="text-[#FE8340] hover:opacity-80 transition-opacity"><LinkedinIcon className="w-6 h-6" /></a>
                 <a href="mailto:connect@vmecogrow.com" className="text-[#FE8340] hover:opacity-80 transition-opacity"><GmailIcon className="w-6 h-6" /></a>
+
               </div>
             </div>
 

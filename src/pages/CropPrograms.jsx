@@ -6,6 +6,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../co
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../components/ui/accordion"
 import ProductsBanner from "../assets/productImages/productBanner.jpg"
 import { useParams, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
+import { productCategories } from "../data/productsData"
 
 // Import PDF files
 import maize from "../assets/pdfs/maize-program.pdf"
@@ -17,7 +19,6 @@ import nitrateConversion from "../assets/pdfs/nitrate-conversion.pdf"
 import rice from "../assets/pdfs/rice-program.pdf"
 import pepper from "../assets/pdfs/pepper-program.pdf"
 import thripsProgram from "../assets/pdfs/thrips-program.pdf"
-import { Link } from "react-router-dom"
 
 const cropPrograms = [
     {
@@ -27,55 +28,55 @@ const cropPrograms = [
         description: "Comprehensive 7-stage plant & soil nutrition program for optimal maize yield",
         duration: "Full Growth Cycle",
         products: [
-            "NBS YIELD BOOSTER",
-            "NBS Microshield",
-            "NBS BIO STIMULATOR",
-            "NBS BUG SHIELD",
-            "NBS K-35",
-            "NBS Pseudotech"
+            "NBS YIELD BOOSTER™",
+            "NBS MICROSHIELD™",
+            "NBS BIO STIMULATOR™",
+            "NBS BUG SHIELD™",
+            "NBS K-35™",
+            "NBS PSEUDO TECH™"
         ],
         stages: [
             {
                 name: "Seed Treatment (Boosting Germination & Early Growth)",
                 duration: "Before Sowing",
                 instructions: "Prepare a solution by mixing 25 ml of NBS YIELD BOOSTER and 20 gm of NBS Microshield in 10 L of water. Dip the seeds in this solution for 20 minutes, ensuring uniform absorption of beneficial nutrients and microbial protection. After treatment, dry the seeds in the shade before sowing to avoid direct sunlight damage and ensure easy handling.",
-                products: ["NBS YIELD BOOSTER", "NBS Microshield"]
+                products: ["NBS YIELD BOOSTER™", "NBS Microshield™"]
             },
             {
                 name: "Soil Preparation (Strengthening Soil Health & Root Development)",
                 duration: "Before Sowing",
                 instructions: "Before sowing, apply 50 kg of NBS BIO STIMULATOR mixed with any organic compost. This step enhances soil fertility, microbial activity, and organic matter content, creating an ideal environment for seed germination and root establishment. Proper soil preparation helps in better nutrient retention and aeration.",
-                products: ["NBS BIO STIMULATOR"]
+                products: ["NBS BIO STIMULATOR™"]
             },
             {
                 name: "Early Growth Phase",
                 duration: "15-20 Days After Sowing",
                 instructions: "At this critical stage, young maize plants require additional nutrients to support root expansion and vegetative growth. Spray NBS YIELD BOOSTER at 1.5 ml/L of water across the field. This foliar application supplies essential bio-nutrients, stimulates chlorophyll production, and improves plant metabolism, ensuring uniform and vigorous early growth.",
-                products: ["NBS YIELD BOOSTER"]
+                products: ["NBS YIELD BOOSTER™"]
             },
             {
                 name: "Vegetative Growth & Nutrient Boost",
                 duration: "45th Day Post-Sowing",
                 instructions: "As the maize plants reach their vegetative peak, they require additional soil nutrition to sustain rapid growth and biomass development. Broadcast 100 kg of NBS BIO STIMULATOR across the field. It can be applied alone or mixed with other fertilizers for better efficiency. This application enhances soil microbial activity, improves nutrient availability, and strengthens the root system for better water and nutrient absorption.",
-                products: ["NBS BIO STIMULATOR"]
+                products: ["NBS BIO STIMULATOR™"]
             },
             {
                 name: "Plant Vitality & Resilience Enhancement",
                 duration: "Every 15 Days",
                 instructions: "To maintain optimal plant health and ensure uninterrupted growth, apply a foliar spray of NBS BUG SHIELD at 1.25 ml/L of water. This application supports overall plant vigour, strengthens natural defences, and promotes a stress-free growth cycle. For consistent results, it is recommended to repeat the application every 15 days as a proactive measure.",
-                products: ["NBS BUG SHIELD"]
+                products: ["NBS BUG SHIELD™"]
             },
             {
                 name: "Flowering & Grain Setting (Ensuring Maximum Yield Potential)",
                 duration: "During Flowering",
                 instructions: "For better flower initiation, stronger grain setting, and improved pollination, foliar nutrition is essential. Apply NBS YIELD BOOSTER at 2 ml/L along with NBS K-35 at 2 ml/L of water. This spray provides essential potassium and growth stimulators, which enhance reproductive development, leading to well-filled, high-yielding maize cobs. Depending on flowering stages, this application can be repeated for consistent results.",
-                products: ["NBS YIELD BOOSTER", "NBS K-35"]
+                products: ["NBS YIELD BOOSTER™", "NBS K-35™"]
             },
             {
                 name: "Plant Strength & Environmental Stress Management",
                 duration: "As Needed",
                 instructions: "To support plant resilience and ensure optimal growth, apply NBS Pseudotech at 200 gm per acre along with NBS BUG SHIELD at 2 ml/L of water. This combination enhances natural defense mechanisms, promotes overall plant health, and maintains crop quality under varying environmental conditions. The application can be repeated as needed, particularly during periods of high moisture or extended wet conditions.",
-                products: ["NBS Pseudotech", "NBS BUG SHIELD"]
+                products: ["NBS Pseudotech™", "NBS BUG SHIELD™"]
             }
         ],
         features: [
@@ -96,16 +97,16 @@ const cropPrograms = [
         description: "Nutrient Solution for Hydroponics - Precise and balanced nutrition for every growth stage",
         duration: "Continuous Application",
         products: [
-            "Stock Solution A",
-            "Stock Solution B",
-            "Chelated Micro-nutrients"
+            "Stock Solution A™",
+            "Stock Solution B™",
+            "Chelated Micro-nutrients™"
         ],
         stages: [
             {
                 name: "Solution Preparation",
                 duration: "Before Application",
                 instructions: "Take 980 ml of RO water in a clean container and mix 10 ml of stock solution 'A'. Mix thoroughly, then add 10 ml of stock solution 'B' to make 1L working solution.",
-                products: ["Stock Solution A", "Stock Solution B"]
+                products: ["Stock Solution A™", "Stock Solution B™"]
             },
             {
                 name: "Solution Monitoring",
@@ -142,14 +143,14 @@ const cropPrograms = [
         description: "Effective Conversion of Leaf Litter & Crop Residues into Humus & Plant Nutrients",
         duration: "As Needed",
         products: [
-            "DIY 6% Liquid Humate",
-            "Molasses/Jaggery",
-            "Urea",
-            "NBS Microshield",
-            "NBS Pseudotech",
-            "Borax/Boric Acid",
-            "Ammonium Molybdate",
-            "Kelp"
+            "DIY 6% Liquid Humate™",
+            "Molasses/Jaggery™",
+            "Urea™",
+            "NBS MICROSHIELD™",
+            "NBS PSEUDO TECH™",
+            "BORAX/BORIC ACID™",
+            "AMMONIUM MOLOBYDATE™",
+            "KELP™"
         ],
         stages: [
             {
@@ -162,7 +163,7 @@ const cropPrograms = [
                 name: "Prepare the Nutrient-Enriched Mixture",
                 duration: "Initial Mix",
                 instructions: "Mix per acre: DIY 6% Liquid Humate (20L - enhances microbial activity), Molasses/Jaggery (4kg - provides energy for soil microbes), Urea (5kg - speeds up decomposition), NBS Microshield (400g - promotes beneficial microbial activity), NBS Pseudotech (400g - aids in organic matter decomposition).",
-                products: ["DIY 6% Liquid Humate", "Molasses/Jaggery", "Urea", "NBS Microshield", "NBS Pseudotech"]
+                products: ["DIY 6% Liquid Humate™", "Molasses/Jaggery™", "Urea™", "NBS Microshield™", "NBS Pseudotech™"]
             },
             {
                 name: "Apply as a Soil Drench",
@@ -174,7 +175,7 @@ const cropPrograms = [
                 name: "Enhance the Mixture for Better Results",
                 duration: "Optional Enhancement",
                 instructions: "Add per acre: Borax/Boric Acid (500g - enhances nutrient uptake), Ammonium Molybdate (125g - aids nitrogen fixation), Kelp (200g - provides natural growth stimulants). The prepared mixture can be applied both to the soil and as a foliar spray.",
-                products: ["Borax/Boric Acid", "Ammonium Molybdate", "Kelp"]
+                products: ["Borax/Boric Acid™", "Ammonium Molybdate™", "Kelp™"]
             }
         ],
         features: [
@@ -195,27 +196,27 @@ const cropPrograms = [
         description: "Our anti-frost agricultural solution is designed to enhance the resilience of crops against cold weather conditions and minimize the risk of frost damage. It is offered in two distinct formulations to cater to different needs and budgets: the Premium Program and the Economical Program. Both programs involve a mix of specialized products applied as foliar treatments to improve plant health and cold weather tolerance.",
         duration: "Seasonal Application",
         products: [
-            "NBS Pseudo-Tech",
-            "NBS Fulvic acid powder",
-            "NBS Shuttle Seven",
-            "Magnesium EDTA chelate",
-            "MKP",
-            "NBS K-35",
-            "NBS Micronutrient",
-            "Magnesium sulphate"
+            "NBS PSEUDO TECH™",
+            "NBS FULVIC ACID POWDER™",
+            "NBS SHUTTLE SEVEN™",
+            "MAGNESIUM EDTA CHELATE™",
+            "MKP™",
+            "NBS K-35™",
+            "NBS MICRO NUTRIENT™",
+            "MAGNESIUM SULPHATE™"
         ],
         stages: [
             {
                 name: "Premium Program Mix",
                 duration: "Before Cold Weather",
                 instructions: "Mix in sequence: NBS Pseudo-Tech (2 g/L up to 1 kg/ha), NBS Fulvic acid powder (125 g/ha), NBS Shuttle Seven (1.0 L/ha), Magnesium EDTA chelate (3 L/ha), MKP (3 kg/ha).",
-                products: ["NBS Pseudo-Tech", "NBS Fulvic acid powder", "NBS Shuttle Seven", "Magnesium EDTA chelate", "MKP"]
+                products: ["NBS Pseudo-Tech™", "NBS Fulvic acid powder™", "NBS Shuttle Seven™", "Magnesium EDTA chelate™", "MKP™"]
             },
             {
                 name: "Economical Program Mix",
                 duration: "Before Cold Weather",
                 instructions: "Mix in sequence: NBS K-35 (2.5 L/ha), NBS Fulvic acid powder (125 g/ha), NBS Micronutrient (500 g/ha). If less nitrogen is required, add NBS Pseudo-Tech (2 g/L up to 1 kg/ha) and Magnesium sulphate (3 kg/ha).",
-                products: ["NBS K-35", "NBS Fulvic acid powder", "NBS Micronutrient", "NBS Pseudo-Tech", "Magnesium sulphate"]
+                products: ["NBS K-35™", "NBS Fulvic acid powder™", "NBS Micronutrient™", "NBS Pseudo-Tech™", "Magnesium sulphate™"]
             },
             {
                 name: "Application Timing",
@@ -253,14 +254,14 @@ const cropPrograms = [
         description: "Full program starting from soil preparation through to harvest. There are no MRL issues with any of the NBS products and the program may be used through extended harvest periods for beans and peas.",
         duration: "Full Growth Cycle",
         products: [
-            "NBS Resilica™",
-            "NBS Pseudo-Tech™",
-            "NBS Micro-Shield™",
-            "NBS Root Max™",
-            "NBS Sapphire™ Granules",
-            "NBS Bio-Protect™",
+            "NBS ReSilica™",
+            "NBS PSEUDO TECH™",
+            "NBS MICRO SHIELD™",
+            "NBS ROOT MAX™",
+            "NBS SAPPHIRE GRANULES™",
+            "NBS BIO PROTECT™",
             "NBS CMB™",
-            "NBS Max Spreader™",
+            "NBS MAX SPREADER™",
             "NBS K-35™"
         ],
         stages: [
@@ -279,8 +280,8 @@ const cropPrograms = [
             {
                 name: "Planting",
                 duration: "During Planting",
-                instructions: "Use 80% normal rate of Planting fertiliser. Blend fertiliser with 5% w/w NBS Sapphire™ Granules. Plant crop as per normal procedure.",
-                products: ["NBS Sapphire™ Granules"]
+                instructions: "Use 80% normal rate of Planting fertiliser. Blend fertiliser with 5% w/w NBS Sapphire Granules™. Plant crop as per normal procedure.",
+                products: ["NBS Sapphire Granules™"]
             },
             {
                 name: "Early Crop Establishment to Flowering Period or Bulbing",
@@ -311,18 +312,18 @@ const cropPrograms = [
         description: "Excessive accumulation of nitrate nitrogen in plant tissues can lead to increased susceptibility to environmental stress, pest infestations, and disease attacks. Converting this excess nitrate into complex amino acids and proteins enhances plant resilience, improves crop quality, and supports balanced growth. This foliar spray aids in efficient nitrogen utilization, ensuring healthier plant development and optimal yield.",
         duration: "Post Fruit Set",
         products: [
-            "Magnesium Sulphate",
-            "Ammonium Molybdate",
-            "Sodium Molybdate",
-            "Fulvic Acid Powder",
-            "NBS Maxspreader"
+            "Magnesium Sulphate™",
+            "Ammonium Molybdate™",
+            "Sodium Molybdate™",
+            "Fulvic Acid Powder™",
+            "NBS Maxspreader™"
         ],
         stages: [
             {
                 name: "Prepare the Foliar Spray",
                 duration: "Before Application",
                 instructions: "Mix per acre: Magnesium Sulphate (2 kg - enhances enzyme activation and protein synthesis), Ammonium Molybdate (125 g) or Sodium Molybdate (150 g if unavailable - supports nitrogen metabolism), Fulvic Acid Powder (60 g - improves nutrient absorption), NBS Maxspreader (20 ml per 100 L of water - ensures better coverage).",
-                products: ["Magnesium Sulphate", "Ammonium Molybdate", "Sodium Molybdate", "Fulvic Acid Powder", "NBS Maxspreader"]
+                products: ["Magnesium Sulphate™", "Ammonium Molybdate™", "Sodium Molybdate™", "Fulvic Acid Powder™", "NBS Maxspreader™"]
             },
             {
                 name: "Method of Application",
@@ -350,36 +351,36 @@ const cropPrograms = [
         description: "Comprehensive nutrition and plant care program for optimal rice cultivation, including both nutrition stages and plant care protocols.",
         duration: "Full Growth Cycle",
         products: [
-            "NBS Bio Stimulator",
-            "NBS Yield Booster",
-            "NBS Bugshield",
-            "NBS Bio Protect",
-            "Local COMPOST"
+            "NBS BIO STIMULATOR™",
+            "NBS YIELD BOOSTER™",
+            "NBS BUG SHIELD™",
+            "NBS BIO PROTECT™",
+            "LOCAL COMPOST™"
         ],
         stages: [
             {
                 name: "Initial Nutrition",
                 duration: "15 Days After Plantation",
                 instructions: "Broadcast NBS Bio Stimulator (100 Kg) mixed with Local COMPOST (100 KG) per acre.",
-                products: ["NBS Bio Stimulator", "Local COMPOST"]
+                products: ["NBS Bio Stimulator™", "Local COMPOST™"]
             },
             {
                 name: "Growth Enhancement",
                 duration: "30 Days After Plantation",
                 instructions: "Apply NBS Yield Booster (2L) as foliar spray at 4 ML per litre of water.",
-                products: ["NBS Yield Booster"]
+                products: ["NBS Yield Booster™"]
             },
             {
                 name: "Pre-Flowering Nutrition",
                 duration: "Before Flowering",
                 instructions: "Broadcast NBS Bio Stimulator (100 Kg) per acre.",
-                products: ["NBS Bio Stimulator"]
+                products: ["NBS Bio Stimulator™"]
             },
             {
                 name: "Grain Development",
                 duration: "After Graining",
                 instructions: "Apply NBS Yield Booster (2L) as foliar spray at 4 ML per litre of water for good grain size and length.",
-                products: ["NBS Yield Booster"]
+                products: ["NBS Yield Booster™"]
             }
         ],
         plantCare: [
@@ -387,13 +388,13 @@ const cropPrograms = [
                 name: "Environmental Stress Protection",
                 duration: "As Needed",
                 instructions: "Apply NBS Bugshield (400 ml) as foliar spray at 2 ML per litre of water. Plan two applications.",
-                products: ["NBS Bugshield"]
+                products: ["NBS Bugshield™"]
             },
             {
                 name: "Pathogen Protection",
                 duration: "As Needed",
                 instructions: "Apply NBS Bio Protect (400 G) as foliar spray at 2 gm per litre of water. Plan two applications.",
-                products: ["NBS Bio Protect"]
+                products: ["NBS Bio Protect™"]
             }
         ],
         features: [
@@ -421,17 +422,17 @@ const cropPrograms = [
         description: "Pepper vines are often planted close to the trunks of shade trees, creating specific soil conditions that influence root health. The traditional method of applying NPK fertilizers in a small root zone can negatively impact soil organic carbon levels, disrupt beneficial microbial activity, and alter soil electrical conductivity. These factors contribute to poor soil structure, water runoff, and weak root systems, making the plants more vulnerable to Phytophthora infections.",
         duration: "Growing Season",
         products: [
-            "DIY 6% Liquid Humate",
-            "NBS Microshield",
-            "NBS Pseudotech",
-            "NBS Root Max"
+            "DIY 6% LIQUID HUMATE™",
+            "NBS MICROSHIELD™",
+            "NBS PSEUDO TECH™",
+            "NBS ROOT MAX™"
         ],
         stages: [
             {
                 name: "Prepare the Soil Drench Mixture",
                 duration: "Before Application",
                 instructions: "Mix in 200L of water: DIY 6% Liquid Humate (160 ml - enhances soil organic matter and nutrient retention), NBS Microshield (40 g - boosts beneficial microbial populations), NBS Pseudotech (40 g - helps maintain soil microbial balance), NBS Root Max (100 ml - promotes healthy root development).",
-                products: ["DIY 6% Liquid Humate", "NBS Microshield", "NBS Pseudotech", "NBS Root Max"]
+                products: ["DIY 6% Liquid Humate™", "NBS Microshield™", "NBS Pseudotech™", "NBS Root Max™"]
             },
             {
                 name: "Application Method",
@@ -459,31 +460,31 @@ const cropPrograms = [
         description: "Comprehensive multi-layered program for effective thrips control using biological and nutritional approaches",
         duration: "As Needed",
         products: [
-            "Bio Defender™",
-            "Max Spreader™",
-            "Triple Twenty",
-            "Kelp",
-            "Ammonium Molybdate"
+            "NBS BIO-DEFENDER™",
+            "NBS MAX SPREADER™",
+            "NBS TRIPLE TWENTY™",
+            "NBS KELP™",
+            "AMMONIUM MOLOBYDATE™"
         ],
         stages: [
             {
                 name: "Initial Application",
                 duration: "First Treatment",
                 instructions: "Mix the following products and apply in the afternoon or when daily temperatures are lower and/or humidities are higher. Pre-soak Bio Defender™ in clean water (non-chlorinated) for at least 1 hour to hydrate spores. Use more than 300 L/ha but observe max product rates.",
-                products: ["Bio Defender™", "Max Spreader™", "Triple Twenty", "Kelp", "Ammonium Molybdate"],
+                products: ["NBS BIO DEFENDER™", "NBS MAX SPREADER™", "NBS TRIPLE TWENTY™", "NBS KELP™", "AMMONIUM MOLOBYDATE™"],
                 rates: [
                     "Bio Defender™: 3 g/L (900 g/ha, max 1.0 kg/ha)",
                     "Max Spreader™: 0.15 mL/L (45 mL/ha, max 50 mL/ha)",
                     "Triple Twenty: 30 mL/L (900 mL/ha, max 1.25 L/ha)",
-                    "Kelp: 1 g/L (300 g/ha, max 500 g/ha)",
-                    "Ammonium Molybdate: 0.25 g/L (75 g/ha, max 90 g/ha)"
+                    "Kelp™: 1 g/L (300 g/ha, max 500 g/ha)",
+                    "Ammonium Molybdate™: 0.25 g/L (75 g/ha, max 90 g/ha)"
                 ]
             },
             {
                 name: "Follow-up Applications",
                 duration: "7-8 Days After Initial",
                 instructions: "Repeat the application 7-8 days after the initial treatment, then every 10-14 days until thrips are controlled. Maintain the same product ratios and application timing.",
-                products: ["Bio Defender™", "Max Spreader™", "Triple Twenty", "Kelp", "Ammonium Molybdate"]
+                products: ["NBS BIO DEFENDER™", "NBS MAX SPREADER™", "NBS TRIPLE TWENTY™", "NBS KELP™", "AMMONIUM MOLOBYDATE™"]
             }
         ],
         features: [
@@ -498,23 +499,23 @@ const cropPrograms = [
         ],
         rationale: [
             {
-                title: "Bio Defender™",
+                title: "NBS BIO DEFENDER™",
                 description: "Integrates three microbial strains to support foliar and soil ecosystems. Two strains are active in canopy environments, while Metarhizium anisopliae contributes to soil microbial diversity when applied to the root zone. These microbes interact synergistically with plant surfaces to enhance natural resilience."
             },
             {
-                title: "Max Spreader™",
+                title: "NBS MAX SPREADER™",
                 description: "Optimizes spray coverage and adhesion, improving nutrient and microbial delivery. Its formulation promotes efficient resource utilization by plants, aiding in maintaining robust physiological functions under stress."
             },
             {
-                title: "Triple Twenty",
+                title: "NBS TRIPLE TWENTY™",
                 description: "Delivers nitrogen, phosphorus, and triacontanol to boost chlorophyll synthesis, photosynthetic efficiency, and sugar transport. Enriched with trace elements, vitamins, and enzymes, it strengthens metabolic pathways linked to plant vitality. Humates and kelp enhance nutrient uptake and cellular resilience."
             },
             {
-                title: "Kelp",
+                title: "NBS KELP™",
                 description: "Provides plant-growth-supporting compounds, including stress-alleviating hormones, to mitigate environmental pressures. Alginates serve as a substrate for beneficial microbial activity, fostering symbiotic relationships between plants and their microbiome."
             },
             {
-                title: "Ammonium Molybdate",
+                title: "AMMONIUM MOLOBYDATE™",
                 description: "Activates enzymatic pathways to optimize nitrogen metabolism, promoting the conversion of nitrates into complex proteins. This process refines sap composition, aligning with plant health priorities."
             }
         ]
@@ -689,11 +690,33 @@ const CropPrograms = () => {
                                         <div className="mb-4 sm:mb-6">
                                             <h3 className="font-semibold mb-2 sm:mb-3 text-black">Recommended Products</h3>
                                             <div className="flex flex-wrap gap-2">
-                                                {selectedProgram.products.map((product) => (
-                                                    <span key={product} className="bg-[#293E31] text-[#DACEC2] px-3 py-1.5 rounded-full text-xs sm:text-sm">
-                                                        {product}
-                                                    </span>
-                                                ))}
+                                                {selectedProgram.products.map((product) => {
+                                                    // Find the product in the productCategories data
+                                                    const productData = Object.entries(productCategories.agricultureAndHorticulture.subcategories).find(([_, subcategory]) => 
+                                                        subcategory.products.some(p => p.name.toLowerCase() === product.toLowerCase())
+                                                    );
+                                                    
+                                                    if (productData) {
+                                                        const [subcategoryKey, subcategory] = productData;
+                                                        const productId = subcategory.products.find(p => p.name === product)?.id;
+                                                        
+                                                        return (
+                                                            <Link
+                                                                key={product}
+                                                                to={`/products/agricultureAndHorticulture/${subcategoryKey}/${productId}`}
+                                                                className="bg-[#293E31] uppercase text-[#DACEC2] px-3 py-1.5 rounded-full text-xs sm:text-sm hover:bg-[#1e3a29] transition-colors duration-300"
+                                                            >
+                                                                {product}
+                                                            </Link>
+                                                        );
+                                                    }
+                                                    
+                                                    return (
+                                                        <span key={product} className="bg-[#293E31] uppercase text-[#DACEC2] px-3 py-1.5 rounded-full text-xs sm:text-sm">
+                                                            {product}
+                                                        </span>
+                                                    );
+                                                })}
                                             </div>
                                         </div>
 
@@ -727,7 +750,7 @@ const CropPrograms = () => {
                                                             {stage.products.length > 0 && (
                                                                 <div className="flex flex-wrap gap-2">
                                                                     {stage.products.map((product) => (
-                                                                        <span key={product} className="bg-[#293E31]/10 text-[#293E31] px-2 py-1 rounded-full text-xs sm:text-sm">
+                                                                        <span key={product} className="bg-[#293E31]/10 uppercase text-[#293E31] px-2 py-1 rounded-full text-xs sm:text-sm">
                                                                             {product}
                                                                         </span>
                                                                     ))}
@@ -758,7 +781,7 @@ const CropPrograms = () => {
                                                                     {care.products.length > 0 && (
                                                                         <div className="flex flex-wrap gap-2">
                                                                             {care.products.map((product) => (
-                                                                                <span key={product} className="bg-[#293E31]/10 text-[#293E31] px-2 py-1 rounded-full text-xs sm:text-sm">
+                                                                                <span key={product} className="bg-[#293E31]/10 uppercase text-[#293E31] px-2 py-1 rounded-full text-xs sm:text-sm">
                                                                                     {product}
                                                                                 </span>
                                                                             ))}
