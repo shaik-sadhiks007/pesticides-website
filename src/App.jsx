@@ -23,19 +23,17 @@ import EmailUs from "./components/sections/EmailUs"
 import PrivacyPolicy from "./pages/PrivacyPolicy"
 import TermsAndConditions from "./pages/TermsAndConditions"
 import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
+import GoogleAnalytics from './components/GoogleAnalytics';
 
 function App() {
   return (
     <DataProvider>
       <BrowserRouter>
+        <GoogleAnalytics />
         <ProductProvider>
           <SearchProvider>
             <div className="flex flex-col min-h-screen">
               <Header />
-              {/* <WhatsAppButton /> */}
-              {/* <TawkMessengerReact
-                propertyId="67eb9428bcc73e19037a3d2c"
-                widgetId="1ino3lg22" /> */}
               <main className="flex-grow">
                 <Routes>
                   <Route path="/" element={<Home />} />

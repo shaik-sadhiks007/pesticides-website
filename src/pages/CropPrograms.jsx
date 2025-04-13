@@ -5,9 +5,10 @@ import { Button } from "../components/ui/Button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../components/ui/accordion"
 import ProductsBanner from "../assets/productImages/productBanner.jpg"
-import { useParams, useNavigate } from "react-router-dom"
+import { useParams, useNavigate, useLocation } from "react-router-dom"
 import { Link } from "react-router-dom"
 import { productCategories } from "../data/productsData"
+import { trackCropProgramView } from '../utils/analytics'
 
 // Import PDF files
 import maize from "../assets/pdfs/maize-program.pdf"
@@ -19,6 +20,7 @@ import nitrateConversion from "../assets/pdfs/nitrate-conversion.pdf"
 import rice from "../assets/pdfs/rice-program.pdf"
 import pepper from "../assets/pdfs/pepper-program.pdf"
 import thripsProgram from "../assets/pdfs/thrips-program.pdf"
+import turfProgram from "../assets/pdfs/turf-program.pdf"
 
 const cropPrograms = [
     {
@@ -519,41 +521,152 @@ const cropPrograms = [
                 description: "Activates enzymatic pathways to optimize nitrogen metabolism, promoting the conversion of nitrates into complex proteins. This process refines sap composition, aligning with plant health priorities."
             }
         ]
+    },
+    {
+        id: 10,
+        name: "Turf Farm & Nursery Program",
+        pdfFile: turfProgram,
+        description: "Comprehensive program for Turf Farms and Turf Nurseries that can be integrated with current activities or applied separately for trial comparison.",
+        duration: "Full Growth Cycle",
+        products: [
+            "NBS BIO STIMULATOR™",
+            "NBS ReSilica™",
+            "NBS SAPPHIRE GRANULES™",
+            "NBS MICROSHIELD™",
+            "NBS ROOT MAX™",
+            "NBS CMB™",
+            "NBS K-35™",
+            "NBS MAX SPREADER™",
+            "NBS BIO PROTECT™",
+            "NBS MICRO NUTRIENT™",
+            "NBS Emulsified Neem Oil™",
+            "NBS BUG SHIELD™"
+        ],
+        stages: [
+            {
+                name: "Pre-Plant Solids Program",
+                duration: "Before Planting",
+                instructions: "Apply NBS BioStimulator™ / NBS Resilica™ at 60 kg/acre (150 kg/ha) pre-plant. Use NPK granular program at 80% of current application rate. Mix NBS Sapphire™ granules at 5% w/w with granular fertilisers. Pre-plant incorporation of compost and minerals to 15 cm. Supplies essential nutrients, reduces salinity issues, strengthens turf rhizomes, stolons and leaves, and feeds soil micro-organisms.",
+                products: ["NBS BioStimulator™", "NBS Resilica™", "NBS Sapphire™"]
+            },
+            {
+                name: "Foliar Program",
+                duration: "Every 2 Weeks",
+                instructions: "At planting and repeat every 2 weeks. Mix NBS Micro-Shield™ at 200 g/100 Litres, NBS Root Max™ or NBS CMB™ at 500 mL/100 L, NBS K-35™ at 300 mL/100 L, and NBS Max Spreader™ at 25 mL/100 L.",
+                products: ["NBS Micro-Shield™", "NBS Root Max™", "NBS CMB™", "NBS K-35™", "NBS Max Spreader™"]
+            },
+            {
+                name: "Armyworm Management",
+                duration: "As Needed",
+                instructions: "At first sight of Armyworm activity, spray the fairways, tees and greens fortnightly with NBS Emulsified Neem Oil™ at 200 mL/100 L water, alone, or alternated with NBS Bug Shield™ at 200 mL/100 L water.",
+                products: ["NBS Emulsified Neem Oil™", "NBS Bug Shield™"]
+            },
+            {
+                name: "Established Turf - Solids Program",
+                duration: "Every 60 Days",
+                instructions: "Use NPK granular program at 80% of current application rate and frequency. Mix NBS Sapphire™ granules at 5% w/w with granular fertilisers. Apply NBS BioStimulator™ / NBS ReSiliCa™ at 150 kg/ha every 60 days.",
+                products: ["NBS BioStimulator™", "NBS ReSiliCa™", "NBS Sapphire™"]
+            },
+            {
+                name: "Established Turf - Soil/Foliar Spray",
+                duration: "Every 2 Weeks",
+                instructions: "For thatch buildup and disease control, improved drainage and aeration, and extension of turf root systems. Mix NBS Bio-Protect™ at 500 mL/100 Litres, NBS Micro-Shield™ at 200 g/100 Litres, NBS Root Max™ or NBS CMB™ at 500 mL/100 L, NBS K-35™ at 300 mL/100 L, and NBS Max Spreader™ at 25 mL/100 L. Add NBS Micro-Nutrient™ at 1.5 g/L (max 1 kg/ha) to a foliar spray 3-4 times per year.",
+                products: ["NBS Bio-Protect™", "NBS Micro-Shield™", "NBS Root Max™", "NBS CMB™", "NBS K-35™", "NBS Max Spreader™", "NBS Micro-Nutrient™"]
+            }
+        ],
+        features: [
+            "Comprehensive program for both new and established turf",
+            "Integrated approach combining solids and foliar applications",
+            "Reduced NPK fertilizer requirements",
+            "Enhanced soil microbial activity",
+            "Improved disease resistance",
+            "Better water and nutrient uptake",
+            "Stronger root development",
+            "Sustainable turf management"
+        ],
+        notes: [
+            "Ideally arrange to have an NBS Soil Test prior to planting/seeding new turf",
+            "Re-test soil every 2 years",
+            "Maintain normal application frequency, and gradually reduce NPK fertiliser rates as required",
+            "NBS Bio-Protect™ will tolerate many common fungicides (except carbendazim and captan)",
+            "Reduce fungicide frequency to once every 2 weeks or spray only when needed",
+            "Avoid fungicides when applying NBS treatments"
+        ]
     }
 ]
+
+const programUrlMap = {
+    'maize': 'Maize Crop Program',
+    'hydro-fast': 'NBS HYDRO FAST',
+    'coffee': 'Litter Digestion Program - Coffee',
+    'anti-frost': 'NBS Anti-frost Protocol',
+    'nitrate-conversion': 'Nitrate Conversion Program – All Crops',
+    'downy-mildew': 'Downy Mildew Program - Onions, Dwarf Beans, Potatoes and Peas',
+    'rice': 'NBS Nutrition Farming Program for Rice',
+    'pepper': 'Phytophthora Control Program - Pepper',
+    'thrips': 'Thrips Crop Program - All Crops',
+    'turf': 'Turf Farm & Nursery Program'
+}
 
 const CropPrograms = () => {
     const { programId } = useParams()
     const navigate = useNavigate()
-    const [selectedProgram, setSelectedProgram] = useState(cropPrograms[0])
+    const location = useLocation()
+    const [selectedProgram, setSelectedProgram] = useState(null)
 
     useEffect(() => {
         if (programId) {
-            const program = cropPrograms.find(p =>
-                p.name.toLowerCase().replace(/\s+/g, '-').includes(programId.toLowerCase())
-            )
-            if (program) {
-                setSelectedProgram(program)
-                // Scroll to the program section
-                const element = document.getElementById(`program-${program.id}`)
-                if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' })
+            const programName = programUrlMap[programId]
+            if (programName) {
+                const program = cropPrograms.find(p => p.name === programName)
+                if (program) {
+                    setSelectedProgram(program)
+                    // Track program view when accessed directly via URL
+                    trackCropProgramView(program.name)
+                    // Scroll to the program section
+                    const element = document.getElementById(`program-${program.id}`)
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' })
+                    }
+                } else {
+                    // If program not found, navigate to main crop programs page
+                    navigate('/crop-programs')
                 }
             } else {
-                // If program not found, navigate to main crop programs page
+                // If URL path not found in mapping, navigate to main crop programs page
                 navigate('/crop-programs')
             }
         }
     }, [programId, navigate])
 
+    const handleProgramSelect = (program) => {
+        setSelectedProgram(program)
+        // Find the URL path for the selected program
+        const urlPath = Object.entries(programUrlMap).find(([_, name]) => name === program.name)?.[0]
+        if (urlPath) {
+            navigate(`/crop-programs/${urlPath}`)
+        } else {
+            // Fallback to program name if no mapping found
+            const programPath = program.name.toLowerCase()
+                .replace(/\s+/g, '-')
+                .replace(/[^a-z0-9-]/g, '')
+                .replace(/^-+|-+$/g, '')
+            navigate(`/crop-programs/${programPath}`)
+        }
+        // Track program view when selected from the list
+        trackCropProgramView(program.name)
+    }
+
     const handleDownload = (pdfFile) => {
-        if (pdfFile) {
+        if (pdfFile && selectedProgram) {
             const link = document.createElement('a')
             link.href = pdfFile
             link.download = `${selectedProgram.name.toLowerCase().replace(/\s+/g, '-')}-program.pdf`
             document.body.appendChild(link)
             link.click()
             document.body.removeChild(link)
+            // Track PDF download
+            trackCropProgramView(`${selectedProgram.name} - PDF Download`)
         }
     }
 
@@ -657,11 +770,12 @@ const CropPrograms = () => {
                                     <Card
                                         key={program.id}
                                         id={`program-${program.id}`}
-                                        className={`cursor-pointer transition-all bg-[#DACEC2] ${selectedProgram?.id === program.id
-                                            ? "border-[#f47834] shadow-lg"
-                                            : "border border-black"
-                                            }`}
-                                        onClick={() => setSelectedProgram(program)}
+                                        className={`cursor-pointer transition-all bg-[#DACEC2] ${
+                                            selectedProgram?.id === program.id
+                                                ? "border-[#f47834] shadow-lg"
+                                                : "border border-black"
+                                        }`}
+                                        onClick={() => handleProgramSelect(program)}
                                     >
                                         <CardHeader className="py-3">
                                             <CardTitle className="text-base sm:text-lg text-black">{program.name}</CardTitle>

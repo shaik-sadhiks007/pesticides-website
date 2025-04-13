@@ -201,12 +201,6 @@ const Media = () => {
             category: "Case Study"
         },
         {
-            id: 53,
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/paddy/ilj2e1vrci4cnulih8if",
-            title: "Controlled Crop",
-            category: "Case Study"
-        },
-        {
             id: 54,
             image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/paddy/tmctl2ynwa0ye1kieo8a",
             title: "Treated Farm NBS Kit",
@@ -219,24 +213,6 @@ const Media = () => {
             category: "Case Study"
         },
         {
-            id: 56,
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/paddy/affrprtlkwpw4u65typ3",
-            title: "Treated Farm NBS Kit",
-            category: "Case Study"
-        },
-        {
-            id: 57,
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/paddy/ebobnndvpreya5sxmgqh",
-            title: "Controlled Crop",
-            category: "Case Study"
-        },
-        {
-            id: 58,
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/paddy/mtalcahl58eaiuqclxss",
-            title: "Treated Farm (NBS) Kit",
-            category: "Case Study"
-        },
-        {
             id: 59,
             image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/paddy/tseriaj0ojh7r6uz1ppe",
             title: "Controlled Crop",
@@ -246,12 +222,6 @@ const Media = () => {
             id: 60,
             image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/paddy/gqjwffaozr3piwttd0ua",
             title: "Treated Farm (NBS) Kit",
-            category: "Case Study"
-        },
-        {
-            id: 61,
-            image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/case%20Study/paddy/fsqejjhlag1sajdavdp7",
-            title: "Controlled Crop",
             category: "Case Study"
         },
         {

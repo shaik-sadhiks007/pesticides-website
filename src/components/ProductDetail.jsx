@@ -11,6 +11,7 @@ import paddyCaseStudy from "../assets/pdfs/caseStudy/paddy-case-study.pdf"
 import sapphireGranules from "../assets/pdfs/caseStudy/article-sapphire-granules.pdf"
 import researchTrialGrapes from "../assets/pdfs/caseStudy/research-trial-grapes.pdf"
 import maxSpreader from "../assets/pdfs/caseStudy/TDS-NBS-MAX-SPREADER.pdf"
+import { trackProductView } from '../utils/analytics';
 
 export default function ProductDetail() {
     const { category, subcategory, productId } = useParams();
@@ -28,6 +29,13 @@ export default function ProductDetail() {
     const product = productCategories[category]?.subcategories[subcategory]?.products.find(
         (p) => p.id === productId
     );
+
+    useEffect(() => {
+        // Track product view when component mounts
+        if (product?.name && category && subcategory) {
+            trackProductView(product.name, category, subcategory);
+        }
+    }, [product, category, subcategory]);
 
     if (!product) {
         return (
@@ -243,7 +251,7 @@ export default function ProductDetail() {
                                             </div>
                                         )}
 
-                                        <p className="text-gray-700">New generation agriculture : Certified Organic Input (CU896640) </p>
+                                        <p className="text-gray-700">Certified Organic Input (CU896640)</p>
 
                                         {product.suitableFor && (
                                             <div>

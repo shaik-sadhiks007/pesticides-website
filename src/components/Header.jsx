@@ -8,6 +8,27 @@ import { Input } from "./ui/input"
 import { Button } from "./ui/Button"
 import { cn } from "../lib/utils"
 
+// Add Safari-specific styles
+const safariStyles = `
+  @supports (-webkit-hyphens:none) {
+    details > summary::-webkit-details-marker,
+    details > summary::marker {
+      display: none !important;
+    }
+    
+    details > summary {
+      list-style: none !important;
+    }
+    
+    .mobile-nav-link,
+    details > summary,
+    .nav-text-align {
+      text-align: left !important;
+      -webkit-text-align: left !important;
+    }
+  }
+`
+
 export default function Header() {
   const location = useLocation()
   const navigate = useNavigate()
@@ -86,9 +107,24 @@ export default function Header() {
     }
   }, [])
 
+  useEffect(() => {
+    // Add Safari styles to document head
+    const styleElement = document.createElement('style')
+    styleElement.textContent = safariStyles
+    document.head.appendChild(styleElement)
+
+    // Cleanup
+    return () => {
+      document.head.removeChild(styleElement)
+    }
+  }, [])
+
   const isActive = (path) => {
     if (path === "/media") {
       return location.pathname.startsWith("/media") ? "text-[#FE8340] font-semibold" : "text-white hover:text-[#FE8340] transition-colors"
+    }
+    if (path === "/crop-programs") {
+      return location.pathname.startsWith("/crop-programs") ? "text-[#FE8340] font-semibold" : "text-white hover:text-[#FE8340] transition-colors"
     }
     return location.pathname === path ? "text-[#FE8340] font-semibold" : "text-white hover:text-[#FE8340] transition-colors"
   }
@@ -296,6 +332,14 @@ export default function Header() {
                         <span>NBS Anti-frost Protocol</span>
                         <ChevronRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                       </Link>
+                      <Link
+                        to="/crop-programs/nitrate-conversion"
+                        className="text-[#FE8340] uppercase font-semibold text-sm xl:text-base block hover:text-[#293E31] transition-colors flex items-center justify-between relative group-hover:text-[#293E31]"
+                        onClick={handleLinkClick}
+                      >
+                        <span>Nitrate Conversion Program</span>
+                        <ChevronRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </Link>
                     </div>
                     <div className="space-y-3 lg:space-y-4">
                       <Link
@@ -304,14 +348,6 @@ export default function Header() {
                         onClick={handleLinkClick}
                       >
                         <span>Downy Mildew Control Program</span>
-                        <ChevronRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-                      </Link>
-                      <Link
-                        to="/crop-programs/nitrate-conversion"
-                        className="text-[#FE8340] uppercase font-semibold text-sm xl:text-base block hover:text-[#293E31] transition-colors flex items-center justify-between relative group-hover:text-[#293E31]"
-                        onClick={handleLinkClick}
-                      >
-                        <span>Nitrate Conversion Program</span>
                         <ChevronRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                       </Link>
                       <Link
@@ -328,6 +364,22 @@ export default function Header() {
                         onClick={handleLinkClick}
                       >
                         <span>Phytophthora Control Program - Pepper</span>
+                        <ChevronRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </Link>
+                      <Link
+                        to="/crop-programs/thrips"
+                        className="text-[#FE8340] uppercase font-semibold text-sm xl:text-base block hover:text-[#293E31] transition-colors flex items-center justify-between relative group-hover:text-[#293E31]"
+                        onClick={handleLinkClick}
+                      >
+                        <span>Thrips Crop Program</span>
+                        <ChevronRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </Link>
+                      <Link
+                        to="/crop-programs/turf"
+                        className="text-[#FE8340] uppercase font-semibold text-sm xl:text-base block hover:text-[#293E31] transition-colors flex items-center justify-between relative group-hover:text-[#293E31]"
+                        onClick={handleLinkClick}
+                      >
+                        <span>Turf Farm & Nursery Program</span>
                         <ChevronRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                       </Link>
                     </div>
@@ -625,7 +677,7 @@ export default function Header() {
               About
             </Link>
             <div className="border-b border-[#3a4f3f] last:border-b-0">
-              <details className="group">
+              <details className="group [&>summary::-webkit-details-marker]:hidden [&>summary]:list-none">
                 <summary className={`${isActive("/products")} text-lg py-2 flex justify-between items-center cursor-pointer text-left`}>
                   <Link to="/products" className="text-left">Products</Link>
                   <ChevronDown
@@ -673,7 +725,7 @@ export default function Header() {
               </details>
             </div>
             <div className="border-b border-[#3a4f3f] last:border-b-0">
-              <details className="group">
+              <details className="group [&>summary::-webkit-details-marker]:hidden [&>summary]:list-none">
                 <summary className={`${isActive("/crop-programs")} text-lg py-2 flex justify-between items-center cursor-pointer text-left`}>
                   <Link to="/crop-programs" className="text-left">Crop Programs</Link>
                   <ChevronDown
@@ -712,18 +764,20 @@ export default function Header() {
                       NBS Anti-frost Protocol
                     </Link>
                     <Link
-                      to="/crop-programs/downy-mildew"
-                      className="text-[#FE8340] font-semibold block hover:text-white text-left"
-                      onClick={handleLinkClick}
-                    >
-                      Downy Mildew Control Program
-                    </Link>
-                    <Link
                       to="/crop-programs/nitrate-conversion"
                       className="text-[#FE8340] font-semibold block hover:text-white text-left"
                       onClick={handleLinkClick}
                     >
                       Nitrate Conversion Program
+                    </Link>
+                  </div>
+                  <div className="space-y-2">
+                    <Link
+                      to="/crop-programs/downy-mildew"
+                      className="text-[#FE8340] font-semibold block hover:text-white text-left"
+                      onClick={handleLinkClick}
+                    >
+                      Downy Mildew Control Program
                     </Link>
                     <Link
                       to="/crop-programs/rice"
@@ -739,6 +793,20 @@ export default function Header() {
                     >
                       Phytophthora Control Program - Pepper
                     </Link>
+                    <Link
+                      to="/crop-programs/thrips"
+                      className="text-[#FE8340] font-semibold block hover:text-white text-left"
+                      onClick={handleLinkClick}
+                    >
+                      Thrips Crop Program
+                    </Link>
+                    <Link
+                      to="/crop-programs/turf"
+                      className="text-[#FE8340] font-semibold block hover:text-white text-left"
+                      onClick={handleLinkClick}
+                    >
+                      Turf Farm & Nursery Program
+                    </Link>
                   </div>
                 </div>
               </details>
@@ -752,7 +820,7 @@ export default function Header() {
               Services
             </Link>
             <div className="border-b border-[#3a4f3f] last:border-b-0">
-              <details className="group">
+              <details className="group [&>summary::-webkit-details-marker]:hidden [&>summary]:list-none">
                 <summary className={`${isActive("/media")} text-lg py-2 flex justify-between items-center cursor-pointer text-left`}>
                   <Link to="/media" className="text-left">Media</Link>
                   <ChevronDown
