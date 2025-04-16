@@ -87,7 +87,7 @@ export default function Contact() {
                         className="text-center mb-6 sm:mb-8"
                     >
                         <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 text-[#293E31]">
-                             Collaborate with Us
+                            Collaborate with Us
                         </h2>
                         <div className="w-24 h-1 bg-[#FE8340] mx-auto mb-3"></div>
 
@@ -342,7 +342,7 @@ export default function Contact() {
                                     <span className="text-[#293E31] font-medium">Facebook</span>
                                 </motion.a>
 
-                                <motion.a
+                                {/* <motion.a
                                     href="#"
                                     target="_blank"
                                     rel="noopener noreferrer"
@@ -355,10 +355,26 @@ export default function Contact() {
                                         <Twitter className="w-6 h-6 text-[#FE8340] group-hover:scale-110 transition-transform" />
                                     </div>
                                     <span className="text-[#293E31] font-medium">Twitter</span>
-                                </motion.a>
+                                </motion.a> */}
 
                                 <motion.a
-                                    href="#"
+                                    href="https://mail.google.com/mail/?view=cm&fs=1&to=connect@vmecogrow.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center justify-center gap-3 bg-white p-4 rounded-lg hover:shadow-lg transition-all group"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.2 }}
+                                >
+                                    <div className="bg-[#FE8340]/10 p-3 rounded-full">
+                                        <Mail className="w-6 h-6 text-[#FE8340] group-hover:scale-110 transition-transform" />
+                                    </div>
+                                    <span className="text-[#293E31] font-medium">Gmail</span>
+                                </motion.a>
+
+
+                                <motion.a
+                                    href="https://www.linkedin.com/company/vm-group-europe-ltd/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="flex items-center justify-center gap-3 bg-white p-4 rounded-lg hover:shadow-lg transition-all group"
@@ -373,7 +389,7 @@ export default function Contact() {
                                 </motion.a>
 
                                 <motion.a
-                                    href="#"
+                                    href="https://www.instagram.com/vmecogrow/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="flex items-center justify-center gap-3 bg-white p-4 rounded-lg hover:shadow-lg transition-all group"
