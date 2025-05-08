@@ -3,11 +3,6 @@ import { Button } from "../ui/Button"
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 
-// Import banner images
-import banner1 from '../../assets/Carousel-Image1.jpg'
-import banner2 from '../../assets/Carousel-Image2.jpg'
-import banner3 from '../../assets/Carousel-Image3.jpg'
-import banner4 from '../../assets/Carousel-Image4.jpg'
 
 const slides = [
   {
