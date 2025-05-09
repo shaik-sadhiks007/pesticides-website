@@ -21,6 +21,9 @@ import rice from "../assets/pdfs/rice-program.pdf"
 import pepper from "../assets/pdfs/pepper-program.pdf"
 import thripsProgram from "../assets/pdfs/thrips-program.pdf"
 import turfProgram from "../assets/pdfs/turf-program.pdf"
+import citrusProgram from "../assets/pdfs/citrus-program.pdf"
+import chilliProgram from "../assets/pdfs/chilli-program.pdf"
+
 
 const cropPrograms = [
     {
@@ -592,6 +595,170 @@ const cropPrograms = [
             "Reduce fungicide frequency to once every 2 weeks or spray only when needed",
             "Avoid fungicides when applying NBS treatments"
         ]
+    },
+    {
+        id: 11,
+        name: "Citrus - NBS Crop Program 2025",
+        pdfFile: citrusProgram,
+        description: "This foliar or soil drench program supplements the annual solid base fertiliser program. Application rates and timing are as per the table below.",
+        duration: "Full Growth Cycle",
+        products: [
+            "NBS SAPPHIRE GRANULES™",
+            "NBS YIELD BOOSTER™",
+            "NBS MICRO NUTRIENT™",
+            "NBS TRIPLE TWENTY™",
+            "NBS CMB™",
+            "NBS K-35™"
+        ],
+        applicationRates: [
+            "NBS Sapphire™ Liquid: 8 L/acre (Fertigation)",
+            "NBS Yield Booster™: 400 mL/acre (2 mL/L, Fertigation)",
+            "NBS Micro-Nutrients: 250 mL/acre (1 mL/L, Foliar)",
+            "NBS Triple 20: 1.25–1.5 L/acre (4–5 mL/L, Foliar)",
+            "NBS CMB™: 1.5 L/acre (5 mL/L, Foliar)",
+            "NBS K-35™: 1.0–1.5 L/acre (3 mL/L, Foliar)"
+        ],
+        stages: [
+            {
+                name: "Main Spring Flush",
+                duration: "Spring",
+                instructions: "Fertigation: NBS Sapphire™ Liquid (①*), NBS Yield Booster™ (①). Foliar: NBS Micro-Nutrients (①), NBS CMB™ (①).",
+                products: ["NBS Sapphire™ Liquid", "NBS Yield Booster™", "NBS Micro-Nutrients™", "NBS CMB™"]
+            },
+            {
+                name: "Pre-Flowering",
+                duration: "Before Flowering",
+                instructions: "Foliar: NBS Micro-Nutrients (①).",
+                products: ["NBS Micro-Nutrients™"]
+            },
+            {
+                name: "Petal Fall",
+                duration: "After Flowering",
+                instructions: "Fertigation: NBS Yield Booster™ (①). Foliar: NBS Triple 20 (①), NBS CMB™ (①), NBS K-35™ (①).",
+                products: ["NBS Yield Booster™", "NBS Triple 20™", "NBS CMB™", "NBS K-35™"]
+            },
+            {
+                name: "Fruit Bulking",
+                duration: "During Fruit Development",
+                instructions: "Fertigation: NBS Sapphire™ Liquid (②*). Foliar: NBS Triple 20 (②, with CMB™ and K-35™), NBS CMB™ (② with Triple 20), NBS K-35™ (② with Triple 20).",
+                products: ["NBS Sapphire™ Liquid", "NBS Triple 20™", "NBS CMB™", "NBS K-35™"]
+            },
+            {
+                name: "3 Weeks Pre-Harvest",
+                duration: "3 Weeks Before Harvest",
+                instructions: "Foliar: NBS Yield Booster™ (①).",
+                products: ["NBS Yield Booster™"]
+            },
+            {
+                name: "Harvest",
+                duration: "At Harvest",
+                instructions: "Foliar: NBS K-35™ (② with Yield Booster).",
+                products: ["NBS K-35™", "NBS Yield Booster™"]
+            },
+            {
+                name: "Post-Harvest Recharge",
+                duration: "After Harvest",
+                instructions: "Fertigation: NBS Sapphire™ Liquid (①). Foliar: NBS Yield Booster™ (②).",
+                products: ["NBS Sapphire™ Liquid", "NBS Yield Booster™"]
+            }
+        ],
+        features: [
+            "Optimized nutrient application timing for each growth stage",
+            "Enhanced spring flush development",
+            "Improved flowering and fruit set",
+            "Better fruit bulking and quality",
+            "Enhanced post-harvest recovery",
+            "Flexible application methods (foliar or soil drench)",
+            "Complements existing solid fertilizer program",
+            "Sustainable and efficient nutrient delivery"
+        ],
+        legend: [
+            "① = make 1 application in this growth period",
+            "② = make 2 applications in this period"
+        ],
+        notes: [
+            "This program supplements the annual solid base fertiliser program.",
+            "DIY 6% Sapphire Liquid Humic Acid Recipe: Dissolve 1 kg NBS Sapphire Granules in 10 litres of warm water. Stir well and leave overnight. Stir again to solubilise remaining sediment and filter into storage containers for later use. Do NOT use or apply without filtering. A small amount of fine residue remaining in the mixing barrel can be used as a natural fertiliser on gardens and trees."
+        ]
+    },
+    {
+        id: 12,
+        name: "NBS CHILLI, TOMATO, EGGPLANT, OKRA, CAPSICUM PROGRAM",
+        pdfFile: chilliProgram,
+        description: "Comprehensive nursery, soil, and foliar program for solanaceous and okra crops, including seed treatment, soil conditioning, and weekly post-emergent foliar sprays.",
+        duration: "Nursery to Early Growth (First 4 Weeks)",
+        products: [
+            "NBS ROOT MAX™",
+            "NBS MICROSHIELD™",
+            "NBS PSEUDO TECH™",
+            "NBS BIO PROTECT™",
+            "NBS NEEM OIL™",
+            "NBS MAX SPREADER™",
+            "NBS SAPPHIRE GRANULES™",
+            "NBS CMB™",
+            "NBS BUG SHIELD™",
+            "NBS BIO-DEFENDER™",
+            "NBS TRIPLE 20™",
+            "NBS K-35™"
+        ],
+        stages: [
+            {
+                name: "Seed Treatment (Nursery/Seedlings)",
+                duration: "Before Sowing",
+                instructions: "For 1 kg of seed: In a clean container, mix NBS ROOT MAX at 7ml and NBS MICROSHIELD at 3 grams. Add a few drops of water to make a thin slurry. Add seeds and mix thoroughly with the slurry. Place on a clean sheet of plastic or paper and allow to dry (30-60 minutes). Seeds may be planted immediately or stored dry for up to 30 days without fear of germination.",
+                products: ["NBS ROOT MAX™", "NBS MICROSHIELD™"]
+            },
+            {
+                name: "Weekly Nursery Soil Drench or Foliar (Seedlings)",
+                duration: "Weekly until transplant",
+                instructions: "Apply as soil drench or foliar: NBS ROOT MAX 5 mL, NBS PSEUDO TECH 2 g, NBS BIO PROTECT 2 g, NBS NEEM OIL 2 mL, NBS MAX SPREADER 0.25 mL per application.",
+                products: ["NBS ROOT MAX™", "NBS PSEUDO TECH™", "NBS BIO PROTECT™", "NBS NEEM OIL™", "NBS MAX SPREADER™"]
+            },
+            {
+                name: "Pre-Plant Soil Conditioning",
+                duration: "Before Planting",
+                instructions: "Spread NBS SAPPHIRE GRANULES evenly as a base soil addition at 20 kg/ha. Incorporate with base fertilisers and any liming amendments required (seek advice from soil test).",
+                products: ["NBS SAPPHIRE GRANULES™"]
+            },
+            {
+                name: "Planting",
+                duration: "At Planting/Transplanting",
+                instructions: "Hill up and prepare to plant or transplant. Immediately after planting, apply one application of the Nursery program as a soil drench/spray or fertigation.",
+                products: ["NBS ROOT MAX™", "NBS PSEUDO TECH™", "NBS BIO PROTECT™", "NBS NEEM OIL™", "NBS MAX SPREADER™"]
+            },
+            {
+                name: "Post-Emergent Foliar Spray - Week 1",
+                duration: "First Week After Emergence",
+                instructions: "Per Litre of Water: NBS NEEM OIL 2 mL, NBS CMB 5 mL, NBS BUG SHIELD 2 mL, NBS BIO DEFENDER 2 g, NBS MICROSHIELD 1.25 g, NBS ROOT MAX 5 mL.",
+                products: ["NBS NEEM OIL™", "NBS CMB™", "NBS BUG SHIELD™", "NBS BIO DEFENDER™", "NBS MICROSHIELD™", "NBS ROOT MAX™"]
+            },
+            {
+                name: "Post-Emergent Foliar Spray - Week 2",
+                duration: "Second Week After Emergence",
+                instructions: "Per Litre of Water: NBS PSEUDO TECH 2 g, NBS MAX SPREADER 0.25 mL, NBS BUG SHIELD 2 mL, NBS BIO PROTECT 2 g, NBS TRIPLE 20 5 mL, NBS K-35 3 mL.",
+                products: ["NBS PSEUDO TECH™", "NBS MAX SPREADER™", "NBS BUG SHIELD™", "NBS BIO PROTECT™", "NBS TRIPLE 20™", "NBS K-35™"]
+            },
+            {
+                name: "Post-Emergent Foliar Spray - Week 3",
+                duration: "Third Week After Emergence",
+                instructions: "Per Litre of Water: NBS NEEM OIL 2 mL, NBS CMB 5 mL, NBS BUG SHIELD 2 mL, NBS BIO DEFENDER 2 g, NBS MICROSHIELD 1.25 g, NBS ROOT MAX 5 mL.",
+                products: ["NBS NEEM OIL™", "NBS CMB™", "NBS BUG SHIELD™", "NBS BIO DEFENDER™", "NBS MICROSHIELD™", "NBS ROOT MAX™"]
+            },
+            {
+                name: "Post-Emergent Foliar Spray - Week 4",
+                duration: "Fourth Week After Emergence",
+                instructions: "Per Litre of Water: NBS PSEUDO TECH 2 g, NBS MAX SPREADER 0.25 mL, NBS BUG SHIELD 2 mL, NBS BIO PROTECT 2 g, NBS TRIPLE 20 5 mL, NBS K-35 3 mL.",
+                products: ["NBS PSEUDO TECH™", "NBS MAX SPREADER™", "NBS BUG SHIELD™", "NBS BIO PROTECT™", "NBS TRIPLE 20™", "NBS K-35™"]
+            }
+        ],
+        features: [
+            "Seed treatment for strong germination and early vigor",
+            "Weekly nursery and post-emergent foliar/soil drench for disease and pest management",
+            "Soil conditioning for improved root health and nutrient uptake",
+            "Rotational foliar sprays for broad-spectrum protection",
+            "Flexible for chilli, tomato, eggplant, okra, and capsicum",
+            "Integrates biologicals, nutrients, and natural oils"
+        ]
     }
 ]
 
@@ -605,7 +772,9 @@ const programUrlMap = {
     'rice': 'NBS Nutrition Farming Program for Rice',
     'pepper': 'Phytophthora Control Program - Pepper',
     'thrips': 'Thrips Crop Program - All Crops',
-    'turf': 'Turf Farm & Nursery Program'
+    'turf': 'Turf Farm & Nursery Program',
+    'citrus': 'Citrus - NBS Crop Program 2025',
+    'chilli': 'NBS CHILLI, TOMATO, EGGPLANT, OKRA, CAPSICUM PROGRAM'
 }
 
 const CropPrograms = () => {
@@ -635,6 +804,12 @@ const CropPrograms = () => {
             } else {
                 // If URL path not found in mapping, navigate to main crop programs page
                 navigate('/crop-programs')
+            }
+        } else if (!selectedProgram) {
+            // Default to Maize Crop Program if no programId and nothing selected
+            const maizeProgram = cropPrograms.find(p => p.name === 'Maize Crop Program')
+            if (maizeProgram) {
+                setSelectedProgram(maizeProgram)
             }
         }
     }, [programId, navigate])

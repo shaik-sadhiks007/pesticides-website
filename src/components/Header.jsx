@@ -288,7 +288,7 @@ export default function Header() {
             </div>
             <div className="relative group">
               <Link
-                to="/crop-programs"
+                to="/crop-programs/maize"
                 className={`${location.pathname.startsWith("/crop-programs") ? "text-[#FE8340]" : "text-white hover:text-[#FE8340]"} text-sm xl:text-sm flex items-center gap-1 whitespace-nowrap`}
                 onClick={handleLinkClick}
               >
@@ -367,19 +367,19 @@ export default function Header() {
                         <ChevronRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                       </Link>
                       <Link
-                        to="/crop-programs/thrips"
+                        to="/crop-programs/citrus"
                         className="text-[#FE8340] uppercase font-semibold text-sm xl:text-base block hover:text-[#293E31] transition-colors flex items-center justify-between relative group-hover:text-[#293E31]"
                         onClick={handleLinkClick}
                       >
-                        <span>Thrips Crop Program</span>
+                        <span>Citrus Crop Program</span>
                         <ChevronRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                       </Link>
                       <Link
-                        to="/crop-programs/turf"
+                        to="/crop-programs/chilli"
                         className="text-[#FE8340] uppercase font-semibold text-sm xl:text-base block hover:text-[#293E31] transition-colors flex items-center justify-between relative group-hover:text-[#293E31]"
                         onClick={handleLinkClick}
                       >
-                        <span>Turf Farm & Nursery Program</span>
+                        <span>Chilli & Vegetable Program</span>
                         <ChevronRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                       </Link>
                     </div>
@@ -727,7 +727,7 @@ export default function Header() {
             <div className="border-b border-[#3a4f3f] last:border-b-0">
               <details className="group [&>summary::-webkit-details-marker]:hidden [&>summary]:list-none">
                 <summary className={`${isActive("/crop-programs")} text-lg py-2 flex justify-between items-center cursor-pointer text-left`}>
-                  <Link to="/crop-programs" className="text-left">Crop Programs</Link>
+                  <Link to="/crop-programs/maize" className="text-left">Crop Programs</Link>
                   <ChevronDown
                     size={20}
                     className="transition-transform duration-300 group-open:rotate-180"
@@ -794,18 +794,18 @@ export default function Header() {
                       Phytophthora Control Program - Pepper
                     </Link>
                     <Link
-                      to="/crop-programs/thrips"
+                      to="/crop-programs/citrus"
                       className="text-[#FE8340] font-semibold block hover:text-white text-left"
                       onClick={handleLinkClick}
                     >
-                      Thrips Crop Program
+                      Citrus Crop Program
                     </Link>
                     <Link
-                      to="/crop-programs/turf"
+                      to="/crop-programs/chilli"
                       className="text-[#FE8340] font-semibold block hover:text-white text-left"
                       onClick={handleLinkClick}
                     >
-                      Turf Farm & Nursery Program
+                      Chilli & Vegetable Program
                     </Link>
                   </div>
                 </div>

@@ -51,19 +51,19 @@ export function About() {
 
   const teamMembers = [
     {
-      name: "Vedant",
+      name: "Mr. Vedant Murarka",
       title: "Director",
-      image: "https://res.cloudinary.com/dxq7qzxqj/image/upload/v1740000000/team/vedant.jpg"
+      image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/teamMembers/nxmgrydzi8trzp2ukb93"
     },
     {
-      name: "Aditya",
+      name: "Mr. Aditya Gupta",
       title: "Director",
-      image: "https://res.cloudinary.com/dxq7qzxqj/image/upload/v1740000000/team/aditya.jpg"
+      image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/teamMembers/za63sqbyx3k5q9sjct01",
     },
     {
-      name: "Dr Chris",
-      title: "Consultant",
-      image: "https://res.cloudinary.com/dxq7qzxqj/image/upload/v1740000000/team/dr-chris.jpg"
+      name: "Dr. Chris Gamble",
+      title: "Technical Head",
+      image: "https://res.cloudinary.com/dv3d8msjh/image/upload/f_auto,q_auto/v1/teamMembers/ylt4l7h3u43h0fsvlg82"
     }
   ]
 
