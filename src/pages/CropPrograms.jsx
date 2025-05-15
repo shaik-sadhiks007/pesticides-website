@@ -460,7 +460,7 @@ const cropPrograms = [
     },
     {
         id: 9,
-        name: "Thrips Crop Program - All Crops",
+        name: "Thrips Problem - All Crops",
         pdfFile: thripsProgram,
         description: "Comprehensive multi-layered program for effective thrips control using biological and nutritional approaches",
         duration: "As Needed",
@@ -493,6 +493,8 @@ const cropPrograms = [
             }
         ],
         features: [
+            "Helps control thrips and build defence system as well.",
+            "Dual functionality - Stress reduction and improved efficiency",
             "Multi-layered approach combining biological and nutritional solutions",
             "Optimized spray coverage and adhesion for better results",
             "Enhanced plant resilience and natural defense mechanisms",
@@ -585,7 +587,10 @@ const cropPrograms = [
             "Improved disease resistance",
             "Better water and nutrient uptake",
             "Stronger root development",
-            "Sustainable turf management"
+            "Sustainable turf management",
+            "Greener, stress free, pest and disease free, better drainage and aeration",
+            "Ideal for sports tournaments, renovation and post recovery from wear and tear",
+            "Cost effective and increased efficiency with maintaining high level of immunity and metabolism"
         ],
         notes: [
             "Ideally arrange to have an NBS Soil Test prior to planting/seeding new turf",
@@ -610,75 +615,62 @@ const cropPrograms = [
             "NBS CMB™",
             "NBS K-35™"
         ],
-        applicationRates: [
-            "NBS Sapphire™ Liquid: 8 L/acre (Fertigation)",
-            "NBS Yield Booster™: 400 mL/acre (2 mL/L, Fertigation)",
-            "NBS Micro-Nutrients: 250 mL/acre (1 mL/L, Foliar)",
-            "NBS Triple 20: 1.25–1.5 L/acre (4–5 mL/L, Foliar)",
-            "NBS CMB™: 1.5 L/acre (5 mL/L, Foliar)",
-            "NBS K-35™: 1.0–1.5 L/acre (3 mL/L, Foliar)"
-        ],
         stages: [
             {
                 name: "Main Spring Flush",
                 duration: "Spring",
-                instructions: "Fertigation: NBS Sapphire™ Liquid (①*), NBS Yield Booster™ (①). Foliar: NBS Micro-Nutrients (①), NBS CMB™ (①).",
-                products: ["NBS Sapphire™ Liquid", "NBS Yield Booster™", "NBS Micro-Nutrients™", "NBS CMB™"]
+                instructions: "Fertigation: NBS Sapphire™ Liquid (8 L/acre). Foliar: NBS Yield Booster™ (400 mL/acre), NBS Micro-Nutrients™ (250 mL/acre).",
+                products: ["NBS Sapphire™ Liquid", "NBS Yield Booster™", "NBS Micro-Nutrients™"]
             },
             {
                 name: "Pre-Flowering",
                 duration: "Before Flowering",
-                instructions: "Foliar: NBS Micro-Nutrients (①).",
-                products: ["NBS Micro-Nutrients™"]
+                instructions: "Foliar: NBS CMB™ (1.5 L/acre).",
+                products: ["NBS CMB™"]
             },
             {
                 name: "Petal Fall",
                 duration: "After Flowering",
-                instructions: "Fertigation: NBS Yield Booster™ (①). Foliar: NBS Triple 20 (①), NBS CMB™ (①), NBS K-35™ (①).",
-                products: ["NBS Yield Booster™", "NBS Triple 20™", "NBS CMB™", "NBS K-35™"]
+                instructions: "Fertigation: NBS Sapphire™ Liquid (8 L/acre). Foliar: NBS Yield Booster™ (400 mL/acre), NBS CMB™ (1.5 L/acre).",
+                products: ["NBS Sapphire™ Liquid", "NBS Yield Booster™", "NBS CMB™"]
             },
             {
                 name: "Fruit Bulking",
                 duration: "During Fruit Development",
-                instructions: "Fertigation: NBS Sapphire™ Liquid (②*). Foliar: NBS Triple 20 (②, with CMB™ and K-35™), NBS CMB™ (② with Triple 20), NBS K-35™ (② with Triple 20).",
-                products: ["NBS Sapphire™ Liquid", "NBS Triple 20™", "NBS CMB™", "NBS K-35™"]
+                instructions: "Fertigation: NBS Sapphire™ Liquid (8 L/acre, twice during bulking). Foliar: NBS Triple Twenty™ (1.25–1.5 L/acre), NBS K-35™ (1.0–1.5 L/acre), NBS Micro-Nutrients™ (250 mL/acre), all of this has to be used twice during fruit bulking.",
+                products: ["NBS Sapphire™ Liquid", "NBS Triple Twenty™", "NBS K-35™", "NBS Micro-Nutrients™"]
             },
             {
                 name: "3 Weeks Pre-Harvest",
                 duration: "3 Weeks Before Harvest",
-                instructions: "Foliar: NBS Yield Booster™ (①).",
-                products: ["NBS Yield Booster™"]
+                instructions: "Foliar: NBS Yield Booster™ (400 mL/acre), NBS K-35™ (1.0–1.5 L/acre).",
+                products: ["NBS Yield Booster™", "NBS K-35™"]
             },
             {
                 name: "Harvest",
                 duration: "At Harvest",
-                instructions: "Foliar: NBS K-35™ (② with Yield Booster).",
-                products: ["NBS K-35™", "NBS Yield Booster™"]
+                instructions: "No specific application; monitor and prepare for post-harvest.",
+                products: []
             },
             {
                 name: "Post-Harvest Recharge",
                 duration: "After Harvest",
-                instructions: "Fertigation: NBS Sapphire™ Liquid (①). Foliar: NBS Yield Booster™ (②).",
-                products: ["NBS Sapphire™ Liquid", "NBS Yield Booster™"]
+                instructions: "Fertigation: NBS Sapphire™ Liquid (8 L/acre). Foliar: NBS Yield Booster™ (400 mL/acre), NBS K-35™ (1.0–1.5 L/acre), use this foliar twice in this phase.",
+                products: ["NBS Sapphire™ Liquid", "NBS Yield Booster™", "NBS K-35™"]
             }
         ],
         features: [
-            "Optimized nutrient application timing for each growth stage",
-            "Enhanced spring flush development",
-            "Improved flowering and fruit set",
-            "Better fruit bulking and quality",
-            "Enhanced post-harvest recovery",
-            "Flexible application methods (foliar or soil drench)",
-            "Complements existing solid fertilizer program",
-            "Sustainable and efficient nutrient delivery"
-        ],
-        legend: [
-            "① = make 1 application in this growth period",
-            "② = make 2 applications in this period"
-        ],
-        notes: [
-            "This program supplements the annual solid base fertiliser program.",
-            "DIY 6% Sapphire Liquid Humic Acid Recipe: Dissolve 1 kg NBS Sapphire Granules in 10 litres of warm water. Stir well and leave overnight. Stir again to solubilise remaining sediment and filter into storage containers for later use. Do NOT use or apply without filtering. A small amount of fine residue remaining in the mixing barrel can be used as a natural fertiliser on gardens and trees."
+            "Cost Efficiency: Optimized nutrient scheduling and targeted application reduce input waste and maximize return on investment, lowering overall production costs for farmers.",
+            "Improved Resilience & Immunity: Enhances plant health and natural defenses, making citrus trees more resistant to diseases, pests, and environmental stress.",
+            "Stress & Disease Management: Supports stress tolerance and reduces the risk of disease outbreaks through balanced nutrition and bio-stimulant support.",
+            "Even & Proper Growth: Ensures uniform vegetative and root development, leading to consistent crop stands and predictable yields.",
+            "Enhanced Nutrient Uptake: Advanced formulations improve nutrient absorption and utilization, resulting in healthier, more productive trees.",
+            "Superior Fruit Quality: Promotes better fruit size, color, texture, and shelf life, as well as improved taste and market value.",
+            "No Harmful Residues: Uses residue-free, sustainable products that are safe for consumers, workers, and the environment.",
+            "Low Maintenance: Reduces the need for intensive management by improving plant vigor and soil health, leading to less frequent interventions.",
+            "Improved Drainage & Aeration: Supports healthy root systems and soil structure, reducing waterlogging and promoting efficient water use.",
+            "All-Climate Adaptability: Formulated to perform effectively in diverse climates and orchard conditions, ensuring reliable results year-round.",
+            "Sustainable & Eco-Friendly: Minimizes environmental impact through reduced chemical input and supports long-term orchard health."
         ]
     },
     {
@@ -752,12 +744,14 @@ const cropPrograms = [
             }
         ],
         features: [
-            "Seed treatment for strong germination and early vigor",
-            "Weekly nursery and post-emergent foliar/soil drench for disease and pest management",
-            "Soil conditioning for improved root health and nutrient uptake",
-            "Rotational foliar sprays for broad-spectrum protection",
-            "Flexible for chilli, tomato, eggplant, okra, and capsicum",
-            "Integrates biologicals, nutrients, and natural oils"
+            "Bigger and heavier fruits: More kilos per acre, bigger harvests, and better prices.",
+            "Shiny, market-ready vegetables: Produce that looks fresh and sells fast with improved texture and taste.",
+            "Longer shelf life: Less waste, more time to sell, and better returns.",
+            "High yield, every season: More flowers turn into fruits, and plants keep producing longer.",
+            "Natural resilience: Crops bounce back from heat, cold, wind, and pests without heavy chemical use due to good aeration, and drainage with less effort and more outputs.",
+            "Stronger immunity: Less disease and pest damage, healthier plants all year.",
+            "Cost-effective: Fewer sprays, less fertilizer waste, and more value from every input.",
+            "Consistent, reliable results: Uniform crops that meet buyer standards and reduce rejections."
         ]
     }
 ]
@@ -771,7 +765,7 @@ const programUrlMap = {
     'downy-mildew': 'Downy Mildew Program - Onions, Dwarf Beans, Potatoes and Peas',
     'rice': 'NBS Nutrition Farming Program for Rice',
     'pepper': 'Phytophthora Control Program - Pepper',
-    'thrips': 'Thrips Crop Program - All Crops',
+    'thrips': 'Thrips Problem - All Crops',
     'turf': 'Turf Farm & Nursery Program',
     'citrus': 'Citrus - NBS Crop Program 2025',
     'chilli': 'NBS CHILLI, TOMATO, EGGPLANT, OKRA, CAPSICUM PROGRAM'
@@ -945,11 +939,10 @@ const CropPrograms = () => {
                                     <Card
                                         key={program.id}
                                         id={`program-${program.id}`}
-                                        className={`cursor-pointer transition-all bg-[#DACEC2] ${
-                                            selectedProgram?.id === program.id
+                                        className={`cursor-pointer transition-all bg-[#DACEC2] ${selectedProgram?.id === program.id
                                                 ? "border-[#f47834] shadow-lg"
                                                 : "border border-black"
-                                        }`}
+                                            }`}
                                         onClick={() => handleProgramSelect(program)}
                                     >
                                         <CardHeader className="py-3">
@@ -981,14 +974,14 @@ const CropPrograms = () => {
                                             <div className="flex flex-wrap gap-2">
                                                 {selectedProgram.products.map((product) => {
                                                     // Find the product in the productCategories data
-                                                    const productData = Object.entries(productCategories.agricultureAndHorticulture.subcategories).find(([_, subcategory]) => 
+                                                    const productData = Object.entries(productCategories.agricultureAndHorticulture.subcategories).find(([_, subcategory]) =>
                                                         subcategory.products.some(p => p.name.toLowerCase() === product.toLowerCase())
                                                     );
-                                                    
+
                                                     if (productData) {
                                                         const [subcategoryKey, subcategory] = productData;
                                                         const productId = subcategory.products.find(p => p.name === product)?.id;
-                                                        
+
                                                         return (
                                                             <Link
                                                                 key={product}
@@ -999,7 +992,7 @@ const CropPrograms = () => {
                                                             </Link>
                                                         );
                                                     }
-                                                    
+
                                                     return (
                                                         <span key={product} className="bg-[#293E31] uppercase text-[#DACEC2] px-3 py-1.5 rounded-full text-xs sm:text-sm">
                                                             {product}
